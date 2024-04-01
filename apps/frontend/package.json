@@ -1,0 +1,36 @@
+{
+  "name": "frontend",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./eslintConfig": {
+      "import": "./.nuxt/eslint.config.mjs"
+    },
+    "./unoConfig": {
+      "import": "./uno.config.ts"
+    }
+  },
+  "scripts": {
+    "build": "nuxt generate",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1.4.0",
+    "@nuxtjs/color-mode": "^3.3.3",
+    "@unocss/nuxt": "^0.58.8",
+    "@vueuse/nuxt": "^10.9.0",
+    "nuxt": "^3.11.1",
+    "primeicons": "^7.0.0",
+    "primevue": "^3.50.0",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@local/common": "workspace:*",
+    "@nuxt/eslint": "0.3.0-beta.8",
+    "nuxt-primevue": "^0.3.1",
+    "unocss": "^0.58.8"
+  }
+}

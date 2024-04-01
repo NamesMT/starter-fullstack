@@ -1,0 +1,43 @@
+{
+  "name": "backend",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "source": "./src/index.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "NODE_ENV=dev tsx src/index.ts",
+    "watch": "NODE_ENV=dev tsx watch src/index.ts",
+    "stub": "unbuild --stub",
+    "dev": "test",
+    "lint": "eslint .",
+    "test": "vitest",
+    "test:types": "tsc --noEmit --skipLibCheck",
+    "check": "pnpm lint && pnpm test:types && vitest run --coverage",
+    "build": "unbuild"
+  },
+  "dependencies": {
+    "@namesmt/hono-adapter-aws-lambda": "0.1.0-1711616965.7e91467",
+    "consola": "^3.2.3",
+    "hono": "^4.1.7",
+    "std-env": "^3.7.0"
+  },
+  "devDependencies": {
+    "@local/tsconfig": "workspace:*",
+    "@vitest/coverage-v8": "^1.4.0",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3",
+    "unbuild": "^2.0.0",
+    "vitest": "^1.4.0"
+  }
+}

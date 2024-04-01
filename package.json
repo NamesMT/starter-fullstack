@@ -1,17 +1,38 @@
 {
-  "name": "with-vue-nuxt",
+  "name": "starter-fullstack",
+  "type": "module",
   "private": true,
+  "packageManager": "pnpm@8.15.5",
+  "engines": {
+    "node": ">=20.12.0"
+  },
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "prepare": "simple-git-hooks"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^2.11.6",
+    "@local/tsconfig": "workspace:*",
+    "@unocss/eslint-plugin": "^0.58.8",
     "eslint": "^8.57.0",
-    "prettier": "^3.2.5",
-    "tsconfig": "workspace:*",
-    "turbo": "latest"
+    "frontend": "workspace:*",
+    "lint-staged": "^15.2.2",
+    "simple-git-hooks": "^2.11.1",
+    "turbo": "latest",
+    "unocss": "^0.58.8"
   },
-  "packageManager": "pnpm@8.6.10"
+  "pnpm": {
+    "overrides": {
+      "hasown": "npm:@nolyfill/hasown@latest",
+      "isarray": "npm:@nolyfill/isarray@latest"
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
 }

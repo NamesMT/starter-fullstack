@@ -1,0 +1,60 @@
+/* eslint-disable jsonc/comma-dangle */
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/alpine
+{
+  "name": "Alpine-NamesMT",
+  "image": "namesmt/images-alpine:node-dev",
+  // "build": {
+  //   "dockerfile": "Dockerfile"
+  // },
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {
+      "version": "latest"
+    }
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "sh .devcontainer/postCreate.sh",
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "antfu.goto-alias",
+        "antfu.iconify",
+        "antfu.unocss",
+        "antfu.vite",
+        "antfu.where-am-i",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens",
+        "george-alisson.html-preview-vscode",
+        "Gruntfuggly.todo-tree",
+        "jock.svg",
+        "lokalise.i18n-ally",
+        "ms-vscode.live-server",
+        "naumovs.color-highlight",
+        "oderwat.indent-rainbow",
+        "rangav.vscode-thunder-client",
+        "streetsidesoftware.code-spell-checker",
+        "thinker.sort-json",
+        "usernamehw.errorlens",
+        "Vue.volar",
+        "yoavbls.pretty-ts-errors",
+      ]
+    }
+  },
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root",
+  "runArgs": [
+    // mount pnpm store for shared caching/linking
+    // "--volume=${env:PNPM_HOME}/store:${env:PNPM_HOME}/store",
+
+    // // Enable both in this block if you want to mount home dir
+    // mount user home directory for things like git, ssh, and other configs
+    // "--volume=${env:HOME}:${env:HOME}",
+    // isolate the .vscode-server folder so you don't overwrite settings from remote ssh vscode
+    // "--volume=${localWorkspaceFolder}/.cache/vscode-server:${env:HOME}/.vscode-server",
+    // //
+  ],
+}
