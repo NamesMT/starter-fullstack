@@ -29,14 +29,14 @@
   "dependencies": {
     "@namesmt/hono-adapter-aws-lambda": "0.1.0-1711616965.7e91467",
     "consola": "^3.2.3",
-    "hono": "^4.1.7",
+    "hono": "^4.2.2",
     "std-env": "^3.7.0"
   },
   "devDependencies": {
     "@local/tsconfig": "workspace:*",
     "@vitest/coverage-v8": "^1.4.0",
-    "tsx": "^4.7.1",
-    "typescript": "^5.4.3",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.4",
     "unbuild": "^2.0.0",
     "vitest": "^1.4.0"
   }
