@@ -1,9 +1,9 @@
 @import url('./primevue.css');
 
 html {
-  --at-apply: 'bg-gray-500';
+  --at-apply: 'bg-emerald-50 text-surface-600';
 }
 
 html.dark {
-  --at-apply: 'bg-gray-700';
+  --at-apply: 'bg-gray-700 text-surface-200';
 }
