@@ -44,6 +44,31 @@ export default defineConfig({
     ['btn', 'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
     ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
   ],
+  rules: [
+    // Declaring css variable with Uno: $SOMETHING=10px
+    [/^\$(.+?)=(.+)$/, ([, name, value]) => ({
+      [`--${name}`]: value,
+    })],
+    // Re-declare to fix priority issue with some primevue components
+    ['rounded-none', { 'border-radius': '0px' }],
+  ],
+  variants: [
+    {
+      // nth-[]:class
+      name: ':nth-child()',
+      match: (matcher) => {
+        const match = matcher.match(/^nth-\[(.+?)\]:/)
+        if (!match)
+          return matcher
+        return {
+          // slice `hover:` prefix and passed to the next variants and rules
+          matcher: matcher.substring(match[0].length),
+          selector: s => `${s}:nth-child(${match[1]})`,
+        }
+      },
+      multiPass: true,
+    },
+  ],
   presets: [
     presetUno(),
     presetAttributify(),
@@ -66,7 +91,7 @@ export default defineConfig({
     pipeline: {
       include: [
         /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
-        'assets/primevue/presets/**',
+        'assets/vendor/primevue/presets/**',
       ],
     },
   },

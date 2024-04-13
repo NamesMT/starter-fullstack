@@ -10,7 +10,7 @@ export default frontendNuxtConfig(antfu(
     vue: true,
     unocss: true,
     ignores: [
-      '**/assets/primevue/presets**',
+      '**/assets/vendor/**',
     ],
   },
   // Allow trailing space for markdown formatting
