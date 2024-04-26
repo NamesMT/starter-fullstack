@@ -49,7 +49,3 @@ const apiResult = import.meta.client ? await $fetch(runtimeConfig.public.backend
     </div>
   </div>
 </template>
-
-<style>
-@import url("~/assets/css/main.css");
-</style>
