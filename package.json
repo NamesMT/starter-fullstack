@@ -12,9 +12,13 @@
     "lint": "turbo run lint",
     "prepare": "simple-git-hooks"
   },
+  "dependencies": {
+    "sst": "ion"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.16.0",
     "@local/tsconfig": "workspace:*",
+    "@types/aws-lambda": "8.10.137",
     "@unocss/eslint-plugin": "^0.59.4",
     "eslint": "^9.1.1",
     "frontend": "workspace:*",

@@ -4,7 +4,9 @@ This is a starter template to kick-start your `Nuxt` full-stack project
 
 ## What's inside?
 
-This template is powered by [Turborepo](https://turbo.build/repo)
+This template is powered by [Turborepo](https://turbo.build/repo).
+
+Utilizing [SST Ion](https://ion.sst.dev/) for Infrastructure-as-Code, with powerful [Live](https://ion.sst.dev/docs/live/) development.
 
 ### Apps and Packages
 

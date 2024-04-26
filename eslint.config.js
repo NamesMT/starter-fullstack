@@ -10,6 +10,7 @@ export default frontendNuxtConfig(antfu(
     vue: true,
     unocss: true,
     ignores: [
+      '.sst',
       '**/assets/vendor/**',
     ],
   },

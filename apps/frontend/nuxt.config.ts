@@ -8,6 +8,15 @@ export default defineNuxtConfig({
     https: false,
   },
 
+  runtimeConfig: {
+    // The private keys which are only available server-side
+    aSecretKey: '123',
+    // Keys within public are also exposed client-side
+    public: {
+      backendUrl: 'https://dummyjson.com/quotes/random',
+    },
+  },
+
   components: [
     {
       path: '~/components',

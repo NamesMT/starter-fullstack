@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import { GridMaker } from '@local/common'
 
+const runtimeConfig = useRuntimeConfig()
 const colorMode = useColorMode()
 
-const value1 = ref()
+const number = ref()
+
+const apiResult = import.meta.client ? await $fetch(runtimeConfig.public.backendUrl) : 'Loading...'
 </script>
 
 <template>
-  <div class="h-screen flex flex-col items-center justify-center gap-4">
+  <div class="h-screen flex flex-col items-center justify-center gap-4 text-center">
     <div class="flex items-end gap-2">
       <GridMaker
         :value="[
@@ -35,10 +38,14 @@ const value1 = ref()
           : 'light'"
       />
       <InputNumber
-        v-model="value1"
+        v-model="number"
         input-id="integeronly"
-        placeholder="Test input"
+        placeholder="Number input"
       />
+    </div>
+    <div>
+      <div>API Response from `<code>{{ runtimeConfig.public.backendUrl }}</code>`:</div>
+      <pre>{{ apiResult }}</pre>
     </div>
   </div>
 </template>

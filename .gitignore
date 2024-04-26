@@ -44,3 +44,6 @@ yarn-error.log*
 # cloud services
 .vercel
 .netlify
+
+# sst
+.sst
