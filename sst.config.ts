@@ -9,13 +9,13 @@ export default $config({
     }
   },
   async run() {
-    const hono = new sst.aws.Function('Backend', {
+    const backend = new sst.aws.Function('Backend', {
       url: true,
       handler: 'apps/backend/src/index.handler',
     })
 
     return {
-      api: hono.url,
+      backend: backend.url,
     }
   },
 })
