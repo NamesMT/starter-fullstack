@@ -8,7 +8,12 @@ node_modules
 coverage
 lib-cov
 
-# builds
+# dev/builds/outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
 dist
 build
 out/
@@ -17,13 +22,12 @@ out/
 
 # misc
 .DS_Store
+.fleet
 .idea
-*.pem
 temp
 logs
-.cache
-.idea
 *.log
+*.pem
 
 # debug
 npm-debug.log*
