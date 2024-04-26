@@ -5,6 +5,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   devServer: {
+    // If you have performance issue in dev, use `127.0.0.1` in your browser instead of `localhost`
+    host: '127.0.0.1',
     https: false,
   },
 
