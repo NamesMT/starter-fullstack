@@ -27,17 +27,17 @@
     "build": "unbuild"
   },
   "dependencies": {
-    "@namesmt/hono-adapter-aws-lambda": "0.1.0-1711616965.7e91467",
+    "@namesmt/hono-adapter-aws-lambda": "^0.1.1",
     "consola": "^3.2.3",
-    "hono": "^4.2.3",
+    "hono": "^4.2.7",
     "std-env": "^3.7.0"
   },
   "devDependencies": {
     "@local/tsconfig": "workspace:*",
-    "@vitest/coverage-v8": "^1.4.0",
-    "tsx": "^4.7.2",
+    "@vitest/coverage-v8": "^1.5.2",
+    "tsx": "^4.7.3",
     "typescript": "^5.4.5",
     "unbuild": "^2.0.0",
-    "vitest": "^1.4.0"
+    "vitest": "^1.5.2"
   }
 }

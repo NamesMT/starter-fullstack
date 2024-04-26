@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "@local/tsconfig": "workspace:*",
-    "vue": "^3.4.21"
+    "vue": "^3.4.25"
   }
 }
