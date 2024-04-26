@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { GridMaker } from '@local/common'
 
 const colorMode = useColorMode()
