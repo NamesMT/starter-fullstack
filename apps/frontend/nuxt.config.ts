@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   devServer: {
-    https: true,
+    https: false,
   },
 
   components: [
