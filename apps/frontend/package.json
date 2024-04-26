@@ -13,6 +13,7 @@
   "scripts": {
     "build": "nuxt generate",
     "dev": "nuxt dev",
+    "lint": "eslint .",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
