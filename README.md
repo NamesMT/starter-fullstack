@@ -6,7 +6,12 @@ This is a starter template to kick-start your `Nuxt` full-stack project
 
 This template is powered by [Turborepo](https://turbo.build/repo).
 
-Utilizing [SST Ion](https://ion.sst.dev/) for Infrastructure-as-Code, with powerful [Live](https://ion.sst.dev/docs/live/) development.
+Out-of-the-box, this repo is configured for a static `frontend` Nuxt app, and a `backend` Hono app that will be the main API, to optimize on cost and simplicity.
+
+Utilizing [SST Ion](https://ion.sst.dev/) for Infrastructure-as-Code, with powerful [Live](https://ion.sst.dev/docs/live/) development.  
+SST is 100% opt-in, by using `sst` CLI commands yourself, like `sst dev`,  
+simply remove `sst` dependency and `sst.config.ts` if you want to use another solution.  
+*currently only `backend` app is configured, which will deploy a Lambda with Function URL enabled*
 
 ### Apps and Packages
 
