@@ -17,6 +17,10 @@ export default defineNuxtConfig({
     },
   },
 
+  ignore: [
+    'dist',
+  ],
+
   components: [
     {
       path: '~/components',
