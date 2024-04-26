@@ -7,8 +7,8 @@ const value1 = ref()
 </script>
 
 <template>
-  <div class="h-screen flex flex-col gap-4 items-center justify-center">
-    <div class="flex gap-2 items-end">
+  <div class="h-screen flex flex-col items-center justify-center gap-4">
+    <div class="flex items-end gap-2">
       <GridMaker
         :value="[
           '* *',
@@ -26,7 +26,7 @@ const value1 = ref()
         ]"
       />
     </div>
-    <div class="flex gap-2 items-center justify-center">
+    <div class="flex items-center justify-center gap-2">
       <div>Theme:&nbsp;</div>
       <Button
         :label="colorMode.preference"
