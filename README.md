@@ -4,18 +4,21 @@ This is a starter template to kick-start your `Nuxt` full-stack project
 
 ## What's inside?
 
-This template is powered by [Turborepo](https://turbo.build/repo).
+⏩ This template is powered by [Turborepo](https://turbo.build/repo).
 
-Out-of-the-box, this repo is configured for a static `frontend` Nuxt app, and a `backend` Hono app that will be the main API, to optimize on cost and simplicity.
+😊 Out-of-the-box, this repo is configured for a static `frontend` Nuxt app, and a `backend` Hono app that will be the main API, to optimize on cost and simplicity.
 
-Utilizing [SST Ion](https://ion.sst.dev/) for Infrastructure-as-Code, with powerful [Live](https://ion.sst.dev/docs/live/) development.  
+🌩️ Utilizing [SST Ion](https://ion.sst.dev/) for Infrastructure-as-Code, with powerful [Live](https://ion.sst.dev/docs/live/) development.  
 SST is 100% opt-in, by using `sst` CLI commands yourself, like `sst dev`,  
 simply remove `sst` dependency and `sst.config.ts` if you want to use another solution.  
 *currently only `backend` app is configured, which will deploy a Lambda with Function URL enabled*
 
+🔐 Comes with starter-kit for [Kinde](https://kinde.com/) authentication, see: `/apps/backend/api/auth`
+
 ### Apps and Packages
 
 - `frontend`: a [Nuxt](https://nuxt.com/) app, configured same as [starter-nuxt](https://github.com/NamesMT/starter-nuxt).
+  - By default, in development, `/api/*` is proxied to the `backendUrl`, this mimics a production environment where the static frontend and the backend lives on the same domain at /api, which is the most efficient configuration for Cloudfront + Lambda Function Url
 - `backend`: a [Hono🔥](https://hono.dev/) app.
 - `@local/common`: a shared library that can contain constants, functions, types shared across all apps.
 - `@local/common-vue`: a shared library that can contain components, constants, functions, types shared across vue-based apps.

@@ -35,6 +35,7 @@
   "devDependencies": {
     "@dotenvx/dotenvx": "^0.37.0",
     "@hono/node-server": "^1.11.1",
+    "@kinde-oss/kinde-typescript-sdk": "^2.9.0",
     "@local/common": "workspace:*",
     "@local/tsconfig": "workspace:*",
     "@vitest/coverage-v8": "^1.5.2",

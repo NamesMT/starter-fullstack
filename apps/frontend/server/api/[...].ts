@@ -1,8 +1,27 @@
-import { joinURL } from 'ufo'
+import { createProxyEventHandler } from 'h3-proxy'
 
-export default defineEventHandler(async (event) => {
-  const backendUrl = useRuntimeConfig().public.backendUrl
-  const target = joinURL(backendUrl, event.path)
-
-  return proxyRequest(event, target)
+let currentUrl = useRuntimeConfig().public.backendUrl
+let currentHandler = createProxyEventHandler({
+  target: currentUrl,
+  pathFilter: ['/api/**'],
+  changeOrigin: true,
+  configureProxyRequest: () => ({ streamRequest: true, sendStream: true, fetchOptions: { redirect: 'manual' } }),
 })
+export default defineEventHandler((e) => {
+  const backendUrl = useRuntimeConfig().public.backendUrl
+  if (currentUrl !== backendUrl) {
+    recreateHandler()
+    currentUrl = backendUrl
+  }
+
+  return currentHandler(e)
+})
+
+function recreateHandler() {
+  currentHandler = createProxyEventHandler({
+    target: currentUrl,
+    pathFilter: ['/api/**'],
+    changeOrigin: true,
+    configureProxyRequest: () => ({ streamRequest: true, sendStream: true, fetchOptions: { redirect: 'manual' } }),
+  })
+}
