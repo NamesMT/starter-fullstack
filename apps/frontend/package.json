@@ -12,13 +12,14 @@
   },
   "scripts": {
     "build": "nuxt generate",
-    "dev": "nuxt dev",
+    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev",
     "lint": "eslint .",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "@local/common": "workspace:*",
+    "@local/common-vue": "workspace:*",
     "@nuxt/eslint": "^0.3.10",
     "@nuxt/image": "^1.6.0",
     "@nuxtjs/color-mode": "^3.4.0",
@@ -30,6 +31,7 @@
     "primeicons": "^7.0.0",
     "primevue": "^3.51.0",
     "sass": "^1.75.0",
+    "ufo": "^1.5.3",
     "unocss": "^0.59.4",
     "vue": "^3.4.25",
     "vue-router": "^4.3.2"

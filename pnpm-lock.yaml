@@ -62,12 +62,21 @@ importers:
         specifier: ^3.7.0
         version: 3.7.0
     devDependencies:
+      '@hono/node-server':
+        specifier: ^1.11.1
+        version: 1.11.1
+      '@local/common':
+        specifier: workspace:*
+        version: link:../../packages/common
       '@local/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
       '@vitest/coverage-v8':
         specifier: ^1.5.2
         version: 1.5.2(vitest@1.5.2(@types/node@20.12.2)(sass@1.75.0)(terser@5.30.0))
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       tsx:
         specifier: ^4.7.3
         version: 4.7.3
@@ -86,6 +95,9 @@ importers:
       '@local/common':
         specifier: workspace:*
         version: link:../../packages/common
+      '@local/common-vue':
+        specifier: workspace:*
+        version: link:../../packages/common-vue
       '@nuxt/eslint':
         specifier: ^0.3.10
         version: 0.3.10(eslint@9.1.1)(nuxt@3.11.2(@parcel/watcher@2.4.1)(@types/node@20.12.2)(@unocss/reset@0.59.4)(encoding@0.1.13)(eslint@9.1.1)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.13.2))(vue@3.4.25(typescript@5.4.5)))(ioredis@5.3.2)(optionator@0.9.3)(rollup@4.13.2)(sass@1.75.0)(terser@5.30.0)(typescript@5.4.5)(unocss@0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.75.0)(terser@5.30.0)))(vite@5.2.8(@types/node@20.12.2)(sass@1.75.0)(terser@5.30.0)))(rollup@4.13.2)(typescript@5.4.5)(vite@5.2.8(@types/node@20.12.2)(sass@1.75.0)(terser@5.30.0))
@@ -119,6 +131,9 @@ importers:
       sass:
         specifier: ^1.75.0
         version: 1.75.0
+      ufo:
+        specifier: ^1.5.3
+        version: 1.5.3
       unocss:
         specifier: ^0.59.4
         version: 0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.75.0)(terser@5.30.0))
@@ -130,6 +145,15 @@ importers:
         version: 4.3.2(vue@3.4.25(typescript@5.4.5))
 
   packages/common:
+    devDependencies:
+      '@local/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      pathe:
+        specifier: ^1.1.2
+        version: 1.1.2
+
+  packages/common-vue:
     devDependencies:
       '@local/tsconfig':
         specifier: workspace:*
@@ -841,6 +865,10 @@ packages:
 
   '@floating-ui/utils@0.2.1':
     resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
+
+  '@hono/node-server@1.11.1':
+    resolution: {integrity: sha512-GW1Iomhmm1o4Z+X57xGby8A35Cu9UZLL7pSMdqDBkD99U5cywff8F+8hLk5aBTzNubnsFAvWQ/fZjNwPsEn9lA==}
+    engines: {node: '>=18.14.1'}
 
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
@@ -6521,6 +6549,8 @@ snapshots:
       '@floating-ui/core': 1.6.0
 
   '@floating-ui/utils@0.2.1': {}
+
+  '@hono/node-server@1.11.1': {}
 
   '@humanwhocodes/config-array@0.13.0':
     dependencies:

@@ -15,6 +15,13 @@ export default frontendNuxtConfig(antfu(
     ],
   },
   {
+    files: ['apps/backend/**'],
+    rules: {
+      // Disable automatically transform `type` to `interface`, because Hono require the Bindings to be type.
+      'ts/consistent-type-definitions': 'off',
+    },
+  },
+  {
     rules: {
       // Allow trailing space in comments, for possible JSDoc formattings
       'style/no-trailing-spaces': ['error', { ignoreComments: true }],

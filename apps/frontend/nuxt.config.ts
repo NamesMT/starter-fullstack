@@ -1,13 +1,18 @@
 import path from 'node:path'
+import { localcertKeyPath, localcertPath } from '@local/common/node'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
   devServer: {
-    // If you have performance issue in dev, use `127.0.0.1` in your browser instead of `localhost`
+    https: {
+      cert: localcertPath,
+      key: localcertKeyPath,
+    },
+    // If you have performance issue in dev, use `127.0.0.1` in your browser instead of `localhost` - Ref: https://github.com/nuxt/cli/issues/136
     host: '127.0.0.1',
-    https: false,
+    port: 3300,
   },
 
   runtimeConfig: {
@@ -15,7 +20,7 @@ export default defineNuxtConfig({
     aSecretKey: '123',
     // Keys within public are also exposed client-side
     public: {
-      backendUrl: 'https://dummyjson.com/quotes/random',
+      backendUrl: 'https://127.0.0.1:3301',
     },
   },
 

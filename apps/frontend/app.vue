@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { GridMaker } from '@local/common'
+import { GridMaker } from '@local/common-vue'
 
 const runtimeConfig = useRuntimeConfig()
 const colorMode = useColorMode()
 
 const number = ref()
 
-const apiResult = import.meta.client ? await $fetch(runtimeConfig.public.backendUrl) : 'Loading...'
+const apiResult = import.meta.client ? await $fetch('/api/hello') : 'Loading...'
 </script>
 
 <template>
@@ -44,7 +44,8 @@ const apiResult = import.meta.client ? await $fetch(runtimeConfig.public.backend
       />
     </div>
     <div>
-      <div>API Response from `<code>{{ runtimeConfig.public.backendUrl }}</code>`:</div>
+      <div>Configured backendUrl: {{ runtimeConfig.public.backendUrl }}</div>
+      <div>API Response from `<code>/api/hello</code>` (proxied to backendUrl + /api/hello):</div>
       <pre>{{ apiResult }}</pre>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { LooseCSSUnit } from '../utils/css'
-import { cssUnit } from '../utils/css'
+import type { LooseCSSUnit } from '@local/common'
+import { cssUnit } from '@local/common'
 
 const {
   value,

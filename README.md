@@ -17,7 +17,8 @@ simply remove `sst` dependency and `sst.config.ts` if you want to use another so
 
 - `frontend`: a [Nuxt](https://nuxt.com/) app, configured same as [starter-nuxt](https://github.com/NamesMT/starter-nuxt).
 - `backend`: a [Hono🔥](https://hono.dev/) app.
-- `@local/common`: a shared library that can contain components, functions, types shared across the apps.
+- `@local/common`: a shared library that can contain constants, functions, types shared across all apps.
+- `@local/common-vue`: a shared library that can contain components, constants, functions, types shared across vue-based apps.
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo.
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).

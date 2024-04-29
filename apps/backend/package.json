@@ -33,8 +33,11 @@
     "std-env": "^3.7.0"
   },
   "devDependencies": {
+    "@hono/node-server": "^1.11.1",
+    "@local/common": "workspace:*",
     "@local/tsconfig": "workspace:*",
     "@vitest/coverage-v8": "^1.5.2",
+    "dotenv": "^16.4.5",
     "tsx": "^4.7.3",
     "typescript": "^5.4.5",
     "unbuild": "^2.0.0",
