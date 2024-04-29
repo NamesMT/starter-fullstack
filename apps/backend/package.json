@@ -19,7 +19,7 @@
     "start": "NODE_ENV=dev tsx src/index.ts",
     "watch": "NODE_ENV=dev tsx watch src/index.ts",
     "stub": "unbuild --stub",
-    "dev": "pnpm run test",
+    "dev": "pnpm run watch",
     "lint": "eslint .",
     "test": "vitest",
     "test:types": "tsc --noEmit --skipLibCheck",
