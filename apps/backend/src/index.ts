@@ -1,4 +1,3 @@
-import 'dotenv/config'
 import { env, isDevelopment } from 'std-env'
 import { localcert, localcertKey } from '@local/common/node'
 
