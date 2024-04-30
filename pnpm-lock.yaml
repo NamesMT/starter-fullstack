@@ -58,6 +58,9 @@ importers:
       hono:
         specifier: ^4.2.9
         version: 4.2.9
+      hono-sessions:
+        specifier: ^0.3.8
+        version: 0.3.8
       std-env:
         specifier: ^3.7.0
         version: 3.7.0
@@ -80,9 +83,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^1.5.2
         version: 1.5.2(vitest@1.5.2(@types/node@20.12.2)(sass@1.75.0)(terser@5.30.0))
-      hono-sessions:
-        specifier: ^0.3.8
-        version: 0.3.8
       tsx:
         specifier: ^4.7.3
         version: 4.7.3
