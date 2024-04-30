@@ -13,7 +13,8 @@ SST is 100% opt-in, by using `sst` CLI commands yourself, like `sst dev`,
 simply remove `sst` dependency and `sst.config.ts` if you want to use another solution.  
 *currently only `backend` app is configured, which will deploy a Lambda with Function URL enabled*
 
-🔐 Comes with starter-kit for [Kinde](https://kinde.com/) authentication, see: `/apps/backend/api/auth`
+🔐 Comes with fully-configured [**Kinde**](https://kinde.com/) [typescript-sdk](https://github.com/kinde-oss/kinde-typescript-sdk), see: `/apps/backend/api/auth`
+*Add your env variables, activate the auth routes, profit$*
 
 ### Apps and Packages
 
