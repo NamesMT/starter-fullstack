@@ -1,4 +1,4 @@
-import { streamHandle } from '@namesmt/hono-adapter-aws-lambda'
+import { handle } from '@namesmt/hono-adapter-aws-lambda'
 import { Hono } from 'hono'
 import { CookieStore, sessionMiddleware } from 'hono-sessions'
 import { cors } from 'hono/cors'
@@ -33,9 +33,7 @@ export const app = _app
   .notFound(c => c.text('four-o-four'))
   .route('/api', apiApp)
 
-// Allow fallback for local development where awslambda global doesn't exists
-// @ts-expect-error awslambda does not exists
-export const handler = typeof globalThis.awslambda !== 'undefined' ? streamHandle(app) : undefined
+export const handler = handle(app)
 export * from './logger'
 
 // Serve API server if in development

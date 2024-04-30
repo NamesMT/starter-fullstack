@@ -11,10 +11,14 @@ const app = new Hono<HonoEnv>()
   // // $Auth
   .route('/auth', authApp)
 
-  // For RPC to know the type of streamed endpoints you could manually cast it with TypedResponse 👌
-  .get('/hello', c => streamText(c, async (stream) => {
-    await stream.writeln('Hello from Hono `/api/hello`!')
-  }) as Response & TypedResponse<'Hello from Hono `/api/hello`!'>)
+// Disabling the streaming API because https://github.com/sst/ion/issues/63
+// For RPC to know the type of streamed endpoints you could manually cast it with TypedResponse 👌
+// .get('/hello', c => streamText(c, async (stream) => {
+//   await stream.writeln('Hello from Hono `/api/hello`!')
+// }) as Response & TypedResponse<'Hello from Hono `/api/hello`!'>)
+
+  // For RPC to know the type of .text() you could manually cast it with TypedResponse 👌
+  .get('/hello', c => c.text('Hello from Hono `/api/hello`!') as Response & TypedResponse<'Hello from Hono `/api/hello`!'>)
 
 export {
   app as apiApp,
