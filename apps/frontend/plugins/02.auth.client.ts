@@ -9,7 +9,7 @@ export default defineNuxtPlugin(async () => {
   const { $apiClient } = useNuxtApp()
   const authApi = $apiClient.api.auth
 
-  const isLoggedIn = await hcRes(authApi.isAuth.$get())
+  const isLoggedIn = await hcRes(authApi.isAuth.$get()).catch(() => false)
   const profile = isLoggedIn ? await hcRes(authApi.profile.$get()) : null
 
   // For some reason if the state is typed as AuthState, TS will just stop working, keeping as untyped
