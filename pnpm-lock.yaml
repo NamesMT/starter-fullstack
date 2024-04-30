@@ -98,6 +98,9 @@ importers:
 
   apps/frontend:
     devDependencies:
+      '@kinde-oss/kinde-typescript-sdk':
+        specifier: ^2.9.0
+        version: 2.9.0
       '@local/common':
         specifier: workspace:*
         version: link:../../packages/common
@@ -122,9 +125,15 @@ importers:
       '@vueuse/nuxt':
         specifier: ^10.9.0
         version: 10.9.0(nuxt@3.11.2(@parcel/watcher@2.4.1)(@types/node@20.12.2)(@unocss/reset@0.59.4)(encoding@0.1.13)(eslint@9.1.1)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.13.2))(vue@3.4.26(typescript@5.4.5)))(ioredis@5.3.2)(optionator@0.9.3)(rollup@4.13.2)(sass@1.75.0)(terser@5.30.0)(typescript@5.4.5)(unocss@0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.75.0)(terser@5.30.0)))(vite@5.2.8(@types/node@20.12.2)(sass@1.75.0)(terser@5.30.0)))(rollup@4.13.2)(vue@3.4.26(typescript@5.4.5))
+      destr:
+        specifier: ^2.0.3
+        version: 2.0.3
       h3-proxy:
         specifier: ^1.13.0
         version: 1.13.0(h3@1.11.1)
+      hono:
+        specifier: ^4.2.9
+        version: 4.2.9
       nuxt:
         specifier: ^3.11.2
         version: 3.11.2(@parcel/watcher@2.4.1)(@types/node@20.12.2)(@unocss/reset@0.59.4)(encoding@0.1.13)(eslint@9.1.1)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.13.2))(vue@3.4.26(typescript@5.4.5)))(ioredis@5.3.2)(optionator@0.9.3)(rollup@4.13.2)(sass@1.75.0)(terser@5.30.0)(typescript@5.4.5)(unocss@0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.75.0)(terser@5.30.0)))(vite@5.2.8(@types/node@20.12.2)(sass@1.75.0)(terser@5.30.0))

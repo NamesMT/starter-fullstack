@@ -3,10 +3,15 @@ import { GridMaker } from '@local/common-vue'
 
 const runtimeConfig = useRuntimeConfig()
 const colorMode = useColorMode()
+const { $apiClient } = useNuxtApp()
 
 const number = ref()
 
-const apiResult = import.meta.client ? await $fetch('/api/hello') : 'Loading...'
+const apiResult = await hcRes($apiClient.api.hello.$get())
+
+const authApiResult = import.meta.client
+  ? (await $apiClient.api.auth.isAuth.$get()).ok ? 'Activated' : 'Not found'
+  : 'Loading...'
 </script>
 
 <template>
@@ -45,8 +50,16 @@ const apiResult = import.meta.client ? await $fetch('/api/hello') : 'Loading...'
     </div>
     <div>
       <div>Configured backendUrl: {{ runtimeConfig.public.backendUrl }}</div>
-      <div>API Response from `<code>/api/hello</code>` (proxied to backendUrl + /api/hello):</div>
-      <pre>{{ apiResult }}</pre>
+      <div>API Response from `<code>{{ $apiClient.api.hello.$url() }}</code>` (proxied to backendUrl):</div>
+      <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ apiResult }}</pre>
+    </div>
+
+    <div>
+      <div>Auth API status: {{ authApiResult }}</div>
+      <template v-if="authApiResult === 'Activated'">
+        <div>User information:</div>
+        <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ $auth }}</pre>
+      </template>
     </div>
   </div>
 </template>

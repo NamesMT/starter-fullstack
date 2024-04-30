@@ -18,6 +18,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@kinde-oss/kinde-typescript-sdk": "^2.9.0",
     "@local/common": "workspace:*",
     "@local/common-vue": "workspace:*",
     "@nuxt/eslint": "^0.3.10",
@@ -26,7 +27,9 @@
     "@unocss/nuxt": "^0.59.4",
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
+    "destr": "^2.0.3",
     "h3-proxy": "^1.13.0",
+    "hono": "^4.2.9",
     "nuxt": "^3.11.2",
     "nuxt-primevue": "^0.3.1",
     "primeicons": "^7.0.0",
