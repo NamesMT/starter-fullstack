@@ -1,5 +1,4 @@
 import { env, isDevelopment } from 'std-env'
-import { localcert, localcertKey } from '@local/common/node'
 import type { Hono, MiddlewareHandler } from 'hono'
 import { logger } from './logger'
 
@@ -16,6 +15,7 @@ export async function tryServeApp(app: Hono<any>) {
 
     logger.info(`NODE_DEV=dev detected, serving API server at: https://${hostname}:${port}`)
     // const { createSecureServer } = await import('node:http2')
+    const { localcert, localcertKey } = await import('@local/common/node')
     const { createServer } = await import('node:https')
     const { serve } = await import('@hono/node-server')
 
