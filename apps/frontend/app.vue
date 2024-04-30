@@ -59,6 +59,10 @@ const authApiResult = import.meta.client
       <template v-if="authApiResult === 'Activated'">
         <div>User information:</div>
         <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ $auth }}</pre>
+        <div class="mt-2">
+          <Button v-if="$auth.loggedIn" label="Sign-out" @click="navigateTo('/api/auth/logout', { external: true })" />
+          <Button v-else label="Sign-in" @click="navigateTo('/api/auth/login', { external: true })" />
+        </div>
       </template>
     </div>
   </div>
