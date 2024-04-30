@@ -12,10 +12,11 @@ export default $config({
     const backend = new sst.aws.Function('Backend', {
       url: true,
       handler: 'apps/backend/src/index.handler',
+      streaming: true,
     })
 
     return {
-      backend: backend.url,
+      backendUrl: backend.url,
     }
   },
 })
