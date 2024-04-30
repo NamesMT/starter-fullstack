@@ -34,11 +34,13 @@ This Turborepo has some additional tools already setup for you:
 
 ### Build
 
-To build all apps and packages, run the following command:
+To build all apps and packages, run the following command:  
+`pnpm run build`
 
 ### Develop
 
-To develop all apps and packages, run the following command:
+To develop all apps and packages, run the following command:  
+`pnpm run dev`
 
 ### Remote Caching
 
