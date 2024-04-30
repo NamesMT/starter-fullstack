@@ -1,22 +1,30 @@
-import { env, isDevelopment } from 'std-env'
-import { localcert, localcertKey } from '@local/common/node'
-
-import type { LambdaContext, LambdaEvent } from '@namesmt/hono-adapter-aws-lambda'
 import { streamHandle } from '@namesmt/hono-adapter-aws-lambda'
 import { Hono } from 'hono'
-
+import { CookieStore, sessionMiddleware } from 'hono-sessions'
 import { cors } from 'hono/cors'
-import { logger } from './logger'
+import { isDevelopment } from 'std-env'
 
+import type { HonoEnv } from './types'
 import { apiApp } from './api/app'
+import { tryServeApp } from './dev'
 
-type Bindings = {
-  event: LambdaEvent
-  context: LambdaContext
-}
+const app = new Hono<HonoEnv>()
 
-const app = new Hono<{ Bindings: Bindings }>()
+// CORS middleware
 app.use(cors())
+
+// Session management middleware
+// @ts-expect-error library known types error with Hono v4, Reference: https://github.com/jcs224/hono_sessions?tab=readme-ov-file#typescript-errors
+app.use(sessionMiddleware({
+  store: new CookieStore(),
+  encryptionKey: 'password_at_least_32_characters!', // Required for CookieStore, recommended for others
+  expireAfterSeconds: 900, // Expire session after 15 minutes of inactivity
+  cookieOptions: {
+    sameSite: 'Lax', // Recommended for basic CSRF protection in modern browsers
+    path: '/', // Required for this library to work properly
+    httpOnly: true, // Recommended to avoid XSS attacks
+  },
+}))
 
 // Registers an adapter middleware for development only
 if (isDevelopment) {
@@ -34,25 +42,5 @@ app.route('/api', apiApp)
 export const handler = typeof globalThis.awslambda !== 'undefined' ? streamHandle(app) : undefined
 export * from './logger'
 
-// Serve API server when in development
-if (isDevelopment) {
-  // Configure in .env file
-  const hostname = env.APP_DEV_host
-  const port = +env.APP_DEV_port!
-
-  logger.info(`NODE_DEV=dev detected, serving API server at: https://${hostname}:${port}`)
-  // const { createSecureServer } = await import('node:http2')
-  const { createServer } = await import('node:https')
-  const { serve } = await import('@hono/node-server')
-
-  serve({
-    fetch: app.fetch,
-    createServer,
-    serverOptions: {
-      cert: localcert,
-      key: localcertKey,
-    },
-    hostname,
-    port,
-  })
-}
+// Serve API server if in development
+tryServeApp(app)

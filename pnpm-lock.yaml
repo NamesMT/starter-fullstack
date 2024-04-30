@@ -80,6 +80,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^1.5.2
         version: 1.5.2(vitest@1.5.2(@types/node@20.12.2)(sass@1.75.0)(terser@5.30.0))
+      hono-sessions:
+        specifier: ^0.3.8
+        version: 0.3.8
       tsx:
         specifier: ^4.7.3
         version: 4.7.3
@@ -3396,6 +3399,13 @@ packages:
   hash-sum@2.0.0:
     resolution: {integrity: sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==}
 
+  hono-sessions@0.3.8:
+    resolution: {integrity: sha512-GblPw9I5ScbACadt4ro7NxsextqBRALek8EpTN/GfKQ8OM+B78Du5A0zrAiVC03xdflTragEO68sMG8MSY7BpQ==}
+
+  hono@3.12.8:
+    resolution: {integrity: sha512-vnOEIRdqsp4uHE/dkOBr9EYmTsR86sD/FyG2xhfAQzR9udDRglN1nuO7SGc/7U3HfSorc6PSCNGN6upnVtCmfg==}
+    engines: {node: '>=16.0.0'}
+
   hono@4.0.1:
     resolution: {integrity: sha512-S9cREGPJIAK437RhroOf1PGlJPIlt5itl69OmQ6onPLo5pdCbSHGL8v4uAKxrdHjcTyuoyvKPqWm5jv0dGkdFA==}
     engines: {node: '>=16.0.0'}
@@ -3516,6 +3526,9 @@ packages:
   ipx@2.1.0:
     resolution: {integrity: sha512-AVnPGXJ8L41vjd11Z4akIF2yd14636Klxul3tBySxHA6PKfCOQPxBDkCFK5zcWh0z/keR6toh1eg8qzdBVUgdA==}
     hasBin: true
+
+  iron-webcrypto@0.10.1:
+    resolution: {integrity: sha512-QGOS8MRMnj/UiOa+aMIgfyHcvkhqNUsUxb1XzskENvbo+rEfp6TOwqd1KPuDzXC4OnGHcMSVxDGRoilqB8ViqA==}
 
   iron-webcrypto@1.1.0:
     resolution: {integrity: sha512-5vgYsCakNlaQub1orZK5QmNYhwYtcllTkZBp5sfIaCqY93Cf6l+v2rtE+E4TMbcfjxDMCdrO8wmp7+ZvhDECLA==}
@@ -4093,6 +4106,11 @@ packages:
   nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
+  nanoid@4.0.0:
+    resolution: {integrity: sha512-IgBP8piMxe/gf73RTQx7hmnhwz0aaEXYakvqZyE302IXW3HyVNhdNGC+O2MwMAVhLEnvXlvKtGbtJf6wvHihCg==}
+    engines: {node: ^14 || ^16 || >=18}
     hasBin: true
 
   nanoid@4.0.2:
@@ -10211,6 +10229,14 @@ snapshots:
 
   hash-sum@2.0.0: {}
 
+  hono-sessions@0.3.8:
+    dependencies:
+      hono: 3.12.8
+      iron-webcrypto: 0.10.1
+      nanoid: 4.0.0
+
+  hono@3.12.8: {}
+
   hono@4.0.1: {}
 
   hono@4.2.9: {}
@@ -10358,6 +10384,8 @@ snapshots:
       - ioredis
       - uWebSockets.js
     optional: true
+
+  iron-webcrypto@0.10.1: {}
 
   iron-webcrypto@1.1.0: {}
 
@@ -10913,6 +10941,8 @@ snapshots:
   mute-stream@1.0.0: {}
 
   nanoid@3.3.7: {}
+
+  nanoid@4.0.0: {}
 
   nanoid@4.0.2: {}
 
