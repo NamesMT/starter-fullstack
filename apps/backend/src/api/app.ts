@@ -1,3 +1,4 @@
+import type { TypedResponse } from 'hono'
 import { Hono } from 'hono'
 import { streamText } from 'hono/streaming'
 
@@ -10,11 +11,10 @@ const app = new Hono<HonoEnv>()
   // // $Auth
   .route('/auth', authApp)
 
+  // For RPC to know the type of streamed endpoints you could manually cast it with TypedResponse 👌
   .get('/hello', c => streamText(c, async (stream) => {
-    await stream.writeln('Hello from Hono `/api/hello` !')
-  }))
-
-  .get('/hola', c => c.text('hello'))
+    await stream.writeln('Hello from Hono `/api/hello`!')
+  }) as Response & TypedResponse<'Hello from Hono `/api/hello`!'>)
 
 export {
   app as apiApp,
