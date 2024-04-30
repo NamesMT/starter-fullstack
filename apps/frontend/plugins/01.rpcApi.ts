@@ -3,9 +3,14 @@ import type { AppType } from 'backend/rpc'
 
 export default defineNuxtPlugin(async () => {
   const url = useRequestURL()
-  // In SSR (Node) we don't have a base path for the url and fetch (undici) will fails.
-  // This automatically get the current host to fix it that.
-  const apiClient = hc<AppType>(`https://${url.host}/`)
+  // If the frontend and backend domain are on the same domain, we will call the proxy instead of the backendUrl directly
+  const backendUrl = useRuntimeConfig().public.backendUrl
+  const urlBackend = new URL(backendUrl)
+  const apiClient = hc<AppType>(
+    urlBackend.hostname === url.hostname
+      ? `https://${url.host}/`
+      : backendUrl,
+  )
 
   return {
     name: 'local-rpcApi',
