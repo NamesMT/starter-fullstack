@@ -8,7 +8,7 @@ export default defineNuxtPlugin(async () => {
   const urlBackend = new URL(backendUrl)
   const apiClient = hc<AppType>(
     urlBackend.hostname === url.hostname
-      ? `https://${url.host}/`
+      ? `https://${url.host}`
       : backendUrl,
   )
 
