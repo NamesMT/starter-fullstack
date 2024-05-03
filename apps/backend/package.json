@@ -21,7 +21,7 @@
   "dependencies": {
     "@namesmt/hono-adapter-aws-lambda": "^0.1.1",
     "consola": "^3.2.3",
-    "hono": "^4.2.9",
+    "hono": "^4.3.0",
     "hono-sessions": "^0.3.8",
     "std-env": "^3.7.0"
   },
