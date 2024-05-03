@@ -3,15 +3,13 @@ import { GridMaker } from '@local/common-vue'
 
 const runtimeConfig = useRuntimeConfig()
 const colorMode = useColorMode()
-const { $apiClient } = useNuxtApp()
+const { $apiClient, $auth } = useNuxtApp()
 
 const number = ref()
 
-const apiResult = await hcRes($apiClient.api.hello.$get())
+const { data: apiResult } = useLazyAsyncData('apiResult', () => hcRes($apiClient.api.hello.$get()), { default: () => 'Loading...' })
 
-const authApiResult = import.meta.client
-  ? (await $apiClient.api.auth.isAuth.$get()).ok ? 'Activated' : 'Not found'
-  : 'Loading...'
+const authApiStatus = $auth.health ? 'Activated' : 'Not found'
 </script>
 
 <template>
@@ -55,8 +53,8 @@ const authApiResult = import.meta.client
     </div>
 
     <div>
-      <div>Auth API status: {{ authApiResult }}</div>
-      <template v-if="authApiResult === 'Activated'">
+      <div>Auth API status: {{ authApiStatus }}</div>
+      <template v-if="$auth && authApiStatus === 'Activated'">
         <div>User information:</div>
         <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ $auth }}</pre>
         <div class="mt-2">

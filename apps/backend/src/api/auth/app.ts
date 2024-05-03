@@ -6,6 +6,10 @@ import { getSessionManager } from './sessionManager'
 import type { HonoEnv } from '~/types'
 
 const app = new Hono<HonoEnv>()
+  .get('/health', async (c) => {
+    return c.text('Good', 200)
+  })
+
   .get('/login', async (c) => {
     const org_code = c.req.query('org_code')
     const loginUrl = await kindeClient.login(getSessionManager(c), { org_code })
