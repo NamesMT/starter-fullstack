@@ -16,7 +16,7 @@
     "test": "vitest",
     "test:types": "tsc --noEmit --skipLibCheck",
     "check": "pnpm lint && pnpm test:types && vitest run --coverage",
-    "build": "unbuild"
+    "build": "dotenvx run -f .env.prod.local -f .env -- unbuild"
   },
   "dependencies": {
     "@namesmt/hono-adapter-aws-lambda": "^0.1.1",
