@@ -5,6 +5,10 @@ import { localcertKeyPath, localcertPath } from '@local/common/node'
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  experimental: {
+    componentIslands: true,
+  },
+
   devServer: {
     https: {
       cert: localcertPath,
@@ -17,7 +21,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     // The private keys which are only available server-side
-    aSecretKey: '123',
+    isSst: false,
     // Keys within public are also exposed client-side
     public: {
       backendUrl: 'https://127.0.0.1:3301',

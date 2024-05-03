@@ -9,6 +9,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "devSST": "dotenvx run -f .env.sst -- sst dev \"pnpm -F=frontend run dev\"",
     "lint": "turbo run lint",
     "prepare": "simple-git-hooks"
   },

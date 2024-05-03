@@ -63,5 +63,9 @@ const authApiStatus = $auth.health ? 'Activated' : 'Not found'
         </div>
       </template>
     </div>
+
+    <div>
+      <IsSST />
+    </div>
   </div>
 </template>
