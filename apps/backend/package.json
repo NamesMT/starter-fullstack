@@ -30,10 +30,10 @@
     "@kinde-oss/kinde-typescript-sdk": "^2.9.0",
     "@local/common": "workspace:*",
     "@local/tsconfig": "workspace:*",
-    "@vitest/coverage-v8": "^1.5.2",
-    "tsx": "^4.7.3",
+    "@vitest/coverage-v8": "^1.5.3",
+    "tsx": "^4.9.0",
     "typescript": "^5.4.5",
     "unbuild": "^2.0.0",
-    "vitest": "^1.5.2"
+    "vitest": "^1.5.3"
   }
 }
