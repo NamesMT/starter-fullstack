@@ -19,6 +19,9 @@ importers:
       '@antfu/eslint-config':
         specifier: ^2.16.0
         version: 2.16.0(@unocss/eslint-plugin@0.59.4(eslint@9.1.1)(typescript@5.4.5))(@vue/compiler-sfc@3.4.26)(eslint@9.1.1)(typescript@5.4.5)(vitest@1.5.2(@types/node@20.12.2)(sass@1.75.0)(terser@5.30.0))
+      '@dotenvx/dotenvx':
+        specifier: ^0.37.1
+        version: 0.37.1
       '@local/tsconfig':
         specifier: workspace:*
         version: link:packages/tsconfig
@@ -65,9 +68,6 @@ importers:
         specifier: ^3.7.0
         version: 3.7.0
     devDependencies:
-      '@dotenvx/dotenvx':
-        specifier: ^0.37.0
-        version: 0.37.0
       '@hono/node-server':
         specifier: ^1.11.1
         version: 1.11.1
@@ -566,8 +566,8 @@ packages:
   '@dabh/diagnostics@2.0.3':
     resolution: {integrity: sha512-hrlQOIi7hAfzsMqlGSFyVucrx38O+j6wiGOf//H2ecvIEqYN4ADBSS2iLMh5UFyDunCNniUIPk/q3riFv45xRA==}
 
-  '@dotenvx/dotenvx@0.37.0':
-    resolution: {integrity: sha512-oDQS5Ks7vnmZ/Enr5jJXeo3HqJzSYNR71lpnJfedemgFK5K/27hdTUaLr9EjuJ5ODnWXxDrnOIrgCvdqS+WfGg==}
+  '@dotenvx/dotenvx@0.37.1':
+    resolution: {integrity: sha512-CN8A4cxuIQ5eRIaWK6qeRAYXPtt5Mo5XHw6o9kP+VWYlTg8UY3k426tCxcgrMRTI/GKMyu8wryHng+thUFCNYg==}
     hasBin: true
 
   '@es-joy/jsdoccomment@0.42.0':
@@ -6599,7 +6599,7 @@ snapshots:
       enabled: 2.0.0
       kuler: 2.0.0
 
-  '@dotenvx/dotenvx@0.37.0':
+  '@dotenvx/dotenvx@0.37.1':
     dependencies:
       '@inquirer/confirm': 2.0.17
       arch: 2.2.0

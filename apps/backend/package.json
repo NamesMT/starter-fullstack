@@ -26,7 +26,6 @@
     "std-env": "^3.7.0"
   },
   "devDependencies": {
-    "@dotenvx/dotenvx": "^0.37.0",
     "@hono/node-server": "^1.11.1",
     "@kinde-oss/kinde-typescript-sdk": "^2.9.0",
     "@local/common": "workspace:*",
