@@ -7,7 +7,7 @@ const { $apiClient, $auth } = useNuxtApp()
 
 const number = ref()
 
-const { data: apiResult } = useLazyAsyncData('apiResult', () => hcRes($apiClient.api.hello.$get()), { default: () => 'Loading...' })
+const { data: apiResult } = useLazyAsyncData('apiResult', () => hcText($apiClient.api.hello.$get()), { default: () => 'Loading...' as const })
 
 const authApiStatus = $auth.health ? 'Activated' : 'Not found'
 </script>

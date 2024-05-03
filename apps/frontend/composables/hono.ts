@@ -1,12 +1,22 @@
 import type { Awaitable } from '@vueuse/core'
 import type { ClientResponse } from 'hono/client'
 
-type GetInnerType<S> = S extends ClientResponse<infer T> ? T : never
-export async function hcRes<T extends ClientResponse<any>>(fetchRes: Awaitable<T>): Promise<GetInnerType<T> extends Record<string, never> ? unknown : GetInnerType<T>> {
+/**
+ * Shortcut for (await hc()).text()
+ */
+export async function hcText<T extends ClientResponse<any>>(fetchRes: Awaitable<T>): Promise<Awaited<ReturnType<T['text']>>> {
   const res = await fetchRes
-  // @ts-expect-error res incompatible
-  const parsedRes = parseResponse(res)
+  const data = await res.text()
 
-  // @ts-expect-error unknown not assignable
-  return res.ok ? parsedRes : Promise.reject(parsedRes)
+  return data as Awaited<ReturnType<T['text']>>
+}
+
+/**
+ * Shortcut for (await hc()).json()
+ */
+export async function hcJson<T extends ClientResponse<any>>(fetchRes: Awaitable<T>): Promise<Awaited<ReturnType<T['json']>>> {
+  const res = await fetchRes
+  const data = await res.json()
+
+  return data as Awaited<ReturnType<T['json']>>
 }
