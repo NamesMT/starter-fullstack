@@ -24,7 +24,9 @@
     "eslint": "^9.1.1",
     "frontend": "workspace:*",
     "lint-staged": "^15.2.2",
+    "pathe": "^1.1.2",
     "simple-git-hooks": "^2.11.1",
+    "std-env": "^3.7.0",
     "turbo": "latest",
     "unocss": "^0.59.4"
   },
