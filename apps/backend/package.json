@@ -3,8 +3,11 @@
   "type": "module",
   "private": true,
   "exports": {
-    "./rpc": {
-      "import": "./rpc.ts"
+    ".": {
+      "import": "./src/index.ts"
+    },
+    "./*": {
+      "import": "./*"
     }
   },
   "scripts": {
