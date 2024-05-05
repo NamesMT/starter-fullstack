@@ -46,7 +46,7 @@ export default defineConfig({
   ],
   rules: [
     // Declaring css variable with Uno: $SOMETHING=10px
-    [/^\$(.+?)=(.+)$/, ([, name, value]) => ({
+    [/^\$(.+?)\-\[(.+)\]$/, ([, name, value]) => ({
       [`--${name}`]: value,
     })],
     // Re-declare to fix priority issue with some primevue components
