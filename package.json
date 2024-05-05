@@ -22,7 +22,7 @@
     "@local/tsconfig": "workspace:*",
     "@types/aws-lambda": "8.10.137",
     "@unocss/eslint-plugin": "^0.59.4",
-    "eslint": "^9.1.1",
+    "eslint": "^9.2.0",
     "frontend": "workspace:*",
     "lint-staged": "^15.2.2",
     "pathe": "^1.1.2",
