@@ -15,7 +15,8 @@ export async function tryServeApp(app: Hono<any>) {
 
     logger.info(`NODE_DEV=dev detected, serving API server at: https://${hostname}:${port}`)
     // const { createSecureServer } = await import('node:http2')
-    const { localcert, localcertKey } = await import('@local/common/node')
+    const { readFileSync } = await import('node:fs')
+    const { localcertPath, localcertKeyPath } = await import('@local/common/node')
     const { createServer } = await import('node:https')
     const { serve } = await import('@hono/node-server')
 
@@ -23,8 +24,8 @@ export async function tryServeApp(app: Hono<any>) {
       fetch: app.fetch,
       createServer,
       serverOptions: {
-        cert: localcert,
-        key: localcertKey,
+        cert: readFileSync(localcertPath),
+        key: readFileSync(localcertKeyPath),
       },
       hostname,
       port,
