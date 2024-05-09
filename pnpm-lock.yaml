@@ -54,7 +54,7 @@ importers:
         version: 1.13.3
       unocss:
         specifier: ^0.59.4
-        version: 0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.76.0)(terser@5.30.0))
+        version: 0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.76.0)(terser@5.30.0))
 
   apps/backend:
     dependencies:
@@ -90,8 +90,8 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0(vitest@1.6.0(@types/node@20.12.2)(sass@1.76.0)(terser@5.30.0))
       tsx:
-        specifier: 4.9.0
-        version: 4.9.0
+        specifier: ^4.9.3
+        version: 4.9.3
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -160,7 +160,7 @@ importers:
         version: 1.5.3
       unocss:
         specifier: ^0.59.4
-        version: 0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.76.0)(terser@5.30.0))
+        version: 0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.76.0)(terser@5.30.0))
       vue:
         specifier: ^3.4.26
         version: 3.4.26(typescript@5.4.5)
@@ -5337,8 +5337,8 @@ packages:
   tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
-  tsx@4.9.0:
-    resolution: {integrity: sha512-UY0UUhDPL6MkqkZU4xTEjEBOLfV+RIt4xeeJ1qwK73xai4/zveG+X6+tieILa7rjtegUW2LE4p7fw7gAoLuytA==}
+  tsx@4.9.3:
+    resolution: {integrity: sha512-czVbetlILiyJZI5zGlj2kw9vFiSeyra9liPD4nG+Thh4pKTi0AmMEQ8zdV/L2xbIVKrIqif4sUNrsMAOksx9Zg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -8283,7 +8283,7 @@ snapshots:
       '@unocss/reset': 0.59.4
       '@unocss/vite': 0.59.4(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.76.0)(terser@5.30.0))
       '@unocss/webpack': 0.59.4(rollup@4.13.2)(webpack@5.91.0)
-      unocss: 0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.76.0)(terser@5.30.0))
+      unocss: 0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.76.0)(terser@5.30.0))
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -8630,7 +8630,7 @@ snapshots:
       colord: 2.9.3
       floating-vue: 5.2.2(@nuxt/kit@3.11.2(rollup@4.13.2))(vue@3.4.26(typescript@5.4.5))
       focus-trap: 7.5.4
-      unocss: 0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.76.0)(terser@5.30.0))
+      unocss: 0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.76.0)(terser@5.30.0))
       vue: 3.4.26(typescript@5.4.5)
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -12426,7 +12426,7 @@ snapshots:
 
   tslib@2.6.2: {}
 
-  tsx@4.9.0:
+  tsx@4.9.3:
     dependencies:
       esbuild: 0.20.2
       get-tsconfig: 4.7.3
@@ -12597,7 +12597,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unocss@0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2)(webpack@5.91.0))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.76.0)(terser@5.30.0)):
+  unocss@0.59.4(@unocss/webpack@0.59.4(rollup@4.13.2))(postcss@8.4.38)(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.76.0)(terser@5.30.0)):
     dependencies:
       '@unocss/astro': 0.59.4(rollup@4.13.2)(vite@5.2.8(@types/node@20.12.2)(sass@1.76.0)(terser@5.30.0))
       '@unocss/cli': 0.59.4(rollup@4.13.2)
