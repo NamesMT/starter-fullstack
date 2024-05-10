@@ -49,7 +49,7 @@ export default {
             'w-4 h-4',
 
             // Appearance
-            'rounded-full border-2 border-primary-500 bg-surface-0 dark:border-primary-300 dark:bg-surface-900/40'
+            'rounded-full border-2 border-primary bg-surface-0 dark:bg-surface-900/40'
         ]
     },
     connector: ({ props }) => ({
@@ -73,8 +73,8 @@ export default {
                 'text-right': props.align === 'right' || (props.layout === 'vertical' && props.align === 'alternate' && context.index % 2 === 1)
             },
             {
-                'min-h-0': props.layout === 'vertical' && context.index === context.count,
-                'grow-0': props.layout === 'horizontal' && context.index === context.count
+                'min-h-0': props.layout === 'vertical' && context.index === context.count - 1,
+                'grow-0': props.layout === 'horizontal' && context.index === context.count - 1
             }
         ]
     })

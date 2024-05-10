@@ -126,9 +126,11 @@ export default {
             'opacity-50',
 
             // States
+            '[&[data-p-active="true"]]:opacity-100',
             'hover:opacity-100',
-            'hover:transition-opacity',
-            'hover:duration-300'
+
+            // Transitions
+            'transition-opacity duration-300'
         ]
     }),
     nextthumbnailbutton: {
@@ -202,7 +204,7 @@ export default {
             { 'bg-surface-200 hover:bg-surface-300 dark:bg-surface-700 dark:hover:bg-surface-600': !context.highlighted },
 
             // Conditional Appearance: Highlighted
-            { 'bg-primary-500 hover:bg-primary-600': context.highlighted }
+            { 'bg-primary hover:bg-primary-hover': context.highlighted }
         ]
     }),
     mask: {
