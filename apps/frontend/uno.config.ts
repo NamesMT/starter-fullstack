@@ -8,6 +8,8 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
+import presetAnimations from 'unocss-preset-animations'
+import { presetShadcn } from '@namesmt/unocss-preset-shadcn'
 
 export default defineConfig({
   theme: {
@@ -15,7 +17,12 @@ export default defineConfig({
       DEFAULT: '3px',
     },
     colors: {
-      'primary': 'hsl(var(--primary))',
+      // Used by both shadcn and primevue
+      'primary': {
+        DEFAULT: 'hsl(var(--primary))',
+        foreground: 'hsl(var(--primary-foreground))',
+      },
+
       'primary-inverse': 'hsl(var(--primary-inverse))',
       'primary-hover': 'hsl(var(--primary-hover))',
       'primary-active-color': 'hsl(var(--primary-active-color))',
@@ -92,6 +99,8 @@ export default defineConfig({
         mono: 'Chivo Mono',
       },
     }),
+    presetAnimations(),
+    presetShadcn({ color: null, radius: 0 }, false),
   ],
   transformers: [
     transformerDirectives(),
@@ -101,7 +110,10 @@ export default defineConfig({
     pipeline: {
       include: [
         /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
+        // Primevue tailwind preset
         'assets/vendor/primevue/presets/**',
+        // shadcn js/ts files
+        'lib/components/ui/**/*.{js,ts}',
       ],
     },
   },

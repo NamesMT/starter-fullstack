@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { GridMaker } from '@local/common-vue'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/lib/components/ui/carousel'
 
 const runtimeConfig = useRuntimeConfig()
 const colorMode = useColorMode()
@@ -46,10 +47,11 @@ const authApiStatus = $auth.health ? 'Activated' : 'Not found'
         placeholder="Number input"
       />
     </div>
+
     <div>
       <div>Configured backendUrl: {{ runtimeConfig.public.backendUrl }}</div>
       <div>API Response from `<code>{{ $apiClient.api.hello.$url() }}</code>` (proxied to backendUrl):</div>
-      <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ apiResult }}</pre>
+      <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ apiResult || 'Empty' }}</pre>
     </div>
 
     <div>
@@ -63,6 +65,28 @@ const authApiStatus = $auth.health ? 'Activated' : 'Not found'
         </div>
       </template>
     </div>
+
+    <Carousel class="relative max-w-xs w-full">
+      <CarouselContent>
+        <CarouselItem v-for="(_, index) in 5" :key="index">
+          <div class="p-1">
+            <Card>
+              <template #title>
+                Simple Card #{{ index }}
+              </template>
+              <template #content>
+                <p class="m-0">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
+                  quas!
+                </p>
+              </template>
+            </Card>
+          </div>
+        </CarouselItem>
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
 
     <div>
       <IsSST />

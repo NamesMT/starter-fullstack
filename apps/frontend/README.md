@@ -8,6 +8,8 @@
   - UnoCSS is an atomic CSS engine, similar to Tailwind but is super fast and have some amazing features like automatically imported icons in pure CSS.
 - PrimeVue
   - Using [tailwind preset mode](https://tailwind.primevue.org/nuxt/)
+- Shadcn/vue
+  - Configured for UnoCSS with [hyoban/unocss-preset-shadcn](https://github.com/hyoban/unocss-preset-shadcn)
 - [ColorMode](https://github.com/nuxt-modules/color-mode)
   - Dark and Light mode with auto detection made easy with Nuxt.
 - [NuxtImage](https://image.nuxt.com/)

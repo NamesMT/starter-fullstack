@@ -50,7 +50,20 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/image',
     'nuxt-primevue',
+    'shadcn-nuxt',
   ],
+
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: 'Shad',
+    /**
+     * Directory that the component lives in.
+     * @default "./components/ui"
+     */
+    componentDir: './lib/components/ui',
+  },
 
   css: [
     '~/assets/css/main.scss',
