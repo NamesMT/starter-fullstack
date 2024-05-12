@@ -33,6 +33,7 @@
   },
   "pnpm": {
     "overrides": {
+      "@internationalized/date": "3.5.2",
       "hasown": "npm:@nolyfill/hasown@latest",
       "isarray": "npm:@nolyfill/isarray@latest"
     }

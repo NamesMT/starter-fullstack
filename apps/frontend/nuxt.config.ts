@@ -3,6 +3,10 @@ import { localcertKeyPath, localcertPath } from '@local/common/node'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  future: {
+    compatibilityVersion: 4,
+  },
+
   devtools: { enabled: true },
 
   experimental: {
@@ -62,7 +66,7 @@ export default defineNuxtConfig({
      * Directory that the component lives in.
      * @default "./components/ui"
      */
-    componentDir: './lib/components/ui',
+    componentDir: './app/lib/components/ui',
   },
 
   css: [
@@ -76,7 +80,7 @@ export default defineNuxtConfig({
       unstyled: true,
       ripple: true,
     },
-    importPT: { from: path.resolve(__dirname, './assets/vendor/primevue/presets/lara/') },
+    importPT: { from: path.resolve(__dirname, './app/assets/vendor/primevue/presets/lara/') },
   },
 
   features: {
