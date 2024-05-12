@@ -2,6 +2,8 @@
 
 This is a starter template to kick-start your `Nuxt` full-stack project
 
+Note: the app comes with a `localcert` SSL for local development, generated with [mkcert](https://github.com/FiloSottile/mkcert), you can install mkcert's local CA to remove the untrusted SSL warning 
+
 ## What's inside?
 
 ⏩ This template is powered by [Turborepo](https://turbo.build/repo).
