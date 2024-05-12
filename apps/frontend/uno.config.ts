@@ -9,7 +9,7 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 import presetAnimations from 'unocss-preset-animations'
-import { presetShadcn } from '@namesmt/unocss-preset-shadcn'
+import { presetShadcn } from 'unocss-preset-shadcn'
 
 export default defineConfig({
   theme: {
@@ -100,7 +100,7 @@ export default defineConfig({
       },
     }),
     presetAnimations(),
-    presetShadcn({ color: null, radius: 0 }, false),
+    presetShadcn({ color: false, radius: false }, false),
   ],
   transformers: [
     transformerDirectives(),

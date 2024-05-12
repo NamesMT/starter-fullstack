@@ -114,9 +114,6 @@ importers:
       '@local/common-vue':
         specifier: workspace:*
         version: link:../../packages/common-vue
-      '@namesmt/unocss-preset-shadcn':
-        specifier: ^0.2.4
-        version: 0.2.4(unocss-preset-animations@1.0.2(@unocss/preset-wind@0.60.1)(unocss@0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))))(unocss@0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0)))
       '@nuxt/eslint':
         specifier: ^0.3.12
         version: 0.3.12(eslint@9.2.0)(nuxt-nightly@3.12.0-28588152.416d76ab(@opentelemetry/api@1.8.0)(@parcel/watcher@2.4.1)(@types/node@20.12.11)(@unocss/reset@0.60.1)(encoding@0.1.13)(eslint@9.2.0)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.17.2))(vue@3.4.27(typescript@5.4.5)))(ioredis@5.4.1)(nuxt-nightly@3.12.0-28588152.416d76ab)(optionator@0.9.4)(rollup@4.17.2)(sass@1.77.1)(terser@5.31.0)(typescript@5.4.5)(unocss@0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0)))(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0)))(rollup@4.17.2)(typescript@5.4.5)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))
@@ -186,6 +183,9 @@ importers:
       unocss-preset-animations:
         specifier: ^1.0.2
         version: 1.0.2(@unocss/preset-wind@0.60.1)(unocss@0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0)))
+      unocss-preset-shadcn:
+        specifier: ^0.3.0
+        version: 0.3.0(unocss-preset-animations@1.0.2(@unocss/preset-wind@0.60.1)(unocss@0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))))(unocss@0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0)))
       vue:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
@@ -1174,12 +1174,6 @@ packages:
   '@namesmt/hono-adapter-aws-lambda@0.1.1':
     resolution: {integrity: sha512-KLTKMk7vWcqDjed2b88U48oTMZclWFj7/SNeGYnJtIcwuTgD1kzEC3Va0C6xrb3KcCynD5khkoGH3fXiIl38/A==}
     engines: {node: '>=18.20.1'}
-
-  '@namesmt/unocss-preset-shadcn@0.2.4':
-    resolution: {integrity: sha512-8540I2gBzT8ug611EPa1f6Wy6gJA8wj8zXlfNQzORowFWJO7AKNGLG0nH+8ZJJ23wZpAOwdnT+m5WX1JT5dVIg==}
-    peerDependencies:
-      unocss: '>= 0.56.0 < 1'
-      unocss-preset-animations: ^1.0.1
 
   '@netlify/functions@2.6.3':
     resolution: {integrity: sha512-7Z9gWyAuPI2NnBOvpYPD66KIWOgNznLz9BkyZ0c7qeRE6p23UCMVZ2VsrJpjPDgoJtKplGSBzASl6fQD7iEeWw==}
@@ -5827,6 +5821,12 @@ packages:
       '@unocss/preset-wind': '>= 0.56.0 < 1'
       unocss: '>= 0.56.0 < 1'
 
+  unocss-preset-shadcn@0.3.0:
+    resolution: {integrity: sha512-GCtp2o/9LZL0xl11T9mE35UMIhow8mmkvMvGEKGD8TiienAXM9I7lf5vSOgJd9ywyuGYV3Av5DZ+sR4GX5KRvA==}
+    peerDependencies:
+      unocss: '>= 0.56.0 < 1'
+      unocss-preset-animations: ^1.0.1
+
   unocss@0.60.1:
     resolution: {integrity: sha512-E7xlV7Kbe+Cgl/y2QHNI31IfdY3J7/XsptOJLaQCtfbejX/sJMgQ8GiFOL+MGyssqeMWWayUiBhCN2UX9GXsMg==}
     engines: {node: '>=14'}
@@ -7443,11 +7443,6 @@ snapshots:
       consola: 3.2.3
       hono: 4.3.4
       std-env: 3.7.0
-
-  '@namesmt/unocss-preset-shadcn@0.2.4(unocss-preset-animations@1.0.2(@unocss/preset-wind@0.60.1)(unocss@0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))))(unocss@0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0)))':
-    dependencies:
-      unocss: 0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))
-      unocss-preset-animations: 1.0.2(@unocss/preset-wind@0.60.1)(unocss@0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0)))
 
   '@netlify/functions@2.6.3(@opentelemetry/api@1.8.0)':
     dependencies:
@@ -13294,6 +13289,11 @@ snapshots:
     dependencies:
       '@unocss/preset-wind': 0.60.1
       unocss: 0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))
+
+  unocss-preset-shadcn@0.3.0(unocss-preset-animations@1.0.2(@unocss/preset-wind@0.60.1)(unocss@0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))))(unocss@0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))):
+    dependencies:
+      unocss: 0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))
+      unocss-preset-animations: 1.0.2(@unocss/preset-wind@0.60.1)(unocss@0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0)))
 
   unocss@0.60.1(@unocss/webpack@0.60.1(rollup@4.17.2))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0)):
     dependencies:

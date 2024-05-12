@@ -21,7 +21,6 @@
     "@kinde-oss/kinde-typescript-sdk": "^2.9.0",
     "@local/common": "workspace:*",
     "@local/common-vue": "workspace:*",
-    "@namesmt/unocss-preset-shadcn": "^0.2.4",
     "@nuxt/eslint": "^0.3.12",
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/color-mode": "^3.4.1",
@@ -45,6 +44,7 @@
     "tailwind-merge": "^2.3.0",
     "unocss": "^0.60.1",
     "unocss-preset-animations": "^1.0.2",
+    "unocss-preset-shadcn": "^0.3.0",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
   }
