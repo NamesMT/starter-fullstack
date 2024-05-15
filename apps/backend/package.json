@@ -24,17 +24,17 @@
   "dependencies": {
     "@namesmt/hono-adapter-aws-lambda": "^0.1.1",
     "consola": "^3.2.3",
-    "hono": "^4.3.4",
-    "hono-sessions": "^0.4.1",
+    "hono": "^4.3.7",
+    "hono-sessions": "^0.5.4",
     "std-env": "^3.7.0"
   },
   "devDependencies": {
     "@hono/node-server": "^1.11.1",
-    "@kinde-oss/kinde-typescript-sdk": "^2.9.0",
+    "@kinde-oss/kinde-typescript-sdk": "^2.9.1",
     "@local/common": "workspace:*",
     "@local/tsconfig": "workspace:*",
     "@vitest/coverage-v8": "^1.6.0",
-    "tsx": "^4.9.4",
+    "tsx": "^4.10.3",
     "typescript": "^5.4.5",
     "unbuild": "^2.0.0",
     "vitest": "^1.6.0"
