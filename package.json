@@ -2,9 +2,9 @@
   "name": "starter-fullstack",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.1.1",
+  "packageManager": "pnpm@9.1.2",
   "engines": {
-    "node": ">=20.12.2"
+    "node": ">=20.13.1"
   },
   "scripts": {
     "build": "turbo run build",
@@ -17,23 +17,23 @@
     "sst": "ion"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.18.0",
-    "@dotenvx/dotenvx": "^0.39.0",
+    "@antfu/eslint-config": "^2.18.1",
+    "@dotenvx/dotenvx": "^0.44.0",
     "@local/tsconfig": "workspace:*",
-    "@types/aws-lambda": "8.10.137",
-    "@unocss/eslint-plugin": "^0.60.2",
-    "eslint": "^9.2.0",
+    "@types/aws-lambda": "8.10.138",
+    "@unocss/eslint-plugin": "^0.60.3",
+    "eslint": "^9.3.0",
     "frontend": "workspace:*",
-    "lint-staged": "^15.2.2",
+    "lint-staged": "^15.2.4",
     "pathe": "^1.1.2",
     "simple-git-hooks": "^2.11.1",
     "std-env": "^3.7.0",
     "turbo": "latest",
-    "unocss": "^0.60.2"
+    "unocss": "^0.60.3"
   },
   "pnpm": {
     "overrides": {
-      "@internationalized/date": "3.5.2",
+      "@internationalized/date": "3.5.4",
       "hasown": "npm:@nolyfill/hasown@latest",
       "isarray": "npm:@nolyfill/isarray@latest"
     }
