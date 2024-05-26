@@ -24,7 +24,7 @@
     "@unocss/eslint-plugin": "^0.60.3",
     "eslint": "^9.3.0",
     "frontend": "workspace:*",
-    "lint-staged": "^15.2.4",
+    "lint-staged": "^15.2.5",
     "pathe": "^1.1.2",
     "simple-git-hooks": "^2.11.1",
     "std-env": "^3.7.0",
