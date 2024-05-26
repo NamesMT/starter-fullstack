@@ -8,8 +8,25 @@ const { $apiClient, $auth } = useNuxtApp()
 
 const number = ref()
 
-const { data: apiResult } = useLazyAsyncData('apiResult', () => hcText($apiClient.api.hello.$get()), { default: () => 'Loading...' as const })
+// API
+const { data: apiResult } = await useLazyAsyncData('apiResult', () => hcText($apiClient.api.hello.$get()), { default: () => 'Loading...' as const })
 
+// Tanstack Query
+const queryResult = ref<any>('Loading...')
+const queryClient = useQueryClient()
+if (import.meta.client) {
+  const { isLoading, isError, data, error, suspense, status } = useQuery({
+    queryKey: ['hello_test'],
+    queryFn: () => hcText($apiClient.api.hello.$get()),
+  })
+  watch([status, data], () => queryResult.value = isLoading.value ? 'Loading...' : isError.value ? error.value : data.value)
+
+  onServerPrefetch(async () => {
+    await suspense()
+  })
+}
+
+// Auth API
 const authApiStatus = $auth.health ? 'Activated' : 'Not found'
 </script>
 
@@ -52,6 +69,16 @@ const authApiStatus = $auth.health ? 'Activated' : 'Not found'
       <div>Configured backendUrl: {{ runtimeConfig.public.backendUrl }}</div>
       <div>API Response from `<code>{{ $apiClient.api.hello.$url() }}</code>` (proxied to backendUrl):</div>
       <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ apiResult || 'Empty' }}</pre>
+    </div>
+
+    <div>
+      <div>Tanstack Query result (this is fetched client-side and persisted to IndexedDB for 12 hours)</div>
+      <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ queryResult }}</pre>
+      <Button
+        class="mt-2"
+        label="Make stale (refetch)"
+        @click="queryClient.invalidateQueries({ queryKey: ['hello_test'] })"
+      />
     </div>
 
     <div>

@@ -17,7 +17,7 @@ const app = new Hono<HonoEnv>()
 //   await stream.writeln('Hello from Hono `/api/hello`!')
 // }) as Response & TypedResponse<'Hello from Hono `/api/hello`!'>)
 
-  .get('/hello', c => c.text('Hello from Hono `/api/hello`!'))
+  .get('/hello', c => c.text(`Hello from Hono \`/api/hello\`! - ${Date.now()}`))
 
 export {
   app as apiApp,

@@ -1,5 +1,6 @@
 import path from 'node:path'
 import { localcertKeyPath, localcertPath } from '@local/common/node'
+import { experimental_createPersister } from '@tanstack/query-persist-client-core'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -55,6 +56,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-primevue',
     'shadcn-nuxt',
+    '@namesmt/vue-query-nuxt',
   ],
 
   shadcn: {
