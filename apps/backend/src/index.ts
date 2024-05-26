@@ -18,7 +18,6 @@ export const app = _app
   .use(cors())
 
   // Session management middleware
-  // @ts-expect-error library known types error with Hono v4, Reference: https://github.com/jcs224/hono_sessions?tab=readme-ov-file#typescript-errors
   .use(sessionMiddleware({
     store: new CookieStore(),
     encryptionKey: 'password_at_least_32_characters!', // Required for CookieStore, recommended for others
