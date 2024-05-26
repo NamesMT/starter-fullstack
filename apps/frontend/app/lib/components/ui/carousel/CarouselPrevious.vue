@@ -21,7 +21,7 @@ const { orientation, canScrollPrev, scrollPrev } = useCarousel()
       props.class,
     )"
     variant="outline"
-    @click="scrollPrev"
+    @pointerdown="scrollPrev"
   >
     <slot>
       <ArrowLeft class="h-4 w-4 text-current" />

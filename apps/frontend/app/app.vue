@@ -54,7 +54,7 @@ const authApiStatus = $auth.health ? 'Activated' : 'Not found'
       <div>Theme:&nbsp;</div>
       <Button
         :label="colorMode.preference"
-        @click="colorMode.preference = (colorMode.preference !== 'dark')
+        @pointerdown="colorMode.preference = (colorMode.preference !== 'dark')
           ? 'dark'
           : 'light'"
       />
@@ -77,7 +77,7 @@ const authApiStatus = $auth.health ? 'Activated' : 'Not found'
       <Button
         class="mt-2"
         label="Make stale (refetch)"
-        @click="queryClient.invalidateQueries({ queryKey: ['hello_test'] })"
+        @pointerdown="queryClient.invalidateQueries({ queryKey: ['hello_test'] })"
       />
     </div>
 
@@ -87,8 +87,8 @@ const authApiStatus = $auth.health ? 'Activated' : 'Not found'
         <div>User information:</div>
         <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ $auth }}</pre>
         <div class="mt-2">
-          <Button v-if="$auth.loggedIn" label="Sign-out" @click="navigateTo('/api/auth/logout', { external: true })" />
-          <Button v-else label="Sign-in" @click="navigateTo('/api/auth/login', { external: true })" />
+          <Button v-if="$auth.loggedIn" label="Sign-out" @pointerdown="navigateTo('/api/auth/logout', { external: true })" />
+          <Button v-else label="Sign-in" @pointerdown="navigateTo('/api/auth/login', { external: true })" />
         </div>
       </template>
     </div>
