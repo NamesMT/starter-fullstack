@@ -6,10 +6,13 @@ export default defineNuxtPlugin(async () => {
   // If the frontend and backend domain are on the same domain, we will call the proxy instead of the backendUrl directly
   const backendUrl = useRuntimeConfig().public.backendUrl
   const urlBackend = new URL(backendUrl)
-  const apiClient = hc<typeof app>(
-    urlBackend.hostname === url.hostname
-      ? `https://${url.host}`
-      : backendUrl,
+  const enableProxy = useAppConfig().enableProxy
+  const callProxy = enableProxy === 'auto'
+    ? urlBackend.hostname === url.hostname
+    : enableProxy
+  const apiClient = hc<typeof app>(callProxy
+    ? `https://${url.host}`
+    : backendUrl,
   )
 
   return {

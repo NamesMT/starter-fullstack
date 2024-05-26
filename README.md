@@ -22,10 +22,11 @@ simply remove `sst` dependency and `sst.config.ts` if you want to use another so
 ### Apps and Packages
 
 - [`frontend`](./apps/frontend/README.md): a [Nuxt](https://nuxt.com/) app, configured same as [starter-nuxt](https://github.com/NamesMT/starter-nuxt).
-  - In development, `/api/*` routes is proxied to the `backendUrl`.
+  - By default, `/api/*` routes is proxied to the `backendUrl`.
   - The `rpcApi` plugin will call the `/api/*` proxy if they're on the same domain (e.g: 127.0.0.1)
     - > this mimics a production environment where the static frontend and the backend lives on the same domain at /api, which is the most efficient configuration for Cloudfront + Lambda Function Url
     - If the `frontend` and `backend` are on different domains then the backend will be called directly without proxy.
+    - This could be configured in frontend's [`app.config.ts`](./apps/frontend/app/app.config.ts)
 - [`backend`](./apps/backend/README.md): a [Hono🔥](https://hono.dev/) app.
 - `@local/common`: a shared library that can contain constants, functions, types shared across all apps.
 - `@local/common-vue`: a shared library that can contain components, constants, functions, types shared across vue-based apps.
