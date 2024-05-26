@@ -157,8 +157,8 @@ importers:
         specifier: npm:nuxt-nightly@3.12.0-28609665.faa5178d
         version: nuxt-nightly@3.12.0-28609665.faa5178d(@opentelemetry/api@1.8.0)(@parcel/watcher@2.4.1)(@types/node@20.12.12)(@unocss/reset@0.60.3)(encoding@0.1.13)(eslint@9.3.0)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.18.0))(vue@3.4.27(typescript@5.4.5)))(ioredis@5.4.1)(nuxt-nightly@3.12.0-28609665.faa5178d)(optionator@0.9.4)(rollup@4.18.0)(sass@1.77.2)(terser@5.31.0)(typescript@5.4.5)(unocss@0.60.3(@unocss/webpack@0.60.3(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)))(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0))
       nuxt-primevue:
-        specifier: ^0.3.1
-        version: 0.3.1(rollup@4.18.0)(vue@3.4.27(typescript@5.4.5))
+        specifier: ^3.0.0
+        version: 3.0.0(rollup@4.18.0)(vue@3.4.27(typescript@5.4.5))
       primeicons:
         specifier: ^7.0.0
         version: 7.0.0
@@ -4598,8 +4598,8 @@ packages:
       '@types/node':
         optional: true
 
-  nuxt-primevue@0.3.1:
-    resolution: {integrity: sha512-wTFvUbniEhntFamnRP4znMqU9a4lYr7eXvA7FW5nGX51YCV3nJzXZlCML4l6kEL0pyJsSV4DTb0Qo61nZnn9JQ==}
+  nuxt-primevue@3.0.0:
+    resolution: {integrity: sha512-MC3ubLTF0hzUEsQ2gYzzlzaW1gXN9/wrpbWnS9xwK47TWw1gcfim8idu5mcOx+l66CPAtTLOR1QJahkDc4m9XA==}
 
   nypm@0.3.8:
     resolution: {integrity: sha512-IGWlC6So2xv6V4cIDmoV0SwwWx7zLG086gyqkyumteH2fIgCAM4nDVFB2iDRszDvmdSVW9xb1N+2KjQ6C7d4og==}
@@ -5016,11 +5016,6 @@ packages:
 
   primeicons@7.0.0:
     resolution: {integrity: sha512-jK3Et9UzwzTsd6tzl2RmwrVY/b8raJ3QZLzoDACj+oTJ0oX7L9Hy+XnVwgo4QVKlKpnP/Ur13SXV/pVh4LzaDw==}
-
-  primevue@3.49.1:
-    resolution: {integrity: sha512-OmUTqbKbPB63Zqf7uA49cipDi+Qh+/13AYJPwgvsVsI4QmAKIkeibBwkOgj1CNIFlopfF79YmyBshFUAPqlw9A==}
-    peerDependencies:
-      vue: ^3.0.0
 
   primevue@3.52.0:
     resolution: {integrity: sha512-HLOVP5YI0ArFKUhIyfZsWmTNMaBYNCBWC/3DYvdd/Po4LY5/WXf7yIYvArE2q/3OuwSXJXvjlR8UNQeJYRSQog==}
@@ -11940,10 +11935,11 @@ snapshots:
       - vue-tsc
       - xml2js
 
-  nuxt-primevue@0.3.1(rollup@4.18.0)(vue@3.4.27(typescript@5.4.5)):
+  nuxt-primevue@3.0.0(rollup@4.18.0)(vue@3.4.27(typescript@5.4.5)):
     dependencies:
       '@nuxt/kit': 3.11.2(rollup@4.18.0)
-      primevue: 3.49.1(vue@3.4.27(typescript@5.4.5))
+      pathe: 1.1.2
+      primevue: 3.52.0(vue@3.4.27(typescript@5.4.5))
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -12382,10 +12378,6 @@ snapshots:
       react-is: 18.3.1
 
   primeicons@7.0.0: {}
-
-  primevue@3.49.1(vue@3.4.27(typescript@5.4.5)):
-    dependencies:
-      vue: 3.4.27(typescript@5.4.5)
 
   primevue@3.52.0(vue@3.4.27(typescript@5.4.5)):
     dependencies:
