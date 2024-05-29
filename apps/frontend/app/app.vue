@@ -9,7 +9,14 @@ const { $apiClient, $auth } = useNuxtApp()
 const number = ref()
 
 // API
-const { data: apiResult } = await useLazyAsyncData('apiResult', () => hcText($apiClient.api.hello.$get()), { default: () => 'Loading...' as const })
+const { data: apiResult } = await useLazyAsyncData(
+  'apiResult',
+  () => hcText($apiClient.api.hello.$get()),
+  {
+    server: false,
+    default: () => 'Loading...' as const,
+  },
+)
 
 // Tanstack Query
 const queryResult = ref<any>('Loading...')
