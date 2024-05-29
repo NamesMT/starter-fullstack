@@ -35,7 +35,8 @@
     "overrides": {
       "@internationalized/date": "3.5.4",
       "hasown": "npm:@nolyfill/hasown@latest",
-      "isarray": "npm:@nolyfill/isarray@latest"
+      "isarray": "npm:@nolyfill/isarray@latest",
+      "nitropack": "latest"
     }
   },
   "simple-git-hooks": {
