@@ -103,4 +103,6 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
+
+  telemetry: false,
 })
