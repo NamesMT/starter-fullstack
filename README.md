@@ -2,7 +2,7 @@
 
 This is a starter template to kick-start your `Nuxt` full-stack project
 
-Note: the app comes with a `localcert` SSL for local development, generated with [mkcert](https://github.com/FiloSottile/mkcert), you can install mkcert's local CA to remove the untrusted SSL warning 
+Note: the app comes with a `localcert` SSL at `packages/common/dev` for local development, generated with [mkcert](https://github.com/FiloSottile/mkcert), you can install mkcert and generate your own certificate and replace it or install the `localcert.cer` to your trusted CA to remove the untrusted SSL warning 
 
 ## What's inside?
 
