@@ -15,6 +15,8 @@
   - Dark and Light mode with auto detection made easy with Nuxt.
 - [NuxtImage](https://image.nuxt.com/)
   - Automatically optimized images for the app, as well as placeholder support
+- [NuxtI18n](https://i18n.nuxtjs.org/)
+  - Internationalization (i18n) module for Nuxt.js + SEO headers
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 

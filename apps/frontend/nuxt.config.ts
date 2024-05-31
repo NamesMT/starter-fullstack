@@ -57,7 +57,24 @@ export default defineNuxtConfig({
     'nuxt-primevue',
     'shadcn-nuxt',
     '@namesmt/vue-query-nuxt',
+    '@nuxtjs/i18n',
   ],
+
+  i18n: {
+    vueI18n: './i18n.config.ts',
+    strategy: 'no_prefix',
+    defaultLocale: 'en',
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US',
+      },
+      {
+        code: 'vi',
+        iso: 'vi-VN',
+      },
+    ],
+  },
 
   shadcn: {
     /**
