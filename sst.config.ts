@@ -23,6 +23,12 @@ export default $config({
     config({ path: [resolve(backendDir, '.env'), resolve(backendDir, '.env.prod.local')], debug: true })
     // //
 
+    const domainConfig: CdnDomainArgs = {
+      name: 'starter-fullstack.is-the.top',
+      dns: false,
+      cert: 'arn:aws:acm:us-east-1:637423182440:certificate/cb05ac36-93cc-4b00-a133-2fb490ca1468',
+    }
+
     const backend = new sst.aws.Function('Backend', {
       url: true,
       // bundle: 'apps/backend/dist',
@@ -41,7 +47,77 @@ export default $config({
       },
     })
 
+    const frontendAssets = new sst.aws.Assets(
+      'FrontendAssets',
+      {
+        build: {
+          command: 'pnpm run build --filter="frontend"',
+          output: 'apps/frontend/.output/public',
+        },
+        environment: {
+          NUXT_PUBLIC_BACKEND_URL: $interpolate`https://${domainConfig.name}`,
+        },
+      },
+      { dependsOn: [backend] },
+    )
+
+    const fullstackRouter = new sst.aws.Router('FullstackRouter', {
+      domain: domainConfig,
+      routes: {
+        '/*': {
+          origin: {
+            originId: 's3',
+            domainName:
+              frontendAssets.nodes.bucket.nodes.bucket.bucketRegionalDomainName,
+            s3OriginConfig: {
+              originAccessIdentity:
+                frontendAssets.nodes.access.cloudfrontAccessIdentityPath,
+            },
+          },
+          behavior: {
+            viewerProtocolPolicy: 'redirect-to-https',
+            allowedMethods: ['GET', 'HEAD', 'OPTIONS'],
+            cachedMethods: ['GET', 'HEAD'],
+            compress: true,
+            // CloudFront's managed CachingOptimized policy
+            cachePolicyId: '658327ea-f89d-4fab-a63d-7e88639e58f6',
+          },
+        },
+        '/api/*': {
+          origin: {
+            originId: 'ok',
+            domainName: backend.url.apply(url => new URL(url).host),
+            customOriginConfig: {
+              httpPort: 80,
+              httpsPort: 443,
+              originProtocolPolicy: 'https-only',
+              originSslProtocols: ['TLSv1.2'],
+            },
+          },
+        },
+      },
+      transform: {
+        cdn: {
+          defaultRootObject: 'index.html',
+          customErrorResponses: [
+            {
+              errorCode: 403,
+              responsePagePath: '/index.html',
+              responseCode: 200,
+            },
+            {
+              errorCode: 404,
+              responsePagePath: '/index.html',
+              responseCode: 200,
+            },
+          ],
+          transform: { distribution: { priceClass: 'PriceClass_200' } },
+        },
+      },
+    })
+
     return {
+      distributionUrl: fullstackRouter.url,
       backendUrl: backend.url,
     }
   },
