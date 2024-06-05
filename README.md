@@ -16,8 +16,10 @@ Note: the app comes with a `localcert` SSL at `packages/common/dev` for local de
 simply remove `sst` dependency and `sst.config.ts` if you want to use another solution.  
 - *currently only `backend` app is configured, which will deploy a Lambda with Function URL enabled*
 
-🔐 Comes with fully-configured [**Kinde**](https://kinde.com/) [typescript-sdk](https://github.com/kinde-oss/kinde-typescript-sdk), see: `/apps/backend/api/auth`
+🔐 Comes with starter-kit for [**Kinde**](https://kinde.com/) [typescript-sdk](https://github.com/kinde-oss/kinde-typescript-sdk), see: `/apps/backend/api/auth`
 - *Add your env variables, activate the auth routes, profit$*
+- Please note that by default it is intended for CSR/SSG app only as it is managed on the `backend` codebase and based on a HttpOnly session cookie to identify user and will not work well with SSR,  
+If you opt for SSR, to properly support identifying the user, you could use the official [Nuxt Kinde](https://nuxt.com/modules/kinde) module or implement your own way to manage the session at `apps/backend/src/middlewares/session.ts`.
 
 ### Apps and Packages
 
