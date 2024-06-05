@@ -1,12 +1,12 @@
 import { handle } from '@namesmt/hono-adapter-aws-lambda'
 import { Hono } from 'hono'
-import { CookieStore, sessionMiddleware } from 'hono-sessions'
 import { cors } from 'hono/cors'
 import { isDevelopment } from 'std-env'
 
 import type { HonoEnv } from './types'
-import { apiApp } from './api/app'
 import { devAdapter, tryServeApp } from './dev'
+import { sessionMiddleware } from './middlewares/session'
+import { apiApp } from './api/app'
 
 const _app = new Hono<HonoEnv>()
 // Registers an adapter middleware for development only
@@ -18,18 +18,12 @@ export const app = _app
   .use(cors())
 
   // Session management middleware
-  .use(sessionMiddleware({
-    store: new CookieStore(),
-    encryptionKey: 'password_at_least_32_characters!', // Required for CookieStore, recommended for others
-    expireAfterSeconds: 900, // Expire session after 15 minutes of inactivity
-    cookieOptions: {
-      sameSite: 'Lax', // Recommended for basic CSRF protection in modern browsers
-      path: '/', // Required for this library to work properly
-      httpOnly: true, // Recommended to avoid XSS attacks
-    },
-  }))
+  .use(sessionMiddleware())
 
+  // Register not found handler
   .notFound(c => c.text('four-o-four'))
+
+  // Register API routes
   .route('/api', apiApp)
 
 export const handler = handle(app)
