@@ -65,12 +65,20 @@ const authApiStatus = $auth.health ? 'Activated' : 'Not found'
     </div>
     <div class="flex items-center justify-center gap-2">
       <div>Theme:&nbsp;</div>
-      <Button
-        :label="colorMode.preference"
-        @pointerdown="colorMode.preference = (colorMode.preference !== 'dark')
-          ? 'dark'
-          : 'light'"
-      />
+      <ClientOnly>
+        <template #fallback>
+          <Button
+            label="..."
+          />
+        </template>
+
+        <Button
+          :label="colorMode.preference"
+          @pointerdown="colorMode.preference = (colorMode.preference !== 'dark')
+            ? 'dark'
+            : 'light'"
+        />
+      </ClientOnly>
       <InputNumber
         v-model="number"
         input-id="integeronly"
