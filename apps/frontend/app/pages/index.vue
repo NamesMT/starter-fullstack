@@ -59,9 +59,9 @@ const authApiStatus = $auth.health ? 'Activated' : 'Not found'
       <div>Theme:&nbsp;</div>
       <ClientOnly>
         <template #fallback>
-          <Button
-            label="..."
-          />
+          <span>
+            ...
+          </span>
         </template>
 
         <Button
