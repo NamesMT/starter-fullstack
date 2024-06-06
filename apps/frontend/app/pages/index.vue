@@ -26,7 +26,7 @@ const { data: apiResult } = await useLazyAsyncData(
 
 // Tanstack Query
 const queryClient = useQueryClient()
-const { isLoading, isError, data, error } = useQuery({
+const { isPending, isError, data, error } = useQuery({
   queryKey: ['hello_test'],
   queryFn: () => hcText($apiClient.api.hello.$get()),
 })
@@ -91,7 +91,7 @@ const authApiStatus = $auth.health ? 'Activated' : 'Not found'
 
     <div>
       <div>Tanstack Query result (this is fetched client-side and persisted to IndexedDB for 12 hours)</div>
-      <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ isLoading ? 'Loading...' : isError ? error : data }}</pre>
+      <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ isPending ? 'Loading...' : isError ? error : data }}</pre>
       <Button
         class="mt-2"
         label="Make stale (refetch)"
