@@ -4,7 +4,6 @@ import { fileURLToPath } from 'node:url'
 import { config } from 'dotenv'
 import { env } from 'std-env'
 import { dirname, resolve } from 'pathe'
-import type { CdnDomainArgs } from './.sst/platform/src/components/aws'
 
 export default $config({
   app(input) {
@@ -32,6 +31,7 @@ export default $config({
       // instead of rising the the spec of the main function
       memory: '300 MB',
       streaming: false,
+      architecture: 'arm64',
       environment: {
         KINDE_DOMAIN: env.KINDE_DOMAIN!,
         KINDE_CLIENT_ID: env.KINDE_CLIENT_ID!,
