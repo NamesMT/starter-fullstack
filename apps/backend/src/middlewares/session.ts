@@ -6,7 +6,8 @@ export function sessionMiddleware() {
     encryptionKey: 'password_at_least_32_characters!', // Required for CookieStore, recommended for others
     expireAfterSeconds: 900, // Expire session after 15 minutes of inactivity
     cookieOptions: {
-      sameSite: 'Lax', // Recommended for basic CSRF protection in modern browsers
+      sameSite: 'None', // Setting to None to support usecase of different domains for backend and frontend
+      secure: true, // Enforce HTTPS for cookie, required for sameSite: 'None'
       path: '/', // Required for this library to work properly
       httpOnly: true, // Recommended to avoid XSS attacks
     },

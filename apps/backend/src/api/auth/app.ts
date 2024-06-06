@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import type { ClaimTokenType, FlagType } from '@kinde-oss/kinde-typescript-sdk'
 
+import { env } from 'std-env'
 import { kindeClient } from './kindeClients'
 import { getSessionManager } from './sessionManager'
 import type { HonoEnv } from '~/types'
@@ -11,6 +12,8 @@ const app = new Hono<HonoEnv>()
   })
 
   .get('/login', async (c) => {
+    c.get('session').set('backToPath', c.req.query('path'))
+
     const org_code = c.req.query('org_code')
     const loginUrl = await kindeClient.login(getSessionManager(c), { org_code })
     return c.redirect(loginUrl.toString())
@@ -24,7 +27,12 @@ const app = new Hono<HonoEnv>()
 
   .get('/callback', async (c) => {
     await kindeClient.handleRedirectToApp(getSessionManager(c), new URL(c.req.url))
-    return c.redirect('/')
+
+    let backToPath = c.get('session').get('backToPath') as string || '/'
+    if (!backToPath.startsWith('/'))
+      backToPath = `/${backToPath}`
+
+    return c.redirect(`${env.FRONTEND_URL!}${backToPath}`)
   })
 
   .get('/logout', async (c) => {
@@ -71,7 +79,7 @@ const app = new Hono<HonoEnv>()
   // Try: /api/auth/getClaim/aud, /api/auth/getClaim/email/id_token
   .get('/getClaim/:claim', async (c) => {
     const type = (c.req.query('type') ?? 'access_token') as ClaimTokenType
-    if (!/^(access_token|id_token)$/.test(type))
+    if (!/^(?:access_token|id_token)$/.test(type))
       return c.text('Bad request: type', 400)
 
     const claim = await kindeClient.getClaim(getSessionManager(c), c.req.param('claim'), type)

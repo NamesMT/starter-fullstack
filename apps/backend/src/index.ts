@@ -1,7 +1,7 @@
 import { handle } from '@namesmt/hono-adapter-aws-lambda'
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
-import { isDevelopment } from 'std-env'
+import { env, isDevelopment } from 'std-env'
 
 import type { HonoEnv } from './types'
 import { devAdapter, tryServeApp } from './dev'
@@ -15,7 +15,10 @@ if (isDevelopment)
 
 export const app = _app
   // CORS middleware
-  .use(cors())
+  .use(cors({
+    origin: [env.FRONTEND_URL!],
+    credentials: true,
+  }))
 
   // Session management middleware
   .use(sessionMiddleware())

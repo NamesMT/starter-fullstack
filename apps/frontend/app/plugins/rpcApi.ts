@@ -13,9 +13,11 @@ export default defineNuxtPlugin({
     const callProxy = enableProxy === 'auto'
       ? urlBackend.hostname === url.hostname
       : enableProxy
-    const apiClient = hc<typeof app>(callProxy
-      ? `https://${url.host}`
-      : backendUrl,
+    const apiClient = hc<typeof app>(
+      callProxy
+        ? `https://${url.host}`
+        : backendUrl,
+      { init: { credentials: 'include' } },
     )
 
     return {
