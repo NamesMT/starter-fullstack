@@ -6,6 +6,8 @@
   - [@antfu/eslint-config](https://github.com/antfu/eslint-config)
 - [UnoCSS](https://unocss.dev/guide/)
   - UnoCSS is an atomic CSS engine, similar to Tailwind but is super fast and have some amazing features like automatically imported icons in pure CSS.
+- Tanstack Query
+  - Default is configured for client-side fetching usage, data is persisted to IndexedDB.
 - PrimeVue
   - Using [tailwind preset mode](https://tailwind.primevue.org/nuxt/)
 - Shadcn/vue
