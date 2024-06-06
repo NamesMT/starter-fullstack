@@ -105,8 +105,8 @@ const authApiStatus = $auth.health ? 'Activated' : 'Not found'
         <div>User information:</div>
         <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ $auth }}</pre>
         <div class="mt-2">
-          <Button v-if="$auth.loggedIn" label="Sign-out" @pointerdown="navigateTo('/api/auth/logout', { external: true })" />
-          <Button v-else label="Sign-in" @pointerdown="navigateTo('/api/auth/login', { external: true })" />
+          <Button v-if="$auth.loggedIn" label="Sign-out" @pointerdown="navigateTo(`${runtimeConfig.public.backendUrl}/api/auth/logout`, { external: true })" />
+          <Button v-else label="Sign-in" @pointerdown="navigateTo(`${runtimeConfig.public.backendUrl}/api/auth/login`, { external: true })" />
         </div>
       </template>
     </div>
