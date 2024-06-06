@@ -22,6 +22,7 @@ simply remove `sst` dependency and `sst.config.ts` if you want to use another so
 If you opt for SSR, to properly support identifying the user, you could use the official [Nuxt Kinde](https://nuxt.com/modules/kinde) module or implement your own way to manage the session at `apps/backend/src/middlewares/session.ts`.
 
 ### Apps and Packages
+(Click the hyperlink of each app to see its README detail)
 
 - [`frontend`](./apps/frontend/README.md): a [Nuxt](https://nuxt.com/) app, configured same as [starter-nuxt](https://github.com/NamesMT/starter-nuxt).
   - By default, `/api/*` routes is proxied to the `backendUrl`.
