@@ -24,6 +24,8 @@ concurrency:
 jobs:
   # Build job
   build:
+    environment: github-pages
+
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ vars.TURBO_TEAM }}
