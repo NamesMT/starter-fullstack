@@ -9,11 +9,12 @@ Note: the app comes with a `localcert` SSL at `packages/common/dev` for local de
 ⏩ This template is powered by [Turborepo](https://turbo.build/repo).
 
 😊 Out-of-the-box, this repo is configured for an SSG `frontend` Nuxt app, and a `backend` Hono app that will be the main API, to optimize on cost and simplicity.
-- Simply change the `apps/frontend`'s build script to `nuxt build` to enable SSR building
+- The starter kit is still configured for 100% SSR support,  
+  Simply change the `apps/frontend`'s build script to `nuxt build` to enable SSR building
 
 🌩️ Utilizing [SST Ion](https://ion.sst.dev/) for Infrastructure-as-Code, with powerful [Live](https://ion.sst.dev/docs/live/) development.  
 - SST is 100% opt-in, by using `sst` CLI commands yourself, like `sst dev`,  
-simply remove `sst` dependency and `sst.config.ts` if you want to use another solution.  
+  simply remove `sst` dependency and `sst.config.ts` if you want to use another solution.
 - *currently only `backend` app is configured, which will deploy a Lambda with Function URL enabled*
 
 🔐 Comes with starter-kit for [**Kinde**](https://kinde.com/) [typescript-sdk](https://github.com/kinde-oss/kinde-typescript-sdk), see: `/apps/backend/api/auth`
