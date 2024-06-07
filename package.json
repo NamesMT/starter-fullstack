@@ -28,7 +28,7 @@
     "pathe": "^1.1.2",
     "simple-git-hooks": "^2.11.1",
     "std-env": "^3.7.0",
-    "turbo": "latest",
+    "turbo": "^1.13.3",
     "unocss": "^0.60.4"
   },
   "pnpm": {
