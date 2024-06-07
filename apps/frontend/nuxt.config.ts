@@ -1,6 +1,5 @@
 import path from 'node:path'
 import { localcertKeyPath, localcertPath } from '@local/common/node'
-import { experimental_createPersister } from '@tanstack/query-persist-client-core'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -29,7 +28,8 @@ export default defineNuxtConfig({
     isSst: false,
     // Keys within public are also exposed client-side
     public: {
-      backendUrl: 'https://127.0.0.1:3301',
+      frontendUrl: import.meta.env.NUXT_PUBLIC_FRONTEND_URL,
+      backendUrl: import.meta.env.NUXT_PUBLIC_BACKEND_URL,
     },
   },
 

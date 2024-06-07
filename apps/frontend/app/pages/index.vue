@@ -84,13 +84,14 @@ const authApiStatus = $auth.health ? 'Activated' : 'Not found'
     </div>
 
     <div>
+      <div>Configured frontendUrl: {{ runtimeConfig.public.frontendUrl }}</div>
       <div>Configured backendUrl: {{ runtimeConfig.public.backendUrl }}</div>
-      <div>API Response from `<code>{{ $apiClient.api.hello.$url() }}</code>` (proxied to backendUrl):</div>
+      <div>API Response from `<code>{{ $apiClient.api.hello.$url() }}</code>`:</div>
       <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ apiResult || 'Empty' }}</pre>
     </div>
 
     <div>
-      <div>Tanstack Query result (this is fetched client-side and persisted to IndexedDB for 12 hours)</div>
+      <div>Tanstack Query result (fetched client-side and persisted to IndexedDB for 12 hours)</div>
       <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ isPending ? 'Loading...' : isError ? error : data }}</pre>
       <Button
         class="mt-2"
