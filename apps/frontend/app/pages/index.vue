@@ -2,6 +2,13 @@
 import { GridMaker } from '@local/common-vue'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/lib/components/ui/carousel'
 
+defineOgImageComponent('NuxtSeo', {
+  title: `Hello! I'm starter-fullstack 👋`,
+  description: 'Hono RPC, Nuxt, SST Ion, Kinde Auth, Tanstack Query, Shadcn, Primevue, UnoCSS',
+  theme: '#bf83fc',
+  colorMode: 'dark',
+})
+
 definePageMeta({
   title: 'pages.title.home',
 })

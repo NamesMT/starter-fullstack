@@ -58,7 +58,14 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     '@namesmt/vue-query-nuxt',
     '@nuxtjs/i18n',
+    '@nuxtjs/seo',
   ],
+
+  site: {
+    url: import.meta.env.NUXT_PUBLIC_FRONTEND_URL,
+    name: 'starter-fullstack',
+    description: '🔥Hono RPC, Nuxt, SST Ion, Kinde Auth, Tanstack Query, Shadcn, Primevue, UnoCSS',
+  },
 
   i18n: {
     vueI18n: './i18n.config.ts',

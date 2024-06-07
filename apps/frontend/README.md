@@ -11,14 +11,16 @@
 - PrimeVue
   - Using [tailwind preset mode](https://tailwind.primevue.org/nuxt/)
 - Shadcn/vue
-  - Configured for UnoCSS with [hyoban/unocss-preset-shadcn](https://github.com/hyoban/unocss-preset-shadcn)
-  - Share the primary color and could work in parallel with PrimeVue
+  - Configured for UnoCSS with [hyoban/unocss-preset-shadcn](https://github.com/hyoban/unocss-preset-shadcn).
+  - Share the primary color and could work in parallel with PrimeVue.
 - [ColorMode](https://github.com/nuxt-modules/color-mode)
   - Dark and Light mode with auto detection made easy with Nuxt.
 - [NuxtImage](https://image.nuxt.com/)
-  - Automatically optimized images for the app, as well as placeholder support
+  - Automatically optimized images for the app, as well as placeholder support.
 - [NuxtI18n](https://i18n.nuxtjs.org/)
-  - Internationalization (i18n) module for Nuxt.js + SEO headers
+  - Internationalization (i18n) module for Nuxt.js + SEO headers.
+- [Nuxt SEO](https://nuxtseo.com/)
+  - All the boring SEO work for Nuxt done.
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
