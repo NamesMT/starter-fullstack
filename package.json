@@ -33,10 +33,10 @@
   },
   "pnpm": {
     "overrides": {
-      "@internationalized/date": "3.5.4",
       "hasown": "npm:@nolyfill/hasown@latest",
       "isarray": "npm:@nolyfill/isarray@latest",
-      "nitropack": "latest"
+      "nitropack": "latest",
+      "string.prototype.codepointat": "npm:@nolyfill/string.prototype.codepointat@latest"
     }
   },
   "simple-git-hooks": {
