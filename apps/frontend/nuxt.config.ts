@@ -62,7 +62,7 @@ export default defineNuxtConfig({
   ],
 
   site: {
-    url: import.meta.env.NUXT_PUBLIC_FRONTEND_URL,
+    url: console.log({ lAMEEEEEEEEEEE: import.meta.env.NUXT_PUBLIC_FRONTEND_URL, me222222222222: import.meta.env.NUXT_PUBLIC_BACKEND_URL }) || import.meta.env.NUXT_PUBLIC_FRONTEND_URL,
     name: 'starter-fullstack',
     description: '🔥Hono RPC, Nuxt, SST Ion, Kinde Auth, Tanstack Query, Shadcn, Primevue, UnoCSS',
   },
