@@ -61,6 +61,25 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
   ],
 
+  ogImage: {
+    enabled: true,
+  },
+  sitemap: {
+    enabled: false,
+  },
+  robots: {
+    enabled: false,
+  },
+  seoExperiments: {
+    enabled: true,
+  },
+  schemaOrg: {
+    enabled: true,
+  },
+  linkChecker: {
+    enabled: true,
+  },
+
   site: {
     url: import.meta.env.NUXT_PUBLIC_FRONTEND_URL,
     name: 'starter-fullstack',
