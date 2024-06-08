@@ -5,6 +5,10 @@
   ],
   "tasks": {
     "build": {
+      "env": [
+        "NUXT_PUBLIC_FRONTEND_URL",
+        "NUXT_PUBLIC_BACKEND_URL"
+      ],
       "dependsOn": [
         "^build"
       ],
