@@ -1,7 +1,7 @@
-import { CookieStore, sessionMiddleware as libSessionMiddleware } from 'hono-sessions'
+import { CookieStore, sessionMiddleware } from 'hono-sessions'
 
-export function sessionMiddleware() {
-  return libSessionMiddleware({
+export function cookieSession() {
+  return sessionMiddleware({
     store: new CookieStore(),
     encryptionKey: 'password_at_least_32_characters!', // Required for CookieStore, recommended for others
     expireAfterSeconds: 900, // Expire session after 15 minutes of inactivity

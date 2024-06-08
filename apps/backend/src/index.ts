@@ -5,7 +5,7 @@ import { env, isDevelopment } from 'std-env'
 
 import type { HonoEnv } from './types'
 import { devAdapter, tryServeApp } from './dev'
-import { sessionMiddleware } from './middlewares/session'
+import { cookieSession } from './middlewares/session'
 import { apiApp } from './api/app'
 
 const _app = new Hono<HonoEnv>()
@@ -21,7 +21,7 @@ export const app = _app
   }))
 
   // Session management middleware
-  .use(sessionMiddleware())
+  .use(cookieSession())
 
   // Register not found handler
   .notFound(c => c.text('four-o-four'))
