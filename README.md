@@ -54,6 +54,8 @@ To build all apps and packages, run the following command:
 To develop all apps and packages, run the following command:  
 `pnpm run dev`
 
+It is recommended to do your local .env setup to `.env.local` of each app and use `git update-index --skip-worktree` to ignore the changes from being committed to the repo.
+
 ### Remote Caching
 
 Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
