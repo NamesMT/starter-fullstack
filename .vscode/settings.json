@@ -44,5 +44,9 @@
     "toml",
     "gql",
     "graphql"
-  ]
+  ],
+
+  "files.associations": {
+    "turbo.json": "jsonc"
+  }
 }
