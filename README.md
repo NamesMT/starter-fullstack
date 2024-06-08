@@ -19,8 +19,9 @@ Note: the app comes with a `localcert` SSL at `packages/common/dev` for local de
 
 🔐 Comes with starter-kit for [**Kinde**](https://kinde.com/) [typescript-sdk](https://github.com/kinde-oss/kinde-typescript-sdk), see: `/apps/backend/api/auth`
 - *Add your env variables, activate the auth routes, profit$*
-- Please note that by default it is intended for CSR/SSG app only as it is managed on the `backend` codebase and based on a HttpOnly session cookie to identify user and will not work well with SSR,  
-If you opt for SSR, to properly support identifying the user, you could use the official [Nuxt Kinde](https://nuxt.com/modules/kinde) module or implement your own way to manage the session at `apps/backend/src/middlewares/session.ts`.
+- Please note that by default `backend` comes with a cookies-based session manager, which have great DX, security and does not require an external database (which also means great performance), but as the `backend` is decoupled with the Nuxt's SSR server, it will not work well with SSR (the session/auth state is not shared).  
+So if you use SSR, you could use the official [Nuxt Kinde](https://nuxt.com/modules/kinde) module or implement your own way to manage the session at `apps/backend/src/middlewares/session.ts`.
+  - If you have a good session manager implementation, a PR is greatly appreciated!
 
 ### Apps and Packages
 (Click the hyperlink of each app to see its README detail)
