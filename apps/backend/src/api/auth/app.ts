@@ -12,10 +12,11 @@ const app = new Hono<HonoEnv>()
   })
 
   .get('/login', async (c) => {
-    c.get('session').set('backToPath', c.req.query('path'))
-
     const org_code = c.req.query('org_code')
     const loginUrl = await kindeClient.login(getSessionManager(c), { org_code })
+
+    c.get('session').set('backToPath', c.req.query('path'))
+
     return c.redirect(loginUrl.toString())
   })
 
