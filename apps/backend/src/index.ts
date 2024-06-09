@@ -21,7 +21,7 @@ export const app = _app
   }))
 
   // Session management middleware
-  .use(cookieSession())
+  .use(await cookieSession())
 
   // Register not found handler
   .notFound(c => c.text('four-o-four'))

@@ -1,6 +1,5 @@
-import { CookieStore, sessionMiddleware } from 'hono-sessions'
-
-export function cookieSession() {
+export async function cookieSession() {
+  const { CookieStore, sessionMiddleware } = await import('hono-sessions')
   return sessionMiddleware({
     store: new CookieStore(),
     encryptionKey: 'password_at_least_32_characters!', // Required for CookieStore, recommended for others
