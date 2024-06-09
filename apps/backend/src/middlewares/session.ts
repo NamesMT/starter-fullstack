@@ -1,3 +1,8 @@
+/**
+ * `Cookies`-based manager by `hono-sessions`.
+ * 
+ * Default configuration uses `CookieStore` and just works out of the box.
+ */
 export async function cookieSession() {
   const { CookieStore, sessionMiddleware } = await import('hono-sessions')
   return sessionMiddleware({
