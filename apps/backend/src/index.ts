@@ -20,7 +20,7 @@ export const app = _app
     credentials: true,
   }))
 
-  // Session management middleware
+  // Session management middleware, configure and see all available managers in `src/middlewares/session.ts`
   .use(await cookieSession())
 
   // Register not found handler
