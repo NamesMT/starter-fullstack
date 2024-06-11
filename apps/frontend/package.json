@@ -40,7 +40,7 @@
     "hono": "^4.4.5",
     "idb-keyval": "^6.2.1",
     "lucide-vue-next": "^0.394.0",
-    "nuxt": "npm:nuxt-nightly@latest",
+    "nuxt": "^3.12.1",
     "nuxt-primevue": "^3.0.0",
     "primeicons": "^7.0.0",
     "radix-vue": "^1.8.3",

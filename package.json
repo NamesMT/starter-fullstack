@@ -35,7 +35,6 @@
     "overrides": {
       "hasown": "npm:@nolyfill/hasown@latest",
       "isarray": "npm:@nolyfill/isarray@latest",
-      "nitropack": "latest",
       "string.prototype.codepointat": "npm:@nolyfill/string.prototype.codepointat@latest"
     },
     "patchedDependencies": {
