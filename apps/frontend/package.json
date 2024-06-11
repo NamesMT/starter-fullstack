@@ -28,7 +28,7 @@
     "@nuxtjs/i18n": "^8.3.1",
     "@nuxtjs/seo": "2.0.0-rc.10",
     "@tanstack/query-persist-client-core": "^5.40.0",
-    "@tanstack/vue-query": "^5.40.1",
+    "@tanstack/vue-query": "^5.41.0",
     "@unocss/nuxt": "^0.60.4",
     "@vueuse/core": "^10.10.0",
     "@vueuse/nuxt": "^10.10.0",
@@ -37,9 +37,9 @@
     "embla-carousel": "^8.1.3",
     "embla-carousel-vue": "^8.1.3",
     "h3-proxy": "^1.13.0",
-    "hono": "^4.4.4",
+    "hono": "^4.4.5",
     "idb-keyval": "^6.2.1",
-    "lucide-vue-next": "^0.390.0",
+    "lucide-vue-next": "^0.394.0",
     "nuxt": "npm:nuxt-nightly@latest",
     "nuxt-primevue": "^3.0.0",
     "primeicons": "^7.0.0",
@@ -51,6 +51,6 @@
     "unocss-preset-animations": "^1.0.2",
     "unocss-preset-shadcn": "^0.3.0",
     "vue": "^3.4.27",
-    "vue-router": "^4.3.2"
+    "vue-router": "^4.3.3"
   }
 }
