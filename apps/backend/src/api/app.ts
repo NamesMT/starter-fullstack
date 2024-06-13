@@ -1,6 +1,6 @@
-import type { TypedResponse } from 'hono'
+// import type { TypedResponse } from 'hono'
+// import { streamText } from 'hono/streaming'
 import { Hono } from 'hono'
-import { streamText } from 'hono/streaming'
 
 import { authApp } from './auth/app'
 import type { HonoEnv } from '~/types'
