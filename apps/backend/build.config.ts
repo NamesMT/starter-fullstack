@@ -18,6 +18,7 @@ export default defineBuildConfig({
   rollup: {
     inlineDependencies: true,
     esbuild: {
+      target: 'esnext',
       // minify: true,
     },
   },
