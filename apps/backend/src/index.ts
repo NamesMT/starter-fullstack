@@ -1,6 +1,7 @@
 import { handle } from '@namesmt/hono-adapter-aws-lambda'
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
+import { logger as loggerMiddleware } from 'hono/logger'
 import { env, isDevelopment } from 'std-env'
 
 import type { HonoEnv } from './types'
@@ -14,6 +15,9 @@ if (isDevelopment)
   _app.use(devAdapter)
 
 export const app = _app
+  // Request logging middleware
+  .use(loggerMiddleware())
+
   // CORS middleware
   .use(cors({
     origin: [env.FRONTEND_URL!],
