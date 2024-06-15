@@ -40,6 +40,10 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "deploy": {
+      "cache": false,
+      "dependsOn": ["build", "lint"]
     }
   }
 }
