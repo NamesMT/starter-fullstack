@@ -18,6 +18,9 @@
     "**/.env",
     "**/.env.*"
   ],
+  "globalEnv": [
+    "AWS_*"
+  ],
   "tasks": {
     "build": {
       "env": [
