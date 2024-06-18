@@ -36,6 +36,9 @@
       "hasown": "npm:@nolyfill/hasown@latest",
       "isarray": "npm:@nolyfill/isarray@latest",
       "string.prototype.codepointat": "npm:@nolyfill/string.prototype.codepointat@latest"
+    },
+    "patchedDependencies": {
+      "execa@5.1.1": "patches/execa@5.1.1.patch"
     }
   },
   "simple-git-hooks": {

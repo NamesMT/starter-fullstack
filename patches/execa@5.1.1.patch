@@ -1,0 +1,13 @@
+diff --git a/index.js b/index.js
+index 6fc9f129543e9729f81888f4b7c787cba6fbddc7..15c0920b68eb1e6d49f2dfc54aad3ff32220e7e7 100644
+--- a/index.js
++++ b/index.js
+@@ -162,6 +162,8 @@ const execa = (file, args, options) => {
+ 
+ module.exports = execa;
+ 
++module.exports.execa = execa;
++
+ module.exports.sync = (file, args, options) => {
+ 	const parsed = handleArguments(file, args, options);
+ 	const command = joinCommand(file, args);
