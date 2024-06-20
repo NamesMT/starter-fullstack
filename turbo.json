@@ -19,6 +19,7 @@
     "**/.env.*"
   ],
   "globalEnv": [
+    "NODE_TLS_REJECT_UNAUTHORIZED",
     "AWS_*"
   ],
   "tasks": {

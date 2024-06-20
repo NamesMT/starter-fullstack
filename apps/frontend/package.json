@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "nuxt generate",
-    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --dotenv .env.local",
+    "dev": "nuxt dev --dotenv .env.local",
     "lint": "eslint .",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"

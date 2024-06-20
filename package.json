@@ -7,9 +7,9 @@
     "node": ">=20.13.1"
   },
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "devSST": "dotenvx run -f .env.sst -- sst dev \"pnpm -F=frontend run dev\"",
+    "build": "dotenvx run -- turbo run build",
+    "dev": "dotenvx run -- turbo run dev",
+    "devSST": "dotenvx run -f .env.sst -f .env -- sst dev \"pnpm -F=frontend run dev\"",
     "lint": "turbo run lint",
     "prepare": "simple-git-hooks"
   },
