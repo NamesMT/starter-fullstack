@@ -62,7 +62,7 @@ export default defineConfig({
     ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
   ],
   rules: [
-    // Declaring css variable with Uno: $SOMETHING=10px
+    // Declaring css variable with Uno: $SOMETHING=[10px]
     [/^\$(.+?)-\[(.+)\]$/, ([, name, value]) => ({
       [`--${name}`]: value,
     })],
@@ -104,7 +104,7 @@ export default defineConfig({
   ],
   transformers: [
     transformerDirectives(),
-    transformerVariantGroup(),
+    transformerVariantGroup({ separators: [':'] }),
   ],
   content: {
     pipeline: {
