@@ -33,7 +33,6 @@
     "hono-sessions": "^0.5.8",
     "std-env": "^3.7.0",
     "tsx": "^4.15.6",
-    "typescript": "^5.4.5",
     "unbuild": "^2.0.0",
     "vitest": "^1.6.0"
   }
