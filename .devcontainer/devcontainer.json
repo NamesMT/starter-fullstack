@@ -23,21 +23,18 @@
       "extensions": [
         "antfu.iconify",
         "antfu.unocss",
-        "antfu.vite",
-        "antfu.where-am-i",
+        "csstools.postcss",
         "dbaeumer.vscode-eslint",
-        "eamodio.gitlens",
-        "george-alisson.html-preview-vscode",
-        "Gruntfuggly.todo-tree",
-        "jock.svg",
+        // "george-alisson.html-preview-vscode",
+        // "Gruntfuggly.todo-tree",
+        // "jock.svg",
         "lokalise.i18n-ally",
-        "naumovs.color-highlight",
-        "oderwat.indent-rainbow",
-        "rangav.vscode-thunder-client",
-        "streetsidesoftware.code-spell-checker",
+        // "naumovs.color-highlight",
+        // "oderwat.indent-rainbow",
+        // "streetsidesoftware.code-spell-checker",
         "usernamehw.errorlens",
         "Vue.volar",
-        "yoavbls.pretty-ts-errors",
+        // "yoavbls.pretty-ts-errors",
       ]
     }
   },
@@ -46,7 +43,6 @@
   "runArgs": [
     // mount pnpm store for shared caching/linking
     // "--volume=${env:PNPM_HOME}/store:${env:PNPM_HOME}/store",
-
     // // Enable both in this block if you want to mount home dir
     // mount user home directory for things like git, ssh, and other configs
     // "--volume=${env:HOME}:${env:HOME}",
