@@ -22,17 +22,17 @@
     "build": "dotenvx run -f .env.prod.local -f .env -- unbuild"
   },
   "devDependencies": {
-    "@hono/node-server": "^1.11.3",
+    "@hono/node-server": "^1.11.4",
     "@kinde-oss/kinde-typescript-sdk": "^2.9.1",
     "@local/common": "workspace:*",
     "@local/tsconfig": "workspace:*",
-    "@namesmt/hono-adapter-aws-lambda": "^0.1.5",
+    "@namesmt/hono-adapter-aws-lambda": "^0.2.0-1718818726.a66ea14",
     "@vitest/coverage-v8": "^1.6.0",
     "consola": "^3.2.3",
-    "hono": "^4.4.6",
+    "hono": "^4.4.7",
     "hono-sessions": "^0.5.8",
     "std-env": "^3.7.0",
-    "tsx": "^4.15.6",
+    "tsx": "^4.15.7",
     "unbuild": "^2.0.0",
     "vitest": "^1.6.0"
   }
