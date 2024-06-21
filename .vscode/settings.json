@@ -1,10 +1,4 @@
 {
-  // Enable Vue Volar (v2) Hybrid Mode, ref: https://github.com/vuejs/language-tools/releases/tag/v2.0.7
-  "vue.server.hybridMode": true,
-
-  // Enable the ESlint flat config support
-  "eslint.experimental.useFlatConfig": true,
-
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.formatOnSave": false,
