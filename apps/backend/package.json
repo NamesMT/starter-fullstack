@@ -27,7 +27,7 @@
     "@kinde-oss/kinde-typescript-sdk": "^2.9.1",
     "@local/common": "workspace:*",
     "@local/tsconfig": "workspace:*",
-    "@namesmt/hono-adapter-aws-lambda": "^0.2.0-1718818726.a66ea14",
+    "@namesmt/hono-adapter-aws-lambda": "^0.2.0-1719056816.4d340c2",
     "@vitest/coverage-v8": "^1.6.0",
     "consola": "^3.2.3",
     "hono": "^4.4.7",

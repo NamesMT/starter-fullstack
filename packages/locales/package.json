@@ -11,6 +11,7 @@
   "main": "./index.ts",
   "types": "./index.ts",
   "scripts": {
+    "start": "tsx index.ts",
     "lint": "eslint .",
     "dev": "tsx watch index.ts",
     "postinstall": "tsx index.ts"
