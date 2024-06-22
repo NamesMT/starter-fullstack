@@ -1,0 +1,22 @@
+{
+  "name": "@local/locales",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./*": {
+      "import": "./dist/*"
+    }
+  },
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "lint": "eslint .",
+    "dev": "tsx watch index.ts",
+    "postinstall": "tsx index.ts"
+  },
+  "devDependencies": {
+    "@local/tsconfig": "workspace:*",
+    "unplugin-sheet-i18n": "^0.4.8"
+  }
+}

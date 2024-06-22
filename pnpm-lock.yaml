@@ -230,6 +230,15 @@ importers:
         specifier: ^3.4.29
         version: 3.4.29(typescript@5.5.2)
 
+  packages/locales:
+    devDependencies:
+      '@local/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
+      unplugin-sheet-i18n:
+        specifier: ^0.4.8
+        version: 0.4.8(@nuxt/kit@3.12.2(rollup@3.29.4))(@nuxt/schema@3.12.2(rollup@3.29.4))(esbuild@0.21.5)(rollup@3.29.4)(vite@5.3.1(@types/node@20.14.7)(sass@1.77.6)(terser@5.31.1))(webpack@5.92.1(esbuild@0.21.5))
+
   packages/tsconfig:
     devDependencies:
       '@vue/tsconfig':
@@ -719,6 +728,12 @@ packages:
 
   '@dotenvx/dotenvx@0.45.0':
     resolution: {integrity: sha512-qjW6PDX3mONGQHSrI6LPzOCHn/RZPZuHThPrRZOvyo90pTMGQaCqRbcastl1Y3ZQlw0igdcKnk9pJSh5uYNLbg==}
+    hasBin: true
+
+  '@e965/xlsx@0.20.2':
+    resolution: {integrity: sha512-VtTND/9MDM4G3fgwo6sV0xOKM4rrragqWNUPPoSrUQ+lGRRaYYfcS/9UaqgkNLm9do3rJBEn59fZQ+BPeG2yyA==}
+    engines: {node: '>=0.8'}
+    deprecated: The version was published incorrectly, and is different from the one actually released by the SheetJS authors. Use version 0.20.2-released.0 (published manually), or wait for the next one. See https://github.com/e965/sheetjs-npm-publisher/issues/4
     hasBin: true
 
   '@es-joy/jsdoccomment@0.43.1':
@@ -5392,6 +5407,9 @@ packages:
   pako@0.2.9:
     resolution: {integrity: sha512-NUcwaKxUxWrZLpDG+z/xZaCgQITkA/Dv4V/T6bw7VON6l1Xz/VnrBqrYjZQ12TamKHzITTfOEIYUj48y2KXImA==}
 
+  papaparse@5.4.1:
+    resolution: {integrity: sha512-HipMsgJkZu8br23pW15uvo6sib6wne/4woLZPlFf3rpDyMe9ywEXUsuD7+6K9PRkJlVT51j/sCOYDKGGS3ZJrw==}
+
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
     engines: {node: '>=6'}
@@ -6624,6 +6642,30 @@ packages:
   unplugin-ast@0.10.0:
     resolution: {integrity: sha512-IA1r4JGZ6O/Zn3CZxSShQBuJ2fbNCDGCtMOz0q+K2kOhgZHJUH3Y+hTthcitjH0vx5C0QN3lWwgsa/4cL1cS0w==}
     engines: {node: '>=18.12.0'}
+
+  unplugin-sheet-i18n@0.4.8:
+    resolution: {integrity: sha512-SwJ9p/o39lYU8FHoanSZa3X3Xz4Wv2fmRzOtTBvK4Fuv3KFkWG4t4OcFVlZtQGF0tK0Y1SNvZQJSnY2SloCXpw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      '@nuxt/kit': ^3
+      '@nuxt/schema': ^3
+      esbuild: '*'
+      rollup: ^3
+      vite: '>=3'
+      webpack: ^4 || ^5
+    peerDependenciesMeta:
+      '@nuxt/kit':
+        optional: true
+      '@nuxt/schema':
+        optional: true
+      esbuild:
+        optional: true
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
 
   unplugin-vue-router@0.7.0:
     resolution: {integrity: sha512-ddRreGq0t5vlSB7OMy4e4cfU1w2AwBQCwmvW3oP/0IHQiokzbx4hd3TpwBu3eIAFVuhX2cwNQwp1U32UybTVCw==}
@@ -7919,6 +7961,8 @@ snapshots:
       winston: 3.13.0
       xxhashjs: 0.2.2
 
+  '@e965/xlsx@0.20.2': {}
+
   '@es-joy/jsdoccomment@0.43.1':
     dependencies:
       '@types/eslint': 8.56.10
@@ -8855,6 +8899,53 @@ snapshots:
       - magicast
       - rollup
       - supports-color
+
+  '@nuxt/kit@3.12.2(rollup@3.29.4)':
+    dependencies:
+      '@nuxt/schema': 3.12.2(rollup@3.29.4)
+      c12: 1.11.1(magicast@0.3.4)
+      consola: 3.2.3
+      defu: 6.1.4
+      destr: 2.0.3
+      globby: 14.0.1
+      hash-sum: 2.0.0
+      ignore: 5.3.1
+      jiti: 1.21.6
+      klona: 2.0.6
+      knitwork: 1.1.0
+      mlly: 1.7.1
+      pathe: 1.1.2
+      pkg-types: 1.1.1
+      scule: 1.3.0
+      semver: 7.6.2
+      ufo: 1.5.3
+      unctx: 2.3.1
+      unimport: 3.7.2(rollup@3.29.4)
+      untyped: 1.4.2
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
+    optional: true
+
+  '@nuxt/schema@3.12.2(rollup@3.29.4)':
+    dependencies:
+      compatx: 0.1.8
+      consola: 3.2.3
+      defu: 6.1.4
+      hookable: 5.5.3
+      pathe: 1.1.2
+      pkg-types: 1.1.1
+      scule: 1.3.0
+      std-env: 3.7.0
+      ufo: 1.5.3
+      uncrypto: 0.1.3
+      unimport: 3.7.2(rollup@3.29.4)
+      untyped: 1.4.2
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    optional: true
 
   '@nuxt/schema@3.12.2(rollup@4.18.0)':
     dependencies:
@@ -14094,6 +14185,8 @@ snapshots:
 
   pako@0.2.9: {}
 
+  papaparse@5.4.1: {}
+
   parent-module@1.0.1:
     dependencies:
       callsites: 3.1.0
@@ -15342,6 +15435,25 @@ snapshots:
 
   unicorn-magic@0.1.0: {}
 
+  unimport@3.7.2(rollup@3.29.4):
+    dependencies:
+      '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
+      acorn: 8.12.0
+      escape-string-regexp: 5.0.0
+      estree-walker: 3.0.3
+      fast-glob: 3.3.2
+      local-pkg: 0.5.0
+      magic-string: 0.30.10
+      mlly: 1.7.1
+      pathe: 1.1.2
+      pkg-types: 1.1.1
+      scule: 1.3.0
+      strip-literal: 2.1.0
+      unplugin: 1.10.1
+    transitivePeerDependencies:
+      - rollup
+    optional: true
+
   unimport@3.7.2(rollup@4.18.0):
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@4.18.0)
@@ -15485,6 +15597,23 @@ snapshots:
       unplugin: 1.10.1
     transitivePeerDependencies:
       - rollup
+
+  unplugin-sheet-i18n@0.4.8(@nuxt/kit@3.12.2(rollup@3.29.4))(@nuxt/schema@3.12.2(rollup@3.29.4))(esbuild@0.21.5)(rollup@3.29.4)(vite@5.3.1(@types/node@20.14.7)(sass@1.77.6)(terser@5.31.1))(webpack@5.92.1(esbuild@0.21.5)):
+    dependencies:
+      '@e965/xlsx': 0.20.2
+      consola: 3.2.3
+      defu: 6.1.4
+      papaparse: 5.4.1
+      pathe: 1.1.2
+      std-env: 3.7.0
+      unplugin: 1.10.1
+    optionalDependencies:
+      '@nuxt/kit': 3.12.2(rollup@3.29.4)
+      '@nuxt/schema': 3.12.2(rollup@3.29.4)
+      esbuild: 0.21.5
+      rollup: 3.29.4
+      vite: 5.3.1(@types/node@20.14.7)(sass@1.77.6)(terser@5.31.1)
+      webpack: 5.92.1(esbuild@0.21.5)
 
   unplugin-vue-router@0.7.0(rollup@4.18.0)(vue-router@4.3.3(vue@3.4.29(typescript@5.5.2)))(vue@3.4.29(typescript@5.5.2)):
     dependencies:
