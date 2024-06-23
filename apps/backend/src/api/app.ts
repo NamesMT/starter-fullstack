@@ -1,13 +1,12 @@
 // import type { TypedResponse } from 'hono'
 // import { streamText } from 'hono/streaming'
-import { Hono } from 'hono'
 
 import { authApp } from './auth/app'
-import type { HonoEnv } from '~/types'
+import { appFactory } from '~/factory'
 
 // Setup Kinde environment variables and uncomment all "$Auth" blocks to activate authentication routes
 
-const app = new Hono<HonoEnv>()
+const app = appFactory.createApp()
   // // $Auth
   .route('/auth', authApp)
 

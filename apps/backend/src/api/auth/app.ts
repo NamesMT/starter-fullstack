@@ -1,12 +1,11 @@
-import { Hono } from 'hono'
 import type { ClaimTokenType, FlagType } from '@kinde-oss/kinde-typescript-sdk'
-
 import { env } from 'std-env'
+
 import { kindeClient } from './kindeClients'
 import { getSessionManager } from './sessionManager'
-import type { HonoEnv } from '~/types'
+import { appFactory } from '~/factory'
 
-const app = new Hono<HonoEnv>()
+const app = appFactory.createApp()
   .get('/health', async (c) => {
     return c.text('Good', 200)
   })

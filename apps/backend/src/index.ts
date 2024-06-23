@@ -1,15 +1,14 @@
 import { handle } from '@namesmt/hono-adapter-aws-lambda'
-import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { logger as loggerMiddleware } from 'hono/logger'
 import { env, isDevelopment } from 'std-env'
 
-import type { HonoEnv } from './types'
 import { devAdapter, tryServeApp } from './dev'
 import { cookieSession } from './middlewares/session'
 import { apiApp } from './api/app'
+import { appFactory } from '~/factory'
 
-const _app = new Hono<HonoEnv>()
+const _app = appFactory.createApp()
 // Registers an adapter middleware for development only
 if (isDevelopment)
   _app.use(devAdapter)
