@@ -63,7 +63,7 @@ importers:
         version: 5.5.2
       unocss:
         specifier: ^0.61.0
-        version: 0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
+        version: 0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
 
   apps/backend:
     devDependencies:
@@ -80,8 +80,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/tsconfig
       '@namesmt/hono-adapter-aws-lambda':
-        specifier: ^0.2.0-1719056816.4d340c2
-        version: 0.2.0-1719056816.4d340c2
+        specifier: ^0.2.1
+        version: 0.2.1
       '@vitest/coverage-v8':
         specifier: ^1.6.0
         version: 1.6.0(vitest@1.6.0(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
@@ -198,7 +198,7 @@ importers:
         version: 2.3.0
       unocss:
         specifier: ^0.61.0
-        version: 0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
+        version: 0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
       unocss-preset-animations:
         specifier: ^1.0.2
         version: 1.0.2(@unocss/preset-wind@0.61.0)(unocss@0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1)))
@@ -237,7 +237,7 @@ importers:
         version: link:../tsconfig
       unplugin-sheet-i18n:
         specifier: ^0.4.8
-        version: 0.4.8(@nuxt/kit@3.12.2(rollup@3.29.4))(@nuxt/schema@3.12.2(rollup@3.29.4))(esbuild@0.21.5)(rollup@3.29.4)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
+        version: 0.4.8(@nuxt/kit@3.12.2(rollup@3.29.4))(@nuxt/schema@3.12.2(rollup@3.29.4))(esbuild@0.21.5)(rollup@3.29.4)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))(webpack@5.92.1(esbuild@0.21.5))
 
   packages/tsconfig:
     devDependencies:
@@ -1528,8 +1528,8 @@ packages:
     peerDependencies:
       rollup: ^1.20.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
 
-  '@namesmt/hono-adapter-aws-lambda@0.2.0-1719056816.4d340c2':
-    resolution: {integrity: sha512-6GLHXUnhw4IOzqibVUPw+H72mLenlmopTpOI5rN9sTFeAjmzbgbcyeyS4gN38dJ7jATjqPbp1nliw3fBsZZG1w==}
+  '@namesmt/hono-adapter-aws-lambda@0.2.1':
+    resolution: {integrity: sha512-GJVICQThq8kjt7nyjWGbaCNlw3JFYn4JjHY2bw1NCb8pvXF23F2L8scvFFwjuQeON1kFFg/JxJhkd98ibfFAsQ==}
     engines: {node: '>=18.20.3'}
 
   '@namesmt/utils-lambda@0.0.2':
@@ -7610,10 +7610,10 @@ snapshots:
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
-      '@aws-sdk/client-sso-oidc': 3.600.0
-      '@aws-sdk/client-sts': 3.600.0(@aws-sdk/client-sso-oidc@3.600.0)
+      '@aws-sdk/client-sso-oidc': 3.600.0(@aws-sdk/client-sts@3.600.0)
+      '@aws-sdk/client-sts': 3.600.0
       '@aws-sdk/core': 3.598.0
-      '@aws-sdk/credential-provider-node': 3.600.0(@aws-sdk/client-sso-oidc@3.600.0)(@aws-sdk/client-sts@3.600.0(@aws-sdk/client-sso-oidc@3.600.0))
+      '@aws-sdk/credential-provider-node': 3.600.0(@aws-sdk/client-sso-oidc@3.600.0(@aws-sdk/client-sts@3.600.0))(@aws-sdk/client-sts@3.600.0)
       '@aws-sdk/middleware-host-header': 3.598.0
       '@aws-sdk/middleware-logger': 3.598.0
       '@aws-sdk/middleware-recursion-detection': 3.598.0
@@ -7657,13 +7657,13 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/client-sso-oidc@3.600.0':
+  '@aws-sdk/client-sso-oidc@3.600.0(@aws-sdk/client-sts@3.600.0)':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
-      '@aws-sdk/client-sts': 3.600.0(@aws-sdk/client-sso-oidc@3.600.0)
+      '@aws-sdk/client-sts': 3.600.0
       '@aws-sdk/core': 3.598.0
-      '@aws-sdk/credential-provider-node': 3.600.0(@aws-sdk/client-sso-oidc@3.600.0)(@aws-sdk/client-sts@3.600.0(@aws-sdk/client-sso-oidc@3.600.0))
+      '@aws-sdk/credential-provider-node': 3.600.0(@aws-sdk/client-sso-oidc@3.600.0(@aws-sdk/client-sts@3.600.0))(@aws-sdk/client-sts@3.600.0)
       '@aws-sdk/middleware-host-header': 3.598.0
       '@aws-sdk/middleware-logger': 3.598.0
       '@aws-sdk/middleware-recursion-detection': 3.598.0
@@ -7700,6 +7700,7 @@ snapshots:
       '@smithy/util-utf8': 3.0.0
       tslib: 2.6.3
     transitivePeerDependencies:
+      - '@aws-sdk/client-sts'
       - aws-crt
 
   '@aws-sdk/client-sso@3.478.0':
@@ -7832,13 +7833,13 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/client-sts@3.600.0(@aws-sdk/client-sso-oidc@3.600.0)':
+  '@aws-sdk/client-sts@3.600.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
-      '@aws-sdk/client-sso-oidc': 3.600.0
+      '@aws-sdk/client-sso-oidc': 3.600.0(@aws-sdk/client-sts@3.600.0)
       '@aws-sdk/core': 3.598.0
-      '@aws-sdk/credential-provider-node': 3.600.0(@aws-sdk/client-sso-oidc@3.600.0)(@aws-sdk/client-sts@3.600.0(@aws-sdk/client-sso-oidc@3.600.0))
+      '@aws-sdk/credential-provider-node': 3.600.0(@aws-sdk/client-sso-oidc@3.600.0(@aws-sdk/client-sts@3.600.0))(@aws-sdk/client-sts@3.600.0)
       '@aws-sdk/middleware-host-header': 3.598.0
       '@aws-sdk/middleware-logger': 3.598.0
       '@aws-sdk/middleware-recursion-detection': 3.598.0
@@ -7875,7 +7876,6 @@ snapshots:
       '@smithy/util-utf8': 3.0.0
       tslib: 2.6.3
     transitivePeerDependencies:
-      - '@aws-sdk/client-sso-oidc'
       - aws-crt
 
   '@aws-sdk/core@3.477.0':
@@ -7938,14 +7938,14 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/credential-provider-ini@3.598.0(@aws-sdk/client-sso-oidc@3.600.0)(@aws-sdk/client-sts@3.600.0(@aws-sdk/client-sso-oidc@3.600.0))':
+  '@aws-sdk/credential-provider-ini@3.598.0(@aws-sdk/client-sso-oidc@3.600.0(@aws-sdk/client-sts@3.600.0))(@aws-sdk/client-sts@3.600.0)':
     dependencies:
-      '@aws-sdk/client-sts': 3.600.0(@aws-sdk/client-sso-oidc@3.600.0)
+      '@aws-sdk/client-sts': 3.600.0
       '@aws-sdk/credential-provider-env': 3.598.0
       '@aws-sdk/credential-provider-http': 3.598.0
       '@aws-sdk/credential-provider-process': 3.598.0
-      '@aws-sdk/credential-provider-sso': 3.598.0(@aws-sdk/client-sso-oidc@3.600.0)
-      '@aws-sdk/credential-provider-web-identity': 3.598.0(@aws-sdk/client-sts@3.600.0(@aws-sdk/client-sso-oidc@3.600.0))
+      '@aws-sdk/credential-provider-sso': 3.598.0(@aws-sdk/client-sso-oidc@3.600.0(@aws-sdk/client-sts@3.600.0))
+      '@aws-sdk/credential-provider-web-identity': 3.598.0(@aws-sdk/client-sts@3.600.0)
       '@aws-sdk/types': 3.598.0
       '@smithy/credential-provider-imds': 3.1.2
       '@smithy/property-provider': 3.1.2
@@ -7972,14 +7972,14 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/credential-provider-node@3.600.0(@aws-sdk/client-sso-oidc@3.600.0)(@aws-sdk/client-sts@3.600.0(@aws-sdk/client-sso-oidc@3.600.0))':
+  '@aws-sdk/credential-provider-node@3.600.0(@aws-sdk/client-sso-oidc@3.600.0(@aws-sdk/client-sts@3.600.0))(@aws-sdk/client-sts@3.600.0)':
     dependencies:
       '@aws-sdk/credential-provider-env': 3.598.0
       '@aws-sdk/credential-provider-http': 3.598.0
-      '@aws-sdk/credential-provider-ini': 3.598.0(@aws-sdk/client-sso-oidc@3.600.0)(@aws-sdk/client-sts@3.600.0(@aws-sdk/client-sso-oidc@3.600.0))
+      '@aws-sdk/credential-provider-ini': 3.598.0(@aws-sdk/client-sso-oidc@3.600.0(@aws-sdk/client-sts@3.600.0))(@aws-sdk/client-sts@3.600.0)
       '@aws-sdk/credential-provider-process': 3.598.0
-      '@aws-sdk/credential-provider-sso': 3.598.0(@aws-sdk/client-sso-oidc@3.600.0)
-      '@aws-sdk/credential-provider-web-identity': 3.598.0(@aws-sdk/client-sts@3.600.0(@aws-sdk/client-sso-oidc@3.600.0))
+      '@aws-sdk/credential-provider-sso': 3.598.0(@aws-sdk/client-sso-oidc@3.600.0(@aws-sdk/client-sts@3.600.0))
+      '@aws-sdk/credential-provider-web-identity': 3.598.0(@aws-sdk/client-sts@3.600.0)
       '@aws-sdk/types': 3.598.0
       '@smithy/credential-provider-imds': 3.1.2
       '@smithy/property-provider': 3.1.2
@@ -8019,10 +8019,10 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/credential-provider-sso@3.598.0(@aws-sdk/client-sso-oidc@3.600.0)':
+  '@aws-sdk/credential-provider-sso@3.598.0(@aws-sdk/client-sso-oidc@3.600.0(@aws-sdk/client-sts@3.600.0))':
     dependencies:
       '@aws-sdk/client-sso': 3.598.0
-      '@aws-sdk/token-providers': 3.598.0(@aws-sdk/client-sso-oidc@3.600.0)
+      '@aws-sdk/token-providers': 3.598.0(@aws-sdk/client-sso-oidc@3.600.0(@aws-sdk/client-sts@3.600.0))
       '@aws-sdk/types': 3.598.0
       '@smithy/property-provider': 3.1.2
       '@smithy/shared-ini-file-loader': 3.1.2
@@ -8039,9 +8039,9 @@ snapshots:
       '@smithy/types': 2.12.0
       tslib: 2.6.3
 
-  '@aws-sdk/credential-provider-web-identity@3.598.0(@aws-sdk/client-sts@3.600.0(@aws-sdk/client-sso-oidc@3.600.0))':
+  '@aws-sdk/credential-provider-web-identity@3.598.0(@aws-sdk/client-sts@3.600.0)':
     dependencies:
-      '@aws-sdk/client-sts': 3.600.0(@aws-sdk/client-sso-oidc@3.600.0)
+      '@aws-sdk/client-sts': 3.600.0
       '@aws-sdk/types': 3.598.0
       '@smithy/property-provider': 3.1.2
       '@smithy/types': 3.2.0
@@ -8172,9 +8172,9 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/token-providers@3.598.0(@aws-sdk/client-sso-oidc@3.600.0)':
+  '@aws-sdk/token-providers@3.598.0(@aws-sdk/client-sso-oidc@3.600.0(@aws-sdk/client-sts@3.600.0))':
     dependencies:
-      '@aws-sdk/client-sso-oidc': 3.600.0
+      '@aws-sdk/client-sso-oidc': 3.600.0(@aws-sdk/client-sts@3.600.0)
       '@aws-sdk/types': 3.598.0
       '@smithy/property-provider': 3.1.2
       '@smithy/shared-ini-file-loader': 3.1.2
@@ -9198,7 +9198,7 @@ snapshots:
       json5: 2.2.3
       rollup: 4.18.0
 
-  '@namesmt/hono-adapter-aws-lambda@0.2.0-1719056816.4d340c2':
+  '@namesmt/hono-adapter-aws-lambda@0.2.1':
     dependencies:
       '@namesmt/utils-lambda': 0.0.2
       '@types/aws-lambda': 8.10.140
@@ -9388,7 +9388,7 @@ snapshots:
       defu: 6.1.4
       focus-trap: 7.5.4
       splitpanes: 3.1.5
-      unocss: 0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
+      unocss: 0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
       v-lazy-show: 0.2.4(@vue/compiler-core@3.4.30)
     transitivePeerDependencies:
       - '@unocss/webpack'
@@ -11314,7 +11314,7 @@ snapshots:
       '@unocss/reset': 0.61.0
       '@unocss/vite': 0.61.0(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
       '@unocss/webpack': 0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5))
-      unocss: 0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
+      unocss: 0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
     transitivePeerDependencies:
       - magicast
       - postcss
@@ -16353,14 +16353,14 @@ snapshots:
   unocss-preset-animations@1.0.2(@unocss/preset-wind@0.61.0)(unocss@0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))):
     dependencies:
       '@unocss/preset-wind': 0.61.0
-      unocss: 0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
+      unocss: 0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
 
   unocss-preset-shadcn@0.3.0(unocss-preset-animations@1.0.2(@unocss/preset-wind@0.61.0)(unocss@0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))))(unocss@0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))):
     dependencies:
-      unocss: 0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
+      unocss: 0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
       unocss-preset-animations: 1.0.2(@unocss/preset-wind@0.61.0)(unocss@0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1)))
 
-  unocss@0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1)):
+  unocss@0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1)):
     dependencies:
       '@unocss/astro': 0.61.0(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))
       '@unocss/cli': 0.61.0(rollup@4.18.0)
@@ -16402,7 +16402,7 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  unplugin-sheet-i18n@0.4.8(@nuxt/kit@3.12.2(rollup@3.29.4))(@nuxt/schema@3.12.2(rollup@3.29.4))(esbuild@0.21.5)(rollup@3.29.4)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1)):
+  unplugin-sheet-i18n@0.4.8(@nuxt/kit@3.12.2(rollup@3.29.4))(@nuxt/schema@3.12.2(rollup@3.29.4))(esbuild@0.21.5)(rollup@3.29.4)(vite@5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1))(webpack@5.92.1(esbuild@0.21.5)):
     dependencies:
       '@e965/xlsx': 0.20.2
       consola: 3.2.3
@@ -16417,6 +16417,7 @@ snapshots:
       esbuild: 0.21.5
       rollup: 3.29.4
       vite: 5.3.1(@types/node@20.14.8)(sass@1.77.6)(terser@5.31.1)
+      webpack: 5.92.1(esbuild@0.21.5)
 
   unplugin-vue-router@0.7.0(rollup@4.18.0)(vue-router@4.4.0(vue@3.4.30(typescript@5.5.2)))(vue@3.4.30(typescript@5.5.2)):
     dependencies:
