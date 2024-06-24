@@ -3,9 +3,9 @@ import { cors } from 'hono/cors'
 import { logger as loggerMiddleware } from 'hono/logger'
 import { env, isDevelopment } from 'std-env'
 
-import { devAdapter, tryServeApp } from './dev'
-import { cookieSession } from './middlewares/session'
 import { apiApp } from './api/app'
+import { cookieSession } from '~/middlewares/session'
+import { devAdapter, tryServeApp } from '~/dev'
 import { appFactory } from '~/factory'
 
 const _app = appFactory.createApp()
