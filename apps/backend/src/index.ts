@@ -6,7 +6,7 @@ import { env, isDevelopment } from 'std-env'
 import { apiApp } from './api/app'
 import { cookieSession } from '~/middlewares/session'
 import { devAdapter, tryServeApp } from '~/dev'
-import { appFactory } from '~/factory'
+import { appFactory, triggerFactory } from '~/factory'
 
 const _app = appFactory.createApp()
 // Registers an adapter middleware for development only
@@ -16,6 +16,9 @@ if (isDevelopment)
 export const app = _app
   // Request logging middleware
   .use(loggerMiddleware())
+
+  // Register trigger routes, after the logging middleware but before the request-based middlewares
+  .route('/', triggerFactory.honoApp)
 
   // CORS middleware
   .use(cors({
