@@ -1,6 +1,7 @@
 {
   "extends": "@local/tsconfig/base.json",
   "compilerOptions": {
+    "composite": true,
     "paths": {
       "~/*": [
         "./src/*"
