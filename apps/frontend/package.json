@@ -33,6 +33,7 @@
     "@unocss/nuxt": "^0.61.0",
     "@vueuse/core": "^10.11.0",
     "@vueuse/nuxt": "^10.11.0",
+    "backend": "workspace:*",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel": "^8.1.5",
