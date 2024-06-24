@@ -33,7 +33,6 @@ export const app = _app
   .route('/api', apiApp)
 
 export const handler = handle(app)
-export * from './logger'
 
 // Serve API server if in development
 tryServeApp(app)
