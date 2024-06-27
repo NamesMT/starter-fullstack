@@ -36,6 +36,9 @@
     },
     "lint": {},
     "dev": {
+      "env": [
+        "VSCODE_IPC_HOOK_CLI" // Needed for Nuxt Component Inspector to work
+      ],
       "cache": false,
       "persistent": true
     },
