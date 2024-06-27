@@ -1,5 +1,5 @@
 {
-  // ############# ALL ENV VARIABLES #############
+  // ############# KNOWN ENV VARIABLES #############
   //   // apps/frontend
   //   "NUXT_PUBLIC_FRONTEND_URL", // For SEO
   //   "NUXT_PUBLIC_BACKEND_URL", // To connect with backend
@@ -19,15 +19,12 @@
     "**/.env.*"
   ],
   "globalEnv": [
-    "NODE_TLS_REJECT_UNAUTHORIZED",
-    "AWS_*"
+    "NODE_TLS_REJECT_UNAUTHORIZED", // Needed to dev and build with self-signed certificates
+    "NUXT_*", // Nuxt 3 variables
+    "AWS_*" // AWS variables
   ],
   "tasks": {
     "build": {
-      "env": [
-        "NUXT_PUBLIC_FRONTEND_URL",
-        "NUXT_PUBLIC_BACKEND_URL"
-      ],
       "dependsOn": [
         "^build"
       ],
