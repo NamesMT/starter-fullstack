@@ -20,8 +20,10 @@
     "**/.env.*"
   ],
   "globalEnv": [
+    "NUXT_*" // Nuxt 3 variables
+  ],
+  "globalPassThroughEnv": [
     "NODE_TLS_REJECT_UNAUTHORIZED", // Needed to dev and build with self-signed certificates
-    "NUXT_*", // Nuxt 3 variables
     "AWS_*" // AWS variables
   ],
   "tasks": {
@@ -37,7 +39,7 @@
     },
     "lint": {},
     "dev": {
-      "env": [
+      "passThroughEnv": [
         "VSCODE_IPC_HOOK_CLI" // Needed for Nuxt Component Inspector to work
       ],
       "cache": false,
