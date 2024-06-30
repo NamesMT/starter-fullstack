@@ -30,10 +30,10 @@
     "@namesmt/hono-adapter-aws-lambda": "^0.2.2",
     "@vitest/coverage-v8": "^1.6.0",
     "consola": "^3.2.3",
-    "hono": "^4.4.7",
+    "hono": "^4.4.10",
     "hono-sessions": "^0.5.8",
     "std-env": "^3.7.0",
-    "tsx": "^4.15.7",
+    "tsx": "^4.16.0",
     "unbuild": "^2.0.0",
     "vitest": "^1.6.0"
   }
