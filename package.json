@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.21.2",
-    "@dotenvx/dotenvx": "^0.45.0",
+    "@dotenvx/dotenvx": "^1.6.2",
     "@local/tsconfig": "workspace:*",
     "@types/aws-lambda": "8.10.138",
     "@unocss/eslint-plugin": "^0.61.0",
