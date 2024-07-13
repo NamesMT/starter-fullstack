@@ -48,6 +48,14 @@ export default defineNuxtConfig({
     propsDestructure: true,
   },
 
+  vite: {
+    optimizeDeps: {
+      exclude: [
+        'primevue',
+      ],
+    },
+  },
+
   modules: [
     '@nuxt/eslint',
     '@unocss/nuxt',
