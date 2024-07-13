@@ -1,6 +1,9 @@
 import type { UserType } from '@kinde-oss/kinde-typescript-sdk'
+import type { Reactive } from 'vue'
 
 export type AuthState = { loggedIn: true, user: UserType } | { loggedIn: false, user: null }
+
+// The current plugin targets SSG and CSR, if you use SSR, you need to converts it to useState and useAsyncData for optimized performance
 
 export default defineNuxtPlugin({
   name: 'local-auth',
@@ -12,22 +15,33 @@ export default defineNuxtPlugin({
     const { $apiClient } = useNuxtApp()
     const authApi = $apiClient.api.auth
 
-    const health = await hcText(authApi.health.$get()).catch(() => false)
-    const isLoggedIn = health && await hcJson(authApi.isAuth.$get())
-    const profile = isLoggedIn ? await hcJson(authApi.profile.$get()) : null
+    const auth = reactive({
+      loggedIn: false,
+      user: null,
+    }) as Reactive<AuthState>
 
-    // For some reason if the state is typed as AuthState, TS will just stop working, keeping as untyped
-    const state = useState('authStatePlugin', shallowRef)
+    async function refreshAuth() {
+      const profile = await hcParse(authApi.profile.$get()).catch(() => null)
 
-    state.value = {
-      health,
-      loggedIn: isLoggedIn,
-      user: profile,
+      if (profile) {
+        auth.loggedIn = true
+        auth.user = profile
+      }
+      else {
+        auth.loggedIn = false
+        auth.user = null
+      }
+
+      // Refresh every 15 minutes
+      if (import.meta.client)
+        setTimeout(refreshAuth, 1000 * 60 * 15)
     }
+
+    await refreshAuth()
 
     return {
       provide: {
-        auth: state.value as AuthState & { health: boolean },
+        auth,
       },
     }
   },
