@@ -102,11 +102,12 @@ export default defineNuxtConfig({
 
   // nuxt-primevue
   primevue: {
+    importPT: { from: path.resolve(__dirname, './app/assets/vendor/primevue/presets/aura/') },
     options: {
       unstyled: true,
       ripple: true,
+      ptOptions: { mergeProps: true },
     },
-    importPT: { from: path.resolve(__dirname, './app/assets/vendor/primevue/presets/lara/') },
   },
 
   features: {
