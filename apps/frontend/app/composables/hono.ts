@@ -20,3 +20,14 @@ export async function hcJson<T extends ClientResponse<any>>(fetchRes: Awaitable<
 
   return data as Awaited<ReturnType<T['json']>>
 }
+
+/**
+ * Shortcut for omFetch(await hc())
+ * 
+ * Smartly parse the response data, and automatically throw an error if the response is not ok.
+ */
+export async function hcParse<T extends ClientResponse<any>>(fetchRes: Awaitable<T>): Promise<T extends ClientResponse<infer RT> ? RT : never> {
+  const res = await fetchRes
+
+  return omFetch(res)
+}
