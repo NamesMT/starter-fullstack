@@ -76,6 +76,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    baseUrl: import.meta.env.NUXT_PUBLIC_FRONTEND_URL,
     vueI18n: './i18n.config.ts',
     strategy: 'no_prefix',
     defaultLocale: 'en',
