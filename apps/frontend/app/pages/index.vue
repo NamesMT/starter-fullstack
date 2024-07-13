@@ -37,9 +37,6 @@ const { isPending, isError, data, error } = useQuery({
   queryKey: ['hello_test'],
   queryFn: () => hcText($apiClient.api.hello.$get()),
 })
-
-// Auth API
-const authApiStatus = $auth.health ? 'Activated' : 'Not found'
 </script>
 
 <template>
@@ -110,17 +107,17 @@ const authApiStatus = $auth.health ? 'Activated' : 'Not found'
     <div>
       <ClientOnly>
         <template #fallback>
-          <div>Auth API status: ...</div>
+          <div>Auth status: ...</div>
         </template>
-        <div>Auth API status: {{ authApiStatus }}</div>
-        <template v-if="$auth.health">
+        <div>Auth status: {{ $auth.loggedIn ? 'Logged in' : 'Not logged in' }}</div>
+        <template v-if="$auth.loggedIn">
           <div>User information:</div>
-          <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ $auth }}</pre>
-          <div class="mt-2">
-            <Button v-if="$auth.loggedIn" label="Sign-out" @pointerdown="navigateTo(`${runtimeConfig.public.backendUrl}/api/auth/logout`, { external: true })" />
-            <Button v-else label="Sign-in" @pointerdown="navigateTo(`${runtimeConfig.public.backendUrl}/api/auth/login`, { external: true })" />
-          </div>
+          <pre class="max-w-60vw overflow-hidden text-ellipsis rounded bg-black p-2 px-4 text-left text-white">{{ $auth }}</pre>
         </template>
+        <div class="mt-2 flex items-center justify-center gap-2">
+          <Button v-if="$auth.loggedIn" label="Sign-out" @pointerdown="navigateTo(getSignOutUrl(), { external: true })" />
+          <Button v-else label="Sign-in" @pointerdown="navigateTo(getSignInUrl(), { external: true })" />
+        </div>
       </ClientOnly>
     </div>
 
