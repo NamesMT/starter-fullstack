@@ -36,6 +36,7 @@
     "backend": "workspace:*",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "dayjs": "^1.11.11",
     "destr": "^2.0.3",
     "embla-carousel": "^8.1.6",
     "embla-carousel-vue": "^8.1.6",

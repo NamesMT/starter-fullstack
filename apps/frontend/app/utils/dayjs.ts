@@ -1,0 +1,55 @@
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import isoWeek from 'dayjs/plugin/isoWeek'
+import timezone from 'dayjs/plugin/timezone'
+import duration from 'dayjs/plugin/duration'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import advancedFormat from 'dayjs/plugin/advancedFormat'
+import localizedFormat from 'dayjs/plugin/localizedFormat'
+
+dayjs.extend(utc)
+dayjs.extend(isoWeek)
+dayjs.extend(timezone)
+dayjs.extend(duration)
+dayjs.extend(relativeTime)
+dayjs.extend(advancedFormat)
+dayjs.extend(localizedFormat)
+
+export { dayjs }
+
+const locales = {
+  en: () => import('dayjs/locale/en'),
+  vi: () => import('dayjs/locale/vi'),
+}
+
+export async function setDayjsLocale(locale: keyof typeof locales) {
+  if (!(locale in locales))
+    throw new Error(`locale ${locale} not defined`)
+
+  return locales[locale]().then(() => dayjs.locale(locale))
+}
+
+export interface dateSuffixParams {
+  start?: number
+  end?: number
+  download?: boolean
+  format?: string
+  delimiter?: string
+}
+/**
+ * Utility function to generate a date suffix string for things like reports
+ */
+export function dateSuffix({ start, end, download, format = 'YYYY-MM-DD', delimiter = '_' }: dateSuffixParams = {}) {
+  let str = ''
+
+  if (start)
+    str += `${delimiter}s=${dayjs(start).format(format)}`
+
+  if (typeof end !== 'undefined')
+    str += `${delimiter}e=${dayjs(end).format(format)}`
+
+  if (download)
+    str += `${delimiter}d=${dayjs().format(format)}`
+
+  return str
+}
