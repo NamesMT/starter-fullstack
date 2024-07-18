@@ -1,4 +1,5 @@
 import path from 'node:path'
+import optimizeExclude from 'vite-plugin-optimize-exclude'
 import { localcertKeyPath, localcertPath } from '@local/common/node'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -54,6 +55,9 @@ export default defineNuxtConfig({
         'primevue',
       ],
     },
+    plugins: [
+      optimizeExclude({ }),
+    ],
   },
 
   modules: [

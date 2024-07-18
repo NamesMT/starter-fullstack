@@ -220,6 +220,9 @@ importers:
       unocss-preset-shadcn:
         specifier: ^0.3.1
         version: 0.3.1(unocss-preset-animations@1.1.0(@unocss/preset-wind@0.61.0)(unocss@0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.39)(rollup@4.18.0)(vite@5.3.2(@types/node@20.14.9)(sass@1.77.8)(terser@5.31.1))))(unocss@0.61.0(@unocss/webpack@0.61.0(rollup@4.18.0)(webpack@5.92.1(esbuild@0.21.5)))(postcss@8.4.39)(rollup@4.18.0)(vite@5.3.2(@types/node@20.14.9)(sass@1.77.8)(terser@5.31.1)))
+      vite-plugin-optimize-exclude:
+        specifier: ^0.0.1
+        version: 0.0.1(vite@5.3.2(@types/node@20.14.9)(sass@1.77.8)(terser@5.31.1))
       vue:
         specifier: ^3.4.31
         version: 3.4.31(typescript@5.5.3)
@@ -7117,6 +7120,11 @@ packages:
     peerDependenciesMeta:
       '@nuxt/kit':
         optional: true
+
+  vite-plugin-optimize-exclude@0.0.1:
+    resolution: {integrity: sha512-vRb2u5XlvNa51bt+mz6QS+UHns2tGi1Z9CHuaAnPOWiAtQCZEjavUf/56oRFXauj/0ROl2FvOJ2YFD1k6sGJNQ==}
+    peerDependencies:
+      vite: '>=2.0.0'
 
   vite-plugin-vue-inspector@5.1.2:
     resolution: {integrity: sha512-M+yH2LlQtVNzJAljQM+61CqDXBvHim8dU5ImGaQuwlo13tMDHue5D7IC20YwDJuWDODiYc/cZBUYspVlyPf2vQ==}
@@ -16594,6 +16602,10 @@ snapshots:
     transitivePeerDependencies:
       - rollup
       - supports-color
+
+  vite-plugin-optimize-exclude@0.0.1(vite@5.3.2(@types/node@20.14.9)(sass@1.77.8)(terser@5.31.1)):
+    dependencies:
+      vite: 5.3.2(@types/node@20.14.9)(sass@1.77.8)(terser@5.31.1)
 
   vite-plugin-vue-inspector@5.1.2(vite@5.3.2(@types/node@20.14.9)(sass@1.77.8)(terser@5.31.1)):
     dependencies:
