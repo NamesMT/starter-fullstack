@@ -1,4 +1,4 @@
-import { handle } from '@namesmt/hono-adapter-aws-lambda'
+import { handle } from 'hono-adapter-aws-lambda'
 import { cors } from 'hono/cors'
 import { logger as loggerMiddleware } from 'hono/logger'
 import { HTTPException } from 'hono/http-exception'

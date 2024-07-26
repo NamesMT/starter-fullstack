@@ -1,4 +1,4 @@
-import type { LambdaContext, LambdaEvent } from '@namesmt/hono-adapter-aws-lambda'
+import type { LambdaContext, LambdaEvent } from 'hono-adapter-aws-lambda'
 import type { Session } from 'hono-sessions'
 
 type Bindings = {

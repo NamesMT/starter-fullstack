@@ -15,6 +15,7 @@ export default defineBuildConfig({
   ],
   declaration: false,
   clean: true,
+  externals: [/^@aws-sdk/],
   rollup: {
     inlineDependencies: true,
     esbuild: {
