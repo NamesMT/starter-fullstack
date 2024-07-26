@@ -3,6 +3,7 @@ import { env } from 'std-env'
 
 import { kindeClient } from './kindeClients'
 import { getSessionManager } from './sessionManager'
+
 import { appFactory } from '~/factory'
 
 const app = appFactory.createApp()
