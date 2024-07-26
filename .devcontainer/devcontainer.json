@@ -23,6 +23,7 @@
       "extensions": [
         "antfu.iconify",
         "antfu.unocss",
+        "arktypeio.arkdark",
         "csstools.postcss",
         "dbaeumer.vscode-eslint",
         // "george-alisson.html-preview-vscode",

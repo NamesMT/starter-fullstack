@@ -28,6 +28,9 @@ temp
 logs
 *.log
 *.pem
+# Un-ignore pems in packages/common/dev
+!packages/common/dev/*
+
 
 # debug
 npm-debug.log*
@@ -37,7 +40,6 @@ yarn-error.log*
 
 # local env files
 # It's better to use `git update-index --skip-worktree` than to ignore .env file.
-!packages/common/dev/*
 
 # turbo
 .turbo

@@ -2,6 +2,7 @@
   "recommendations": [
     "antfu.iconify",
     "antfu.unocss",
+    "arktypeio.arkdark",
     "csstools.postcss",
     "dbaeumer.vscode-eslint",
     "lokalise.i18n-ally",
