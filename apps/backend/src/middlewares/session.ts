@@ -42,8 +42,8 @@ export async function cookieSession() {
  *     - See `allowQuery` and `queryName` options.
  * - [ ] Ability to process the callback endpoint (saving the authenticated state/tokens to the associated session).  
  *   Kinde redirects back to the callback endpoint after the client signs in, and doesn't allow us to attach some custom data into it's payload, what to do next?.
- *   - [ ] Solution 1: create a `state` id prior to redirect to Kinde then load from it, this requires a CRUD store, see [reference](https://docs.kinde.com/authenticate/custom-configurations/redirect-users/#use-the-state-parameter).
- *   - [ ] Solution 2: Just put the session token into `state` then read it, no store needed compare to s1, how safe is it?
+ *   - [ ] Solution 1: create a `state` id prior to redirect to Kinde then load from it, this requires an additional storage interface, see [reference](https://docs.kinde.com/authenticate/custom-configurations/redirect-users/#use-the-state-parameter).
+ *   - [ ] Solution 2: Just put the session token into `state` then read it, no additional store needed compare to s1, how safe is it?
  *   - [ ] Solution 3: Save the session token into (HttpOnly) cookies, then read it?
  */
 export async function headerSession(options: Record<string, any> = {}) {
