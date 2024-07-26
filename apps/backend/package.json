@@ -28,6 +28,7 @@
     "@kinde-oss/kinde-typescript-sdk": "^2.9.1",
     "@local/common": "workspace:*",
     "@local/tsconfig": "workspace:*",
+    "@namesmt/utils": "^0.5.0",
     "@vitest/coverage-v8": "^2.0.4",
     "arktype": "2.0.0-beta.1",
     "consola": "^3.2.3",

@@ -1,11 +1,11 @@
 // import type { TypedResponse } from 'hono'
 // import { streamText } from 'hono/streaming'
-import { arktypeValidator } from '@hono/arktype-validator'
 import { type } from 'arktype'
 
 import { authApp } from './auth/app'
 
 import { appFactory } from '~/factory'
+import { customArktypeValidator } from '~/helpers/arktype'
 
 const app = appFactory.createApp()
   // $Auth - you'll need to setup Kinde environment variables.
@@ -23,7 +23,7 @@ const app = appFactory.createApp()
   // Simple arktype input validation demo
   .get(
     '/hello/:name',
-    arktypeValidator('param', type({
+    customArktypeValidator('param', type({
       name: 'string>0',
     })),
     async (c) => {

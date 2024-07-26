@@ -64,7 +64,7 @@ importers:
         version: 5.5.4
       unocss:
         specifier: ^0.61.5
-        version: 0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
+        version: 0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0(esbuild@0.21.5)))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
 
   apps/backend:
     devDependencies:
@@ -83,6 +83,9 @@ importers:
       '@local/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
+      '@namesmt/utils':
+        specifier: ^0.5.0
+        version: 0.5.0
       '@vitest/coverage-v8':
         specifier: ^2.0.4
         version: 2.0.4(vitest@2.0.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
@@ -220,7 +223,7 @@ importers:
         version: 1.5.4
       unocss:
         specifier: ^0.61.5
-        version: 0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
+        version: 0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0(esbuild@0.21.5)))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
       unocss-preset-animations:
         specifier: ^1.1.0
         version: 1.1.0(@unocss/preset-wind@0.61.5)(unocss@0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0(esbuild@0.21.5)))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3)))
@@ -10493,7 +10496,7 @@ snapshots:
       '@unocss/reset': 0.61.5
       '@unocss/vite': 0.61.5(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
       '@unocss/webpack': 0.61.5(rollup@4.18.1)(webpack@5.93.0(esbuild@0.21.5))
-      unocss: 0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
+      unocss: 0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0(esbuild@0.21.5)))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
     transitivePeerDependencies:
       - magicast
       - postcss
@@ -15080,14 +15083,14 @@ snapshots:
   unocss-preset-animations@1.1.0(@unocss/preset-wind@0.61.5)(unocss@0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0(esbuild@0.21.5)))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))):
     dependencies:
       '@unocss/preset-wind': 0.61.5
-      unocss: 0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
+      unocss: 0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0(esbuild@0.21.5)))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
 
   unocss-preset-shadcn@0.3.1(unocss-preset-animations@1.1.0(@unocss/preset-wind@0.61.5)(unocss@0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0(esbuild@0.21.5)))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))))(unocss@0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0(esbuild@0.21.5)))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))):
     dependencies:
-      unocss: 0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
+      unocss: 0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0(esbuild@0.21.5)))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
       unocss-preset-animations: 1.1.0(@unocss/preset-wind@0.61.5)(unocss@0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0(esbuild@0.21.5)))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3)))
 
-  unocss@0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3)):
+  unocss@0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0(esbuild@0.21.5)))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3)):
     dependencies:
       '@unocss/astro': 0.61.5(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
       '@unocss/cli': 0.61.5(rollup@4.18.1)

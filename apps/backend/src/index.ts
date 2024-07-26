@@ -30,6 +30,13 @@ export const app = _app
       return err.getResponse()
     }
 
+    if (err instanceof DetailedError) {
+      return c.json(
+        { message: err.message, code: err.code, detail: err.detail },
+        err.statusCode ?? 500,
+      )
+    }
+
     return c.json(
       { message: err.message },
       500,
