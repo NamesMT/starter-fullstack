@@ -18,7 +18,7 @@ if (isDevelopment)
 
 export const app = _app
   // Register global not found handler
-  .notFound(c => c.text('four-o-four'))
+  .notFound(c => c.text('four-o-four', 404))
 
   // Register global error handler
   .onError((err, c) => {
