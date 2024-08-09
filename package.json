@@ -2,9 +2,9 @@
   "name": "starter-fullstack",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.6.0",
+  "packageManager": "pnpm@9.7.0",
   "engines": {
-    "node": ">=20.13.1"
+    "node": ">=20.16.0"
   },
   "scripts": {
     "build": "dotenvx run -- turbo run build",
@@ -17,27 +17,27 @@
     "sst": "ion"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.23.2",
+    "@antfu/eslint-config": "^2.25.0",
     "@dotenvx/dotenvx": "^1.6.4",
     "@local/tsconfig": "workspace:*",
-    "@types/aws-lambda": "8.10.138",
-    "@unocss/eslint-plugin": "^0.61.5",
-    "eslint": "^9.7.0",
+    "@types/aws-lambda": "8.10.143",
+    "@unocss/eslint-plugin": "^0.61.9",
+    "eslint": "^9.8.0",
     "frontend": "workspace:*",
-    "lint-staged": "^15.2.7",
+    "lint-staged": "^15.2.8",
     "pathe": "^1.1.2",
     "simple-git-hooks": "^2.11.1",
     "std-env": "^3.7.0",
-    "turbo": "^2.0.9",
+    "turbo": "^2.0.12",
     "typescript": "^5.5.4",
-    "unocss": "^0.61.5"
+    "unocss": "^0.61.9"
   },
   "pnpm": {
     "overrides": {
-      "hasown": "npm:@nolyfill/hasown@^1",
-      "is-core-module": "npm:@nolyfill/is-core-module@^1",
-      "isarray": "npm:@nolyfill/isarray@^1",
-      "string.prototype.codepointat": "npm:@nolyfill/string.prototype.codepointat@^1"
+      "hasown": "npm:@nolyfill/hasown@^1.0.29",
+      "is-core-module": "npm:@nolyfill/is-core-module@^1.0.39",
+      "isarray": "npm:@nolyfill/isarray@^1.0.29",
+      "string.prototype.codepointat": "npm:@nolyfill/string.prototype.codepointat@^1.0.28"
     },
     "patchedDependencies": {
       "execa@5.1.1": "patches/execa@5.1.1.patch"
