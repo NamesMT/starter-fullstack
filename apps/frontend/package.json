@@ -32,7 +32,7 @@
     "@tanstack/vue-query": "^5.51.9",
     "@unocss/nuxt": "^0.61.5",
     "@vueuse/core": "^10.11.0",
-    "@vueuse/nuxt": "^10.11.0",
+    "@vueuse/nuxt": "^11.0.1",
     "backend": "workspace:*",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
