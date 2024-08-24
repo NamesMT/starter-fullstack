@@ -186,9 +186,6 @@ importers:
       idb-keyval:
         specifier: ^6.2.1
         version: 6.2.1
-      lucide-vue-next:
-        specifier: ^0.435.0
-        version: 0.435.0(vue@3.4.38(typescript@5.5.4))
       nuxt:
         specifier: ^3.13.0
         version: 3.13.0(@parcel/watcher@2.4.1)(@types/node@22.5.0)(eslint@9.9.1(jiti@1.21.6))(idb-keyval@6.2.1)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.21.0)(sass@1.77.8)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@22.5.0)(sass@1.77.8)(terser@5.31.6))
@@ -4713,11 +4710,6 @@ packages:
   lru-cache@6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
-
-  lucide-vue-next@0.435.0:
-    resolution: {integrity: sha512-SqMLTJH8o+WOCyXBTNn/rw1yxI9L3pKlHx5mrFgWUHKlqfeqtuEO2sIAmnF3aG1fWQZAiXjMdSTAHufNlWEh+Q==}
-    peerDependencies:
-      vue: '>=3.0.1'
 
   magic-string-ast@0.6.2:
     resolution: {integrity: sha512-oN3Bcd7ZVt+0VGEs7402qR/tjgjbM7kPlH/z7ufJnzTLVBzXJITRHOJiwMmmYMgZfdoWQsfQcY+iKlxiBppnMA==}
@@ -12650,10 +12642,6 @@ snapshots:
   lru-cache@6.0.0:
     dependencies:
       yallist: 4.0.0
-
-  lucide-vue-next@0.435.0(vue@3.4.38(typescript@5.5.4)):
-    dependencies:
-      vue: 3.4.38(typescript@5.5.4)
 
   magic-string-ast@0.6.2:
     dependencies:

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ArrowLeft } from 'lucide-vue-next'
 import { useCarousel } from './useCarousel'
 import type { WithClassAsProps } from './interface'
 import { cn } from '@/lib/utils'
@@ -24,7 +23,7 @@ const { orientation, canScrollPrev, scrollPrev } = useCarousel()
     @pointerdown="scrollPrev"
   >
     <slot>
-      <ArrowLeft class="h-4 w-4 text-current" />
+      <div i-lucide:arrow-left class="h-4 w-4 text-current" />
     </slot>
   </Button>
 </template>

@@ -11,8 +11,12 @@
 - PrimeVue
   - Using [tailwind preset mode](https://tailwind.primevue.org/nuxt/)
 - Shadcn/vue
+  - > Why two UI libraries? - the way shadcn works in reality is that you only installs what you use, instead of you installing "embla-carousel" and implements a Carousel component yourself, shadcn will help you do it, and provides you with some pre-made document, wrappers component and their styling system, so it will not bloat the application compared to cases like PrimeVue + Vuetify.
   - Configured for UnoCSS with [hyoban/unocss-preset-shadcn](https://github.com/hyoban/unocss-preset-shadcn).
   - Share the primary color and could work in parallel with PrimeVue.
+  - Note: `lucide-vue-next` (icon pack) is not pre-installed, you can:
+    - Install `lucide-vue-next`
+    -  Convert usage of `lucide-vue-next` icons to UnoCSS icons (Recommended)
 - [ColorMode](https://github.com/nuxt-modules/color-mode)
   - Dark and Light mode with auto detection made easy with Nuxt.
 - [NuxtImage](https://image.nuxt.com/)

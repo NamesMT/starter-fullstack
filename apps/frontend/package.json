@@ -43,7 +43,6 @@
     "h3-proxy": "^1.13.0",
     "hono": "^4.5.8",
     "idb-keyval": "^6.2.1",
-    "lucide-vue-next": "^0.435.0",
     "nuxt": "^3.13.0",
     "nuxt-primevue": "^3.0.0",
     "ohash": "^1.1.3",
