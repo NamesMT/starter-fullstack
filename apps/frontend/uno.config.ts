@@ -11,6 +11,25 @@ import {
 import presetAnimations from 'unocss-preset-animations'
 import { presetShadcn } from 'unocss-preset-shadcn'
 
+import { parseColor } from 'unocss/preset-mini'
+
+const colorsPaletteMap: Record<string, string> = {}
+for (const color of ['primary', 'surface']) {
+  Array.from({ length: 11 }, (_, n) => n + 1).forEach((num) => {
+    const key = `${color}-${colorIndexer(num)}`
+    colorsPaletteMap[key] = `hsl(var(--${key}))`
+  })
+}
+function colorIndexer(num: number) {
+  let res = 0
+  while (num > 0) {
+    --num
+    res += (res < 100 || res >= 900) ? 50 : 100
+  }
+
+  return res
+}
+
 export default defineConfig({
   theme: {
     ringWidth: {
@@ -31,41 +50,26 @@ export default defineConfig({
       'primary-highlight-inverse': 'hsl(var(--primary-highlight-inverse))',
       'primary-highlight-hover': 'hsl(var(--primary)/var(--primary-highlight-hover-opacity))',
 
-      'primary-50': 'hsl(var(--primary-50))',
-      'primary-100': 'hsl(var(--primary-100))',
-      'primary-200': 'hsl(var(--primary-200))',
-      'primary-300': 'hsl(var(--primary-300))',
-      'primary-400': 'hsl(var(--primary-400))',
-      'primary-500': 'hsl(var(--primary-500))',
-      'primary-600': 'hsl(var(--primary-600))',
-      'primary-700': 'hsl(var(--primary-700))',
-      'primary-800': 'hsl(var(--primary-800))',
-      'primary-900': 'hsl(var(--primary-900))',
-      'primary-950': 'hsl(var(--primary-950))',
-
-      'surface-0': 'hsl(var(--surface-0))',
-      'surface-50': 'hsl(var(--surface-50))',
-      'surface-100': 'hsl(var(--surface-100))',
-      'surface-200': 'hsl(var(--surface-200))',
-      'surface-300': 'hsl(var(--surface-300))',
-      'surface-400': 'hsl(var(--surface-400))',
-      'surface-500': 'hsl(var(--surface-500))',
-      'surface-600': 'hsl(var(--surface-600))',
-      'surface-700': 'hsl(var(--surface-700))',
-      'surface-800': 'hsl(var(--surface-800))',
-      'surface-900': 'hsl(var(--surface-900))',
-      'surface-950': 'hsl(var(--surface-950))',
+      ...colorsPaletteMap,
     },
   },
   shortcuts: [
   ],
   rules: [
-    // Declaring css variable with Uno: $SOMETHING=[10px]
-    [/^\$(.+?)-\[(.+)\]$/, ([, name, value]) => ({
-      [`--${name}`]: value,
+    // Declaring css variable with Uno: $mainColor-primary-500
+    [/^\$(\w+)-(.+)$/, ([, name, value], { theme }) => ({
+      [`--${name}`]: parseColor(value!, theme)?.color || value,
     })],
     // Re-declare to fix priority issue with some primevue components
     ['rounded-none', { 'border-radius': '0px' }],
+    // bg dimming
+    [/^bg-dim-(\d+)$/, ([, v]) => ({
+      'background-image': `linear-gradient(rgba(0, 0, 0, ${+v! / 100}), rgba(0, 0, 0, ${+v! / 100}))`,
+    })],
+    // bg lighten
+    [/^bg-lighten-(\d+)$/, ([, v]) => ({
+      'background-image': `linear-gradient(rgba(255, 255, 255, ${+v! / 100}), rgba(255, 255, 255, ${+v! / 100}))`,
+    })],
   ],
   variants: [
     {
@@ -112,6 +116,7 @@ export default defineConfig({
   content: {
     pipeline: {
       include: [
+        // Default
         /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
         // Primevue tailwind preset
         'assets/vendor/primevue/presets/**',
