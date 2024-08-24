@@ -78,11 +78,11 @@ export default defineNuxtConfig({
     locales: [
       {
         code: 'en',
-        iso: 'en-US',
+        language: 'en-US',
       },
       {
         code: 'vi',
-        iso: 'vi-VN',
+        language: 'vi-VN',
       },
     ],
   },
