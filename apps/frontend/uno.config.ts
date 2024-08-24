@@ -15,11 +15,13 @@ import { parseColor } from 'unocss/preset-mini'
 
 const colorsPaletteMap: Record<string, string> = {}
 for (const color of ['primary', 'surface']) {
-  Array.from({ length: 11 }, (_, n) => n + 1).forEach((num) => {
+  // length 12 = 0-950
+  Array.from({ length: 12 }, (_, i) => i).forEach((num) => {
     const key = `${color}-${colorIndexer(num)}`
     colorsPaletteMap[key] = `hsl(var(--${key}))`
   })
 }
+// Generates color index following the pattern: 0 50 100 200..900 950 1000
 function colorIndexer(num: number) {
   let res = 0
   while (num > 0) {
