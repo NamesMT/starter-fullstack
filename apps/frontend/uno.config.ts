@@ -94,7 +94,11 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        sans: 'Chivo',
+        sans: {
+          name: 'Chivo',
+          weights: ['100..900'],
+          italic: true,
+        },
         mono: 'Chivo Mono',
       },
     }),
