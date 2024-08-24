@@ -9,7 +9,6 @@
 - Tanstack Query
   - Default is configured for client-side fetching usage, data is persisted to IndexedDB.
 - PrimeVue
-  - Using [tailwind preset mode](https://tailwind.primevue.org/nuxt/)
 - Shadcn/vue
   - > Why two UI libraries? - the way shadcn works in reality is that you only installs what you use, instead of you installing "embla-carousel" and implements a Carousel component yourself, shadcn will help you do it, and provides you with some pre-made document, wrappers component and their styling system, so it will not bloat the application compared to cases like PrimeVue + Vuetify.
   - Configured for UnoCSS with [hyoban/unocss-preset-shadcn](https://github.com/hyoban/unocss-preset-shadcn).

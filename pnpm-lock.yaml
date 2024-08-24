@@ -16,7 +16,7 @@ importers:
     dependencies:
       sst:
         specifier: ion
-        version: 3.0.69(hono@4.5.8)
+        version: 3.0.70(hono@4.5.8)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.27.1
@@ -80,7 +80,7 @@ importers:
         version: link:../../packages/tsconfig
       '@namesmt/utils':
         specifier: ^0.5.3
-        version: 0.5.3
+        version: 0.5.4
       '@vitest/coverage-v8':
         specifier: ^2.0.5
         version: 2.0.5(vitest@2.0.5(@types/node@22.5.0)(sass@1.77.8)(terser@5.31.6))
@@ -95,7 +95,7 @@ importers:
         version: 4.5.8
       hono-adapter-aws-lambda:
         specifier: ^1.0.0
-        version: 1.0.0(hono@4.5.8)
+        version: 1.0.1(hono@4.5.8)
       hono-sessions:
         specifier: ^0.5.8
         version: 0.5.8
@@ -113,6 +113,10 @@ importers:
         version: 2.0.5(@types/node@22.5.0)(sass@1.77.8)(terser@5.31.6)
 
   apps/frontend:
+    dependencies:
+      '@primevue/themes':
+        specifier: ^4.0.5
+        version: 4.0.5
     devDependencies:
       '@kinde-oss/kinde-typescript-sdk':
         specifier: ^2.9.1
@@ -141,6 +145,9 @@ importers:
       '@nuxtjs/seo':
         specifier: 2.0.0-rc.10
         version: 2.0.0-rc.10(h3@1.12.0)(magicast@0.3.4)(rollup@4.21.0)(vite@5.4.2(@types/node@22.5.0)(sass@1.77.8)(terser@5.31.6))(vue@3.4.38(typescript@5.5.4))
+      '@primevue/nuxt-module':
+        specifier: ^4.0.5
+        version: 4.0.5(@babel/parser@7.25.4)(magicast@0.3.4)(rollup@4.21.0)(vue@3.4.38(typescript@5.5.4))
       '@tanstack/query-persist-client-core':
         specifier: ^5.52.0
         version: 5.52.0
@@ -189,9 +196,6 @@ importers:
       nuxt:
         specifier: ^3.13.0
         version: 3.13.0(@parcel/watcher@2.4.1)(@types/node@22.5.0)(eslint@9.9.1(jiti@1.21.6))(idb-keyval@6.2.1)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.21.0)(sass@1.77.8)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@22.5.0)(sass@1.77.8)(terser@5.31.6))
-      nuxt-primevue:
-        specifier: ^3.0.0
-        version: 3.0.0(magicast@0.3.4)(rollup@4.21.0)(vue@3.4.38(typescript@5.5.4))
       ohash:
         specifier: ^1.1.3
         version: 1.1.3
@@ -257,7 +261,7 @@ importers:
         version: link:../tsconfig
       unplugin-sheet-i18n:
         specifier: ^0.4.10
-        version: 0.4.10(@nuxt/kit@3.13.0(magicast@0.3.4)(rollup@3.29.4))(@nuxt/schema@3.13.0(rollup@3.29.4))(esbuild@0.23.1)(rollup@3.29.4)(vite@5.4.2(@types/node@22.5.0)(sass@1.77.8)(terser@5.31.6))(webpack@5.94.0(esbuild@0.23.1))
+        version: 0.4.11(@nuxt/kit@3.13.0(magicast@0.3.4)(rollup@4.21.0))(@nuxt/schema@3.13.0(rollup@4.21.0))(@types/node@22.5.0)(sass@1.77.8)(terser@5.31.6)
 
   packages/tsconfig:
     devDependencies:
@@ -1524,12 +1528,12 @@ packages:
     peerDependencies:
       rollup: ^1.20.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
 
-  '@namesmt/utils-lambda@0.1.1':
-    resolution: {integrity: sha512-dqHXL+H/NDAUcY4QuZ3KJ1S1uvNm26gfgP1QN3gAwW6tFc66T1qSdV7kKBxYWowcpFHzDkwfylCfAf3QPnqsUA==}
+  '@namesmt/utils-lambda@0.1.2':
+    resolution: {integrity: sha512-K/v+OG9u/7wrN8hpYVHc6LbFcVg1tsOs7HdJUCXdI5jufTSEU+RUxLlfA8p/4/Va31pCoIB9kwqPyOI4J60WKw==}
     engines: {node: '>=20.13.1'}
 
-  '@namesmt/utils@0.5.3':
-    resolution: {integrity: sha512-S1llcr2cNUb5kHFBwuPMqME9BfBVobsIGXyjURP7QulnngvhMe+WQti0hXflwVsMsOLOo+XPFey6ZeoykDoBZw==}
+  '@namesmt/utils@0.5.4':
+    resolution: {integrity: sha512-RQMyYGBXwmtJZlFNbsuqMbED10T+dHwTAwEb3rLsXRQLiA64SDocEhMdNSx7ZIC+BeIAdSp/RdovcDuIH2QzfA==}
     engines: {node: '>=18.0.0'}
 
   '@namesmt/vue-query-nuxt@0.3.3':
@@ -1770,6 +1774,40 @@ packages:
 
   '@polka/url@1.0.0-next.25':
     resolution: {integrity: sha512-j7P6Rgr3mmtdkeDGTe0E/aYyWEWVtc5yFXtHCRHs28/jptDEWfaVOc5T7cblqy1XKPPfCxJc/8DwQ5YgLOZOVQ==}
+
+  '@primeuix/styled@0.0.5':
+    resolution: {integrity: sha512-pVoGn/uPkVm/DyF3TR3EmH/pL/dP4nR42FcYbVduFq9VfO3KVeOEqvcCULHXos66RZO9MCbCFUoLy6ctf9GUGQ==}
+    engines: {node: '>=12.11.0'}
+
+  '@primeuix/utils@0.0.5':
+    resolution: {integrity: sha512-ntUiUgtRtkF8KuaxHffzhYxQxoXk6LAPHm7CVlFjdqS8Rx8xRkLkZVyo84E+pO2hcNFkOGVP/GxHhQ2s94O8zA==}
+    engines: {node: '>=12.11.0'}
+
+  '@primevue/auto-import-resolver@4.0.5':
+    resolution: {integrity: sha512-rSV3s+VJRt10gH3Cly1ONOZ5jwet1XvH4n617KJiy03vp3o1kOIs/WtG9yfgKRqI+CYMiHMHc9b3Sd4r74BELw==}
+    engines: {node: '>=12.11.0'}
+
+  '@primevue/core@4.0.5':
+    resolution: {integrity: sha512-DUCslDA93eUOVW0A1I3yoZgRLI4zmI2++loZQXbUF5jaXCwKiAza14+iyUU+cWH27VSq+jQnCEP9QJtPZiJJ0w==}
+    engines: {node: '>=12.11.0'}
+    peerDependencies:
+      vue: ^3.0.0
+
+  '@primevue/icons@4.0.5':
+    resolution: {integrity: sha512-ZxR9W1wlAE2fTtUhrHyeMx5t0jNyAgxDcHPm0cNXpX8q1XF95rSM/qb48QKXIBDBrJ/xs57BcyCNADP/VDPY4g==}
+    engines: {node: '>=12.11.0'}
+
+  '@primevue/metadata@4.0.5':
+    resolution: {integrity: sha512-IydjQ4K1k4eJppBCmup/YPTpHWqJt05yuSIxLoCtk6h0ivljEIJ/TGScEciRjF5u4mIIhltyjdHCpexVnoCaIQ==}
+    engines: {node: '>=12.11.0'}
+
+  '@primevue/nuxt-module@4.0.5':
+    resolution: {integrity: sha512-HR7hLiFbYetlfFDeuofUi/zFd+hjYgrbT5ea8LgKlAkcBxyjcUhMFnuRz57XUtLe7bgnV+RDR0QLSO5FpDg9LQ==}
+    engines: {node: '>=12.11.0'}
+
+  '@primevue/themes@4.0.5':
+    resolution: {integrity: sha512-cRrAhOapOT8eFCTDwNdB/acg2ZEEkn7y6h6p188PYSjJsWnYK+D8eI1Js1ZB5HwWo4sWs3oR3Sy8bPwejnGbAw==}
+    engines: {node: '>=12.11.0'}
 
   '@resvg/resvg-js-android-arm-eabi@2.6.2':
     resolution: {integrity: sha512-FrJibrAk6v29eabIPgcTUMPXiEz8ssrAk7TXxsiZzww9UTQ1Z5KAbFJs+Z0Ez+VZTYgnE5IQJqBcoSiMebtPHA==}
@@ -4247,8 +4285,8 @@ packages:
     resolution: {integrity: sha512-Ox1pJVrDCyGHMG9CFg1tmrRUMRPRsAWYc/PinY0XzJU4K7y7vjNoLKIQ7BR5UJMCxNN8EM1MNDmHWA/B3aZUuw==}
     engines: {node: '>=6'}
 
-  hono-adapter-aws-lambda@1.0.0:
-    resolution: {integrity: sha512-cCksVhGaEYUraa2DlGZUO6pjiHJXJrQUtezgBmJsRCVmDRjSg7OcsikLwkKydFdbWIGFhZ2xMq5XEPazjAVRlA==}
+  hono-adapter-aws-lambda@1.0.1:
+    resolution: {integrity: sha512-sHE9jgBOiu9cKlGziKFXpgg/WLHX3MGcgFVyWg1jWG+CjMceHm99Q/tYcPFB0hINVhOOTqXWjyNEtGApSzu4Ow==}
     engines: {node: '>=18.20.3'}
     peerDependencies:
       hono: '>=4.5.1'
@@ -4991,9 +5029,6 @@ packages:
     resolution: {integrity: sha512-rhfjZBONskXJAnsmv5Wy7f6jbSMRw4JuJ3As4Vg+LttMVzw0YwH/X/gDFRVhJ1z2/2ahvBiBiJAnkmlncR+9Ow==}
     engines: {node: '>=18.0.0'}
 
-  nuxt-primevue@3.0.0:
-    resolution: {integrity: sha512-MC3ubLTF0hzUEsQ2gYzzlzaW1gXN9/wrpbWnS9xwK47TWw1gcfim8idu5mcOx+l66CPAtTLOR1QJahkDc4m9XA==}
-
   nuxt-schema-org@3.3.9:
     resolution: {integrity: sha512-2irEKbMC3T8a/ob4hieuGhe+C7AHmrEQMhEwnfQXR2Tmdvp/YYMRA7zxbK7aml4qj/O7ljMVkX4VRV9Nd7IT2Q==}
 
@@ -5445,10 +5480,9 @@ packages:
   primeicons@7.0.0:
     resolution: {integrity: sha512-jK3Et9UzwzTsd6tzl2RmwrVY/b8raJ3QZLzoDACj+oTJ0oX7L9Hy+XnVwgo4QVKlKpnP/Ur13SXV/pVh4LzaDw==}
 
-  primevue@3.53.0:
-    resolution: {integrity: sha512-mRqTPGGZX+3AQokaCCjxLVSNEjGEA7LaPdBT4qSpGEdMstK6vhUBCxgLH7IPjHudbaSi4Xo3CIO62pXQxbz8dQ==}
-    peerDependencies:
-      vue: ^3.0.0
+  primevue@4.0.5:
+    resolution: {integrity: sha512-MALszGIZ5SnEQy1XeZLBFhpMXQ1OS7D1U7H+l/JAX5U46RQ1vufo7NAiWbbV5/ADjPGw4uLplqMQxujkksNY2g==}
+    engines: {node: '>=12.11.0'}
 
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
@@ -5805,33 +5839,33 @@ packages:
     resolution: {integrity: sha512-1POYv7uv2gXoyGFpBCmpDVSNV74IfsWlDW216UPjbWufNf+bSU6GdbDsxdcxtfwb4xlI3yxzOTKClUosxARYrQ==}
     engines: {node: '>=0.10.0'}
 
-  sst-darwin-arm64@3.0.69:
-    resolution: {integrity: sha512-D25D7a3dsDcVGo/kibxcksF03fC54akyQU4JUiLrWrz+scp225rGSc3s9cjsE8UobUxNHY11vLg4TQkvP/qKDw==}
+  sst-darwin-arm64@3.0.70:
+    resolution: {integrity: sha512-70IjoQkUJqTlIA9y04clBQjda6Xd6WgG0vA9mF9tB+7QRmSU+KiSVEAIo8L2EQoHNATlfyFJF9+6FDNCKpMx3Q==}
     cpu: [arm64]
     os: [darwin]
 
-  sst-darwin-x64@3.0.69:
-    resolution: {integrity: sha512-XW/dai8VTxslJSeiwGM5vuzyAvR/35PXDSpOreulZDJkj/fptKLyCtKkT1Ms18HB9ImIu/Doka7aBZGexYuZ1g==}
+  sst-darwin-x64@3.0.70:
+    resolution: {integrity: sha512-hqF39p2VADLNxZM1EhroAFQtaIJeLDWnd80UaFDu12SHYPB6H8wmtK/tTfDFBDk4211IBpR6S4jVylbtNUfu+w==}
     cpu: [x64]
     os: [darwin]
 
-  sst-linux-arm64@3.0.69:
-    resolution: {integrity: sha512-UoZPz0Zh/ezOYoETkCtDEzn91bXcIIpmMKkkOLsjOxukmaXkLhK27GiBNH9KNfX3NuKYPuAYvGz/AXMf0SHj/A==}
+  sst-linux-arm64@3.0.70:
+    resolution: {integrity: sha512-hS7r/Eh98o7fXJyPL+DMau/v/2q65DsBrLgw6XbTKJmSUvj8DgRa+YrH38WKL1XjcDVJep+yDjxUD0OUqI9Iuw==}
     cpu: [arm64]
     os: [linux]
 
-  sst-linux-x64@3.0.69:
-    resolution: {integrity: sha512-C8T9iflB6orDwEu7G9IPrd+UorZP28JXb3QCfxdmmVs0vu5xyDtPrX1PfxTfRehMBaEk6+BPJFDpe83eGr5EYg==}
+  sst-linux-x64@3.0.70:
+    resolution: {integrity: sha512-8MLCqNQiREK2O5VWAQXxA2otfRMy/youPPA/xpRk7nBFW2bojfRBlM64ur4DrOXlhhxMO3Qp34jD4mUmxikjlg==}
     cpu: [x64]
     os: [linux]
 
-  sst-linux-x86@3.0.69:
-    resolution: {integrity: sha512-CkEJXS8TB4hBeEa1ZCvqOwoTKoHOFQkNFcgfaggN5qzE4+qHu6nYy3vlcuymHopnBdBjRIY6ZG9jE016FhNxrA==}
+  sst-linux-x86@3.0.70:
+    resolution: {integrity: sha512-vpZGov18e0GauLi5Ln9qYmY79hmgYujo/veCXyunz50I5rcuRyQZ3JZP3Hz5SBiVgvL9a1gR42r6H3VDziHodg==}
     cpu: [x86]
     os: [linux]
 
-  sst@3.0.69:
-    resolution: {integrity: sha512-MEV/S9rYbAtKtncXZ2XGzY6EFOQvtyUo2yyG3iyZu2WfjFraE1aPDMmXbZE584DEFzt8vKuxpFXpARyvZkNvXg==}
+  sst@3.0.70:
+    resolution: {integrity: sha512-yw69fju5+/kgDsIZdkhdKgn1GVAvZpVe4TdnzkMRVVCDt4MwnkenPe7MpuEQC4YRTTyJRwq+n43cIJt3xIS54g==}
     hasBin: true
     peerDependencies:
       hono: 4.x
@@ -6261,28 +6295,29 @@ packages:
     resolution: {integrity: sha512-IA1r4JGZ6O/Zn3CZxSShQBuJ2fbNCDGCtMOz0q+K2kOhgZHJUH3Y+hTthcitjH0vx5C0QN3lWwgsa/4cL1cS0w==}
     engines: {node: '>=18.12.0'}
 
-  unplugin-sheet-i18n@0.4.10:
-    resolution: {integrity: sha512-danKydfBAIDpA5zVJBzFtAq8/BBd+Ao0K2ha6gSounf7pDs8eoY1WQmg+f4mvpeHRQ1zlOi+FzBqwnvTP8u63Q==}
+  unplugin-sheet-i18n@0.4.11:
+    resolution: {integrity: sha512-hxk5MVwv5carGAn6FOG0EMF2skm3M7WVXxX4n2aaitOWjBYeTwoZUvNF6Wfxvqe9P2o40v88Bd5oObMpcrJ4FA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       '@nuxt/kit': ^3
       '@nuxt/schema': ^3
-      esbuild: '*'
-      rollup: ^3
-      vite: '>=3'
-      webpack: ^4 || ^5
     peerDependenciesMeta:
       '@nuxt/kit':
         optional: true
       '@nuxt/schema':
         optional: true
-      esbuild:
+
+  unplugin-vue-components@0.27.0:
+    resolution: {integrity: sha512-77eTEy23sQ0UpzGWnZ9I2mY3cnmXwklz4ITcn3JfxjCoX643ghImkiZ4nFm58sxbdVcc4Fo/o4LIoFnlqEqsSg==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@babel/parser': ^7.15.8
+      '@nuxt/kit': ^3.2.2
+      vue: 2 || 3
+    peerDependenciesMeta:
+      '@babel/parser':
         optional: true
-      rollup:
-        optional: true
-      vite:
-        optional: true
-      webpack:
+      '@nuxt/kit':
         optional: true
 
   unplugin-vue-router@0.10.7:
@@ -8363,10 +8398,10 @@ snapshots:
       json5: 2.2.3
       rollup: 4.21.0
 
-  '@namesmt/utils-lambda@0.1.1':
+  '@namesmt/utils-lambda@0.1.2':
     dependencies:
       '@aws-sdk/client-lambda': 3.637.0
-      '@namesmt/utils': 0.5.3
+      '@namesmt/utils': 0.5.4
       '@types/aws-lambda': 8.10.143
       consola: 3.2.3
       destr: 2.0.3
@@ -8375,7 +8410,7 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@namesmt/utils@0.5.3':
+  '@namesmt/utils@0.5.4':
     dependencies:
       '@antfu/utils': 0.7.10
 
@@ -8609,34 +8644,6 @@ snapshots:
       - supports-color
       - uWebSockets.js
 
-  '@nuxt/kit@3.13.0(magicast@0.3.4)(rollup@3.29.4)':
-    dependencies:
-      '@nuxt/schema': 3.13.0(rollup@3.29.4)
-      c12: 1.11.1(magicast@0.3.4)
-      consola: 3.2.3
-      defu: 6.1.4
-      destr: 2.0.3
-      globby: 14.0.2
-      hash-sum: 2.0.0
-      ignore: 5.3.2
-      jiti: 1.21.6
-      klona: 2.0.6
-      knitwork: 1.1.0
-      mlly: 1.7.1
-      pathe: 1.1.2
-      pkg-types: 1.2.0
-      scule: 1.3.0
-      semver: 7.6.3
-      ufo: 1.5.4
-      unctx: 2.3.1
-      unimport: 3.11.0(rollup@3.29.4)
-      untyped: 1.4.2
-    transitivePeerDependencies:
-      - magicast
-      - rollup
-      - supports-color
-    optional: true
-
   '@nuxt/kit@3.13.0(magicast@0.3.4)(rollup@4.21.0)':
     dependencies:
       '@nuxt/schema': 3.13.0(rollup@4.21.0)
@@ -8663,25 +8670,6 @@ snapshots:
       - magicast
       - rollup
       - supports-color
-
-  '@nuxt/schema@3.13.0(rollup@3.29.4)':
-    dependencies:
-      compatx: 0.1.8
-      consola: 3.2.3
-      defu: 6.1.4
-      hookable: 5.5.3
-      pathe: 1.1.2
-      pkg-types: 1.2.0
-      scule: 1.3.0
-      std-env: 3.7.0
-      ufo: 1.5.4
-      uncrypto: 0.1.3
-      unimport: 3.11.0(rollup@3.29.4)
-      untyped: 1.4.2
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
-    optional: true
 
   '@nuxt/schema@3.13.0(rollup@4.21.0)':
     dependencies:
@@ -8944,6 +8932,52 @@ snapshots:
   '@pkgr/core@0.1.1': {}
 
   '@polka/url@1.0.0-next.25': {}
+
+  '@primeuix/styled@0.0.5':
+    dependencies:
+      '@primeuix/utils': 0.0.5
+
+  '@primeuix/utils@0.0.5': {}
+
+  '@primevue/auto-import-resolver@4.0.5':
+    dependencies:
+      '@primevue/metadata': 4.0.5
+
+  '@primevue/core@4.0.5(vue@3.4.38(typescript@5.5.4))':
+    dependencies:
+      '@primeuix/styled': 0.0.5
+      '@primeuix/utils': 0.0.5
+      vue: 3.4.38(typescript@5.5.4)
+
+  '@primevue/icons@4.0.5(vue@3.4.38(typescript@5.5.4))':
+    dependencies:
+      '@primeuix/utils': 0.0.5
+      '@primevue/core': 4.0.5(vue@3.4.38(typescript@5.5.4))
+    transitivePeerDependencies:
+      - vue
+
+  '@primevue/metadata@4.0.5': {}
+
+  '@primevue/nuxt-module@4.0.5(@babel/parser@7.25.4)(magicast@0.3.4)(rollup@4.21.0)(vue@3.4.38(typescript@5.5.4))':
+    dependencies:
+      '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@4.21.0)
+      '@primeuix/styled': 0.0.5
+      '@primeuix/utils': 0.0.5
+      '@primevue/auto-import-resolver': 4.0.5
+      '@primevue/metadata': 4.0.5
+      pathe: 1.1.2
+      primevue: 4.0.5(vue@3.4.38(typescript@5.5.4))
+      unplugin-vue-components: 0.27.0(@babel/parser@7.25.4)(@nuxt/kit@3.13.0(magicast@0.3.4)(rollup@4.21.0))(rollup@4.21.0)(vue@3.4.38(typescript@5.5.4))
+    transitivePeerDependencies:
+      - '@babel/parser'
+      - magicast
+      - rollup
+      - supports-color
+      - vue
+
+  '@primevue/themes@4.0.5':
+    dependencies:
+      '@primeuix/styled': 0.0.5
 
   '@resvg/resvg-js-android-arm-eabi@2.6.2':
     optional: true
@@ -12158,9 +12192,9 @@ snapshots:
 
   hex-rgb@4.3.0: {}
 
-  hono-adapter-aws-lambda@1.0.0(hono@4.5.8):
+  hono-adapter-aws-lambda@1.0.1(hono@4.5.8):
     dependencies:
-      '@namesmt/utils-lambda': 0.1.1
+      '@namesmt/utils-lambda': 0.1.2
       '@types/aws-lambda': 8.10.143
       hono: 4.5.8
     transitivePeerDependencies:
@@ -13037,17 +13071,6 @@ snapshots:
       - vite
       - vue
 
-  nuxt-primevue@3.0.0(magicast@0.3.4)(rollup@4.21.0)(vue@3.4.38(typescript@5.5.4)):
-    dependencies:
-      '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@4.21.0)
-      pathe: 1.1.2
-      primevue: 3.53.0(vue@3.4.38(typescript@5.5.4))
-    transitivePeerDependencies:
-      - magicast
-      - rollup
-      - supports-color
-      - vue
-
   nuxt-schema-org@3.3.9(magicast@0.3.4)(rollup@4.21.0)(vite@5.4.2(@types/node@22.5.0)(sass@1.77.8)(terser@5.31.6))(vue@3.4.38(typescript@5.5.4)):
     dependencies:
       '@nuxt/devtools-kit': 1.3.14(magicast@0.3.4)(rollup@4.21.0)(vite@5.4.2(@types/node@22.5.0)(sass@1.77.8)(terser@5.31.6))
@@ -13657,9 +13680,14 @@ snapshots:
 
   primeicons@7.0.0: {}
 
-  primevue@3.53.0(vue@3.4.38(typescript@5.5.4)):
+  primevue@4.0.5(vue@3.4.38(typescript@5.5.4)):
     dependencies:
-      vue: 3.4.38(typescript@5.5.4)
+      '@primeuix/styled': 0.0.5
+      '@primeuix/utils': 0.0.5
+      '@primevue/core': 4.0.5(vue@3.4.38(typescript@5.5.4))
+      '@primevue/icons': 4.0.5(vue@3.4.38(typescript@5.5.4))
+    transitivePeerDependencies:
+      - vue
 
   process-nextick-args@2.0.1: {}
 
@@ -14085,22 +14113,22 @@ snapshots:
 
   speakingurl@14.0.1: {}
 
-  sst-darwin-arm64@3.0.69:
+  sst-darwin-arm64@3.0.70:
     optional: true
 
-  sst-darwin-x64@3.0.69:
+  sst-darwin-x64@3.0.70:
     optional: true
 
-  sst-linux-arm64@3.0.69:
+  sst-linux-arm64@3.0.70:
     optional: true
 
-  sst-linux-x64@3.0.69:
+  sst-linux-x64@3.0.70:
     optional: true
 
-  sst-linux-x86@3.0.69:
+  sst-linux-x86@3.0.70:
     optional: true
 
-  sst@3.0.69(hono@4.5.8):
+  sst@3.0.70(hono@4.5.8):
     dependencies:
       '@aws-sdk/client-lambda': 3.478.0
       aws4fetch: 1.0.19
@@ -14108,11 +14136,11 @@ snapshots:
       openid-client: 5.6.4
     optionalDependencies:
       hono: 4.5.8
-      sst-darwin-arm64: 3.0.69
-      sst-darwin-x64: 3.0.69
-      sst-linux-arm64: 3.0.69
-      sst-linux-x64: 3.0.69
-      sst-linux-x86: 3.0.69
+      sst-darwin-arm64: 3.0.70
+      sst-darwin-x64: 3.0.70
+      sst-linux-arm64: 3.0.70
+      sst-linux-x64: 3.0.70
+      sst-linux-x86: 3.0.70
     transitivePeerDependencies:
       - aws-crt
 
@@ -14527,25 +14555,6 @@ snapshots:
 
   unicorn-magic@0.1.0: {}
 
-  unimport@3.11.0(rollup@3.29.4):
-    dependencies:
-      '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
-      acorn: 8.12.1
-      escape-string-regexp: 5.0.0
-      estree-walker: 3.0.3
-      fast-glob: 3.3.2
-      local-pkg: 0.5.0
-      magic-string: 0.30.11
-      mlly: 1.7.1
-      pathe: 1.1.2
-      pkg-types: 1.2.0
-      scule: 1.3.0
-      strip-literal: 2.1.0
-      unplugin: 1.12.2
-    transitivePeerDependencies:
-      - rollup
-    optional: true
-
   unimport@3.11.0(rollup@4.21.0):
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@4.21.0)
@@ -14652,22 +14661,49 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  unplugin-sheet-i18n@0.4.10(@nuxt/kit@3.13.0(magicast@0.3.4)(rollup@3.29.4))(@nuxt/schema@3.13.0(rollup@3.29.4))(esbuild@0.23.1)(rollup@3.29.4)(vite@5.4.2(@types/node@22.5.0)(sass@1.77.8)(terser@5.31.6))(webpack@5.94.0(esbuild@0.23.1)):
+  unplugin-sheet-i18n@0.4.11(@nuxt/kit@3.13.0(magicast@0.3.4)(rollup@4.21.0))(@nuxt/schema@3.13.0(rollup@4.21.0))(@types/node@22.5.0)(sass@1.77.8)(terser@5.31.6):
     dependencies:
       '@e965/xlsx': 0.20.3
+      '@namesmt/utils': 0.5.4
       consola: 3.2.3
       defu: 6.1.4
       papaparse: 5.4.1
       pathe: 1.1.2
       std-env: 3.7.0
       unplugin: 1.12.2
-    optionalDependencies:
-      '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@3.29.4)
-      '@nuxt/schema': 3.13.0(rollup@3.29.4)
-      esbuild: 0.23.1
-      rollup: 3.29.4
       vite: 5.4.2(@types/node@22.5.0)(sass@1.77.8)(terser@5.31.6)
-      webpack: 5.94.0(esbuild@0.23.1)
+    optionalDependencies:
+      '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@4.21.0)
+      '@nuxt/schema': 3.13.0(rollup@4.21.0)
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - terser
+
+  unplugin-vue-components@0.27.0(@babel/parser@7.25.4)(@nuxt/kit@3.13.0(magicast@0.3.4)(rollup@4.21.0))(rollup@4.21.0)(vue@3.4.38(typescript@5.5.4)):
+    dependencies:
+      '@antfu/utils': 0.7.10
+      '@rollup/pluginutils': 5.1.0(rollup@4.21.0)
+      chokidar: 3.6.0
+      debug: 4.3.6
+      fast-glob: 3.3.2
+      local-pkg: 0.5.0
+      magic-string: 0.30.11
+      minimatch: 9.0.5
+      resolve: 1.22.8
+      unplugin: 1.12.2
+      vue: 3.4.38(typescript@5.5.4)
+    optionalDependencies:
+      '@babel/parser': 7.25.4
+      '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@4.21.0)
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
 
   unplugin-vue-router@0.10.7(rollup@4.21.0)(vue-router@4.4.3(vue@3.4.38(typescript@5.5.4)))(vue@3.4.38(typescript@5.5.4)):
     dependencies:

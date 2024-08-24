@@ -1,6 +1,6 @@
-import path from 'node:path'
 import optimizeExclude from 'vite-plugin-optimize-exclude'
 import { localcertKeyPath, localcertPath } from '@local/common/node'
+import { Names } from './app/primevue.config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -46,11 +46,6 @@ export default defineNuxtConfig({
   },
 
   vite: {
-    optimizeDeps: {
-      exclude: [
-        'primevue',
-      ],
-    },
     plugins: [
       optimizeExclude({ }),
     ],
@@ -62,7 +57,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@vueuse/nuxt',
     '@nuxt/image',
-    'nuxt-primevue',
+    '@primevue/nuxt-module',
     'shadcn-nuxt',
     '@namesmt/vue-query-nuxt',
     '@nuxtjs/i18n',
@@ -104,10 +99,14 @@ export default defineNuxtConfig({
 
   // nuxt-primevue
   primevue: {
-    importPT: { from: path.resolve(__dirname, './app/assets/vendor/primevue/presets/aura/') },
     options: {
-      unstyled: true,
       ripple: true,
+      theme: {
+        preset: Names,
+        options: {
+          darkModeSelector: '.dark',
+        },
+      },
       ptOptions: { mergeProps: true },
     },
   },
