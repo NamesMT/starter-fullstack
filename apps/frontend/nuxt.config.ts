@@ -34,10 +34,6 @@ export default defineNuxtConfig({
     },
   },
 
-  ignore: [
-    'dist',
-  ],
-
   components: [
     {
       path: '~/components',
@@ -97,14 +93,7 @@ export default defineNuxtConfig({
   },
 
   shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
     prefix: 'Shad',
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
     componentDir: './app/lib/components/ui',
   },
 
@@ -143,4 +132,17 @@ export default defineNuxtConfig({
   },
 
   telemetry: false,
+  sourcemap: {
+    server: false,
+  },
+  ignore: [
+    '**\/*.stories.{js,cts,mts,ts,jsx,tsx}',
+    '**\/*.{spec,test}.{js,cts,mts,ts,jsx,tsx}',
+    '**\/*.d.{cts,mts,ts}',
+    '**\/.{pnpm-store,vercel,netlify,output,git,cache,data}',
+    '.nuxt/analyze',
+    '.nuxt',
+    '**\/-*.*',
+    'dist',
+  ],
 })
