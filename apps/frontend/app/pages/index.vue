@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { GridMaker } from '@local/common-vue'
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/lib/components/ui/carousel'
+import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from '@/lib/components/ui/carousel'
 
 defineOgImageComponent('NuxtSeo', {
   title: `Hello! I'm starter-fullstack 👋`,
@@ -131,7 +131,8 @@ const { isPending, isError, data, error } = useQuery({
 
     <Carousel class="relative max-w-xs w-full">
       <CarouselContent>
-        <CarouselItem v-for="(_, index) in 5" :key="index">
+        <!-- You could either explicitly import the shadcn components or use them with 'Shad' auto-import prefix -->
+        <ShadCarouselItem v-for="(_, index) in 5" :key="index">
           <div class="p-1">
             <Card>
               <template #title>
@@ -145,7 +146,7 @@ const { isPending, isError, data, error } = useQuery({
               </template>
             </Card>
           </div>
-        </CarouselItem>
+        </ShadCarouselItem>
       </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />
