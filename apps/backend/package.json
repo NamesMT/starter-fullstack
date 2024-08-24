@@ -24,20 +24,20 @@
   },
   "devDependencies": {
     "@hono/arktype-validator": "^2.0.0",
-    "@hono/node-server": "^1.12.0",
+    "@hono/node-server": "^1.12.1",
     "@kinde-oss/kinde-typescript-sdk": "^2.9.1",
     "@local/common": "workspace:*",
     "@local/tsconfig": "workspace:*",
-    "@namesmt/utils": "^0.5.0",
-    "@vitest/coverage-v8": "^2.0.4",
+    "@namesmt/utils": "^0.5.3",
+    "@vitest/coverage-v8": "^2.0.5",
     "arktype": "2.0.0-beta.1",
     "consola": "^3.2.3",
-    "hono": "^4.5.1",
+    "hono": "^4.5.8",
     "hono-adapter-aws-lambda": "^1.0.0",
     "hono-sessions": "^0.5.8",
     "std-env": "^3.7.0",
-    "tsx": "^4.16.2",
+    "tsx": "^4.17.0",
     "unbuild": "^2.0.0",
-    "vitest": "^2.0.4"
+    "vitest": "^2.0.5"
   }
 }
