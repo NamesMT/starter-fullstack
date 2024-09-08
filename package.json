@@ -17,7 +17,7 @@
     "sst": "ion"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.27.1",
+    "@antfu/eslint-config": "^3.4.1",
     "@dotenvx/dotenvx": "^1.10.2",
     "@local/tsconfig": "workspace:*",
     "@types/aws-lambda": "8.10.138",
