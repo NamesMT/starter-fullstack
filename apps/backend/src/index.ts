@@ -1,13 +1,11 @@
-import { DetailedError } from '@namesmt/utils'
 import { cors } from 'hono/cors'
-import { HTTPException } from 'hono/http-exception'
 import { logger as loggerMiddleware } from 'hono/logger'
 import { handle } from 'hono-adapter-aws-lambda'
 import { env, isDevelopment } from 'std-env'
 
 import { devAdapter, tryServeApp } from '~/dev'
 import { appFactory, triggerFactory } from '~/factory'
-import { logger } from '~/logger'
+import { errorHandler } from '~/helpers/error'
 import { cookieSession } from '~/middlewares/session'
 
 import { apiApp } from './api/app'
@@ -22,27 +20,7 @@ export const app = _app
   .notFound(c => c.text('four-o-four', 404))
 
   // Register global error handler
-  .onError((err, c) => {
-    logger.error(err)
-
-    // Handling of default Hono's HTTPException
-    if (err instanceof HTTPException) {
-      // Get the custom response
-      return err.getResponse()
-    }
-
-    if (err instanceof DetailedError) {
-      return c.json(
-        { message: err.message, code: err.code, detail: err.detail },
-        err.statusCode ?? 500,
-      )
-    }
-
-    return c.json(
-      { message: err.message },
-      500,
-    )
-  })
+  .onError(errorHandler)
 
   // Request logging middleware
   .use(loggerMiddleware())
