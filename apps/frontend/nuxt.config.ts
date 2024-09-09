@@ -53,15 +53,15 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/eslint',
-    '@unocss/nuxt',
-    '@nuxtjs/color-mode',
     '@vueuse/nuxt',
-    '@nuxt/image',
-    '@primevue/nuxt-module',
-    'shadcn-nuxt',
     '@namesmt/vue-query-nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
+    '@unocss/nuxt',
+    '@nuxtjs/color-mode',
+    '@nuxt/image',
+    '@primevue/nuxt-module',
+    'shadcn-nuxt',
   ],
 
   site: {
