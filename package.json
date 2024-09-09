@@ -2,7 +2,7 @@
   "name": "starter-fullstack",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.8.0",
+  "packageManager": "pnpm@9.9.0",
   "engines": {
     "node": ">=20.13.1"
   },
@@ -17,20 +17,20 @@
     "sst": "ion"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.27.1",
-    "@dotenvx/dotenvx": "^1.10.2",
+    "@antfu/eslint-config": "^3.4.1",
+    "@dotenvx/dotenvx": "^1.14.0",
     "@local/tsconfig": "workspace:*",
     "@types/aws-lambda": "8.10.138",
-    "@unocss/eslint-plugin": "^0.62.2",
-    "eslint": "^9.9.1",
+    "@unocss/eslint-plugin": "^0.62.3",
+    "eslint": "^9.10.0",
     "frontend": "workspace:*",
-    "lint-staged": "^15.2.9",
+    "lint-staged": "^15.2.10",
     "pathe": "^1.1.2",
     "simple-git-hooks": "^2.11.1",
     "std-env": "^3.7.0",
-    "turbo": "^2.0.14",
+    "turbo": "^2.1.1",
     "typescript": "^5.5.4",
-    "unocss": "^0.62.2"
+    "unocss": "^0.62.3"
   },
   "pnpm": {
     "overrides": {
