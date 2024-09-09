@@ -1,3 +1,4 @@
+import { DetailedError } from '@namesmt/utils'
 import { cors } from 'hono/cors'
 import { HTTPException } from 'hono/http-exception'
 import { logger as loggerMiddleware } from 'hono/logger'
