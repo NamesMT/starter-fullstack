@@ -13,7 +13,7 @@
   "scripts": {
     "start": "tsx index.ts",
     "lint": "eslint .",
-    "dev": "tsx watch index.ts",
+    "dev": "tsx watch --include \"src/**/*\" index.ts",
     "postinstall": "tsx index.ts"
   },
   "devDependencies": {
