@@ -1,15 +1,15 @@
-import { handle } from 'hono-adapter-aws-lambda'
 import { cors } from 'hono/cors'
-import { logger as loggerMiddleware } from 'hono/logger'
 import { HTTPException } from 'hono/http-exception'
+import { logger as loggerMiddleware } from 'hono/logger'
+import { handle } from 'hono-adapter-aws-lambda'
 import { env, isDevelopment } from 'std-env'
 
-import { apiApp } from './api/app'
-
+import { devAdapter, tryServeApp } from '~/dev'
 import { appFactory, triggerFactory } from '~/factory'
 import { logger } from '~/logger'
 import { cookieSession } from '~/middlewares/session'
-import { devAdapter, tryServeApp } from '~/dev'
+
+import { apiApp } from './api/app'
 
 const _app = appFactory.createApp()
 // Registers an adapter middleware for development only

@@ -1,4 +1,4 @@
-import { GrantType, createKindeServerClient } from '@kinde-oss/kinde-typescript-sdk'
+import { createKindeServerClient, GrantType } from '@kinde-oss/kinde-typescript-sdk'
 import { env } from 'std-env'
 
 // Client for authorization code flow

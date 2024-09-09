@@ -1,11 +1,11 @@
 import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import isoWeek from 'dayjs/plugin/isoWeek'
-import timezone from 'dayjs/plugin/timezone'
-import duration from 'dayjs/plugin/duration'
-import relativeTime from 'dayjs/plugin/relativeTime'
 import advancedFormat from 'dayjs/plugin/advancedFormat'
+import duration from 'dayjs/plugin/duration'
+import isoWeek from 'dayjs/plugin/isoWeek'
 import localizedFormat from 'dayjs/plugin/localizedFormat'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import timezone from 'dayjs/plugin/timezone'
+import utc from 'dayjs/plugin/utc'
 
 dayjs.extend(utc)
 dayjs.extend(isoWeek)

@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { Button } from '@/lib/components/ui/button'
+import { cn } from '@/lib/utils'
 import { useCarousel } from './useCarousel'
 import type { WithClassAsProps } from './interface'
-import { cn } from '@/lib/utils'
-import { Button } from '@/lib/components/ui/button'
 
 const props = defineProps<WithClassAsProps>()
 

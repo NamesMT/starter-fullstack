@@ -1,37 +1,26 @@
-// import type { TypedResponse } from 'hono'
-// import { streamText } from 'hono/streaming'
-import { type } from 'arktype'
+import { appFactory } from '~/factory'
 
 import { authApp } from './auth/app'
+import { greetRouteApp } from './greet'
+import { helloRouteApp } from './hello'
 
-import { appFactory } from '~/factory'
-import { customArktypeValidator } from '~/helpers/arktype'
-
-const app = appFactory.createApp()
-  // $Auth - you'll need to setup Kinde environment variables.
+export const apiApp = appFactory.createApp()
+  // Auth app - you'll need to setup Kinde environment variables.
   .route('/auth', authApp)
 
-// Disabling the streaming API because https://github.com/sst/ion/issues/63
+  // Simple health check route
+  .route('/hello', helloRouteApp)
+
+  // Simple greet route for arktype input validation demo
+  .route('/greet', greetRouteApp)
+
+// ### This block contains the sample code for streaming APIs,
+// import type { TypedResponse } from 'hono'
+// import { streamText } from 'hono/streaming'
+
+// Do note that SST doesn't support Live Development for Lambda streaming API yet: https://github.com/sst/ion/issues/63
+
 // For RPC to know the type of streamed endpoints you could manually cast it with TypedResponse 👌
 // .get('/helloStream', c => streamText(c, async (stream) => {
 //   await stream.writeln('Hello from Hono `/api/helloStream`!')
 // }) as Response & TypedResponse<'Hello from Hono `/api/helloStream`!'>)
-
-  // Simple health check route
-  .get('/hello', c => c.text(`Hello from Hono \`/api/hello\`! - ${Date.now()}`))
-
-  // Simple arktype input validation demo
-  .get(
-    '/hello/:name',
-    customArktypeValidator('param', type({
-      name: 'string>0',
-    })),
-    async (c) => {
-      const { name } = c.req.valid('param')
-      return c.text(`Hello ${name}!`)
-    },
-  )
-
-export {
-  app as apiApp,
-}

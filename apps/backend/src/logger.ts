@@ -1,5 +1,5 @@
+import { createConsola, LogLevels } from 'consola'
 import { isDevelopment } from 'std-env'
-import { LogLevels, createConsola } from 'consola'
 
 export const logger = createConsola(
   {

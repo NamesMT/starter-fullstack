@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { GridMaker } from '@local/common-vue'
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from '@/lib/components/ui/carousel'
+import { GridMaker } from '@local/common-vue'
 
 defineOgImageComponent('NuxtSeo', {
   title: `Hello! I'm starter-fullstack 👋`,

@@ -8,10 +8,10 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
-import presetAnimations from 'unocss-preset-animations'
-import { presetShadcn } from 'unocss-preset-shadcn'
-
 import { parseColor } from 'unocss/preset-mini'
+import presetAnimations from 'unocss-preset-animations'
+
+import { presetShadcn } from 'unocss-preset-shadcn'
 
 const colorsPaletteMap: Record<string, string> = {}
 for (const color of ['primary', 'surface']) {

@@ -1,5 +1,6 @@
 import { env, isDevelopment } from 'std-env'
 import type { Hono, MiddlewareHandler } from 'hono'
+
 import { logger } from '~/logger'
 
 // TODO: This middleware populate AWS context in local development

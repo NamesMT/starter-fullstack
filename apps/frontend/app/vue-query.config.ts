@@ -1,9 +1,9 @@
 import {
   type AsyncStorage,
-  type PersistedQuery,
   experimental_createPersister,
+  type PersistedQuery,
 } from '@tanstack/query-persist-client-core'
-import { type UseStore, createStore, del, get, set } from 'idb-keyval'
+import { createStore, del, get, set, type UseStore } from 'idb-keyval'
 
 function newIdbStorage(idbStore: UseStore): AsyncStorage<PersistedQuery> {
   return {

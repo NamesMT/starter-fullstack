@@ -160,15 +160,15 @@ export async function headerSession(options: Record<string, any> = {}) {
       sessionData = await store.getSessionById(sessionId)
     }
   })
+}
 
-  async function _jwtResolver() {
-    const { verify } = await import('hono/jwt')
+async function _jwtResolver() {
+  const { verify } = await import('hono/jwt')
 
-    return async (value: string, c: Context) => {
-      const payload = await verify(value, 'top-secret')
-      c.set('jwtPayload', payload)
+  return async (value: string, c: Context) => {
+    const payload = await verify(value, 'top-secret')
+    c.set('jwtPayload', payload)
 
-      return payload.id as string
-    }
+    return payload.id as string
   }
 }

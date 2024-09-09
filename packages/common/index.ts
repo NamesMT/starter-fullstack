@@ -1,6 +1,6 @@
-import { type LooseCSSUnit, cssUnit } from './src/utils/css'
+import { cssUnit, type LooseCSSUnit } from './src/utils/css'
 
 export {
-  type LooseCSSUnit,
   cssUnit,
+  type LooseCSSUnit,
 }
