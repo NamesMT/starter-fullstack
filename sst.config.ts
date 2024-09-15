@@ -2,8 +2,8 @@
 
 import { fileURLToPath } from 'node:url'
 import { config } from 'dotenv'
-import { env } from 'std-env'
 import { dirname, resolve } from 'pathe'
+import { env } from 'std-env'
 
 export default $config({
   app(input) {
