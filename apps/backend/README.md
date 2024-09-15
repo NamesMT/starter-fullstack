@@ -16,25 +16,18 @@ Other globally reuseable code should be placed in `~/helpers` folder.
 Locally reusable code should be placed in the same folder as the file that uses it, its name should be its usable scope, suffixing the file name with `.helper`, e.g: `/api/hello.helper.ts`, `/api/app.helper.ts`.
 
 #### `api` folder:
-You could create folders to group/prefix the routes, e.g: `/api/auth` folder.
+The main app entry of any folder should be `app.ts`.
 
-The main app entry should be `app.ts`.
+You could create folders to group/prefix the routes, e.g: `/api/auth` folder.
 
 Each route should be placed in a separate file according to the route path, e.g: `/api/hello.ts`, `/api/greet.ts`,  
 Alternatively, you could create a `routes.ts` for multiple routes declaration in file one, e.g: `/api/auth/routes.ts`.
 
-#### `import` order:
-The import order is as following, and they should be separated with a line break:
+If you need to define routes for the current folder path, use `_.ts` for the file name.
 
-1. Package imports
-2. Alias imports
-3. Relative imports
+#### Hono `app` export naming conventions:
+* If the app contain routes defines, it should be named as: `<Name>RouteApp`, and it should not define the base route path on it's own, it's parent app should define the base route path for it, e.g: `/api/app.ts` `.route` other `RouteApp`s and define the base path for them.
+* For other cases (i.e: main `app.ts` entry), it should be named as: `<Name>App`, and it should only `.route` other instances or `.use` middlewares, do not define routes on the `App` instance.
 
-e.g:
-```ts
-import { env } from 'std-env'
-
-import { appFactory } from '~/factory'
-
-import { apiApp } from './api/app'
-```
+#### `import` ordering:
+Imports should not be separated by empty lines, and should be sorted automatically by eslint.
