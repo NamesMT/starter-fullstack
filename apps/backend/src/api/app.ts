@@ -1,5 +1,4 @@
 import { appFactory } from '~/factory'
-
 import { authApp } from './auth/app'
 import { greetRouteApp } from './greet'
 import { helloRouteApp } from './hello'

@@ -2,7 +2,7 @@
   "name": "starter-fullstack",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@9.10.0",
   "engines": {
     "node": ">=20.13.1"
   },
@@ -17,7 +17,7 @@
     "sst": "ion"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.4.1",
+    "@antfu/eslint-config": "^3.6.1",
     "@dotenvx/dotenvx": "1.11.4",
     "@local/tsconfig": "workspace:*",
     "@types/aws-lambda": "8.10.138",
@@ -28,9 +28,9 @@
     "pathe": "^1.1.2",
     "simple-git-hooks": "^2.11.1",
     "std-env": "^3.7.0",
-    "tsx": "^4.19.0",
-    "turbo": "^2.1.1",
-    "typescript": "^5.5.4",
+    "tsx": "^4.19.1",
+    "turbo": "^2.1.2",
+    "typescript": "^5.6.2",
     "unocss": "^0.62.3"
   },
   "pnpm": {

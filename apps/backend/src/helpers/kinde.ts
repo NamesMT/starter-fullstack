@@ -1,7 +1,7 @@
-import { HTTPException } from 'hono/http-exception'
 import type { SessionManager } from '@kinde-oss/kinde-typescript-sdk'
 import type { Context } from 'hono'
 import type { Session } from 'hono-sessions'
+import { HTTPException } from 'hono/http-exception'
 
 /**
  * This is a wrapper on top of hono-sessions for Kinde compatibility

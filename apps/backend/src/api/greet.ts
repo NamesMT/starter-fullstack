@@ -1,5 +1,4 @@
 import { type } from 'arktype'
-
 import { appFactory } from '~/factory'
 import { customArktypeValidator } from '~/middlewares/arktype'
 

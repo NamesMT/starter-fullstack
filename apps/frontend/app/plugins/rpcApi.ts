@@ -1,6 +1,6 @@
+import type { app } from 'backend'
 import { type ClientRequestOptions, hc } from 'hono/client'
 import { sha256 } from 'ohash'
-import type { app } from 'backend'
 
 export default defineNuxtPlugin({
   name: 'local-rpcApi',

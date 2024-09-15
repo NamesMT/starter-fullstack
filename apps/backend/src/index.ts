@@ -2,12 +2,10 @@ import { cors } from 'hono/cors'
 import { logger as loggerMiddleware } from 'hono/logger'
 import { handle } from 'hono-adapter-aws-lambda'
 import { env, isDevelopment } from 'std-env'
-
 import { devAdapter, tryServeApp } from '~/dev'
 import { appFactory, triggerFactory } from '~/factory'
 import { errorHandler } from '~/helpers/error'
 import { cookieSession } from '~/middlewares/session'
-
 import { apiApp } from './api/app'
 
 const _app = appFactory.createApp()

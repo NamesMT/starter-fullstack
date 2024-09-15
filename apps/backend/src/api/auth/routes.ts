@@ -1,6 +1,5 @@
-import { env } from 'std-env'
 import type { ClaimTokenType, FlagType } from '@kinde-oss/kinde-typescript-sdk'
-
+import { env } from 'std-env'
 import { appFactory } from '~/factory'
 import { getSessionManager } from '~/helpers/kinde'
 import { kindeClient } from '~/providers/auth/kinde-main'

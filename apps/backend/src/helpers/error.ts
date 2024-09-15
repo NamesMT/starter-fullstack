@@ -1,8 +1,7 @@
+import type { ErrorHandler } from 'hono'
+import type { StatusCode } from 'hono/utils/http-status'
 import { DetailedError } from '@namesmt/utils'
 import { HTTPException } from 'hono/http-exception'
-import type { ErrorHandler } from 'hono'
-
-import type { StatusCode } from 'hono/utils/http-status'
 import { logger } from '~/logger'
 import type { HonoEnv } from '~/types'
 
