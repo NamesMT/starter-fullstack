@@ -1,13 +1,11 @@
 import type { LambdaContext, LambdaEvent } from 'hono-adapter-aws-lambda'
 import type { Session } from 'hono-sessions'
 
-type Bindings = {
-  event: LambdaEvent
-  context: LambdaContext
-}
-
 export interface HonoEnv {
-  Bindings: Bindings
+  Bindings: {
+    event: LambdaEvent
+    context: LambdaContext
+  }
   Variables: {
     session: Session
     session_key_rotation: boolean
