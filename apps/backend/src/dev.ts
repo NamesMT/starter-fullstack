@@ -1,11 +1,6 @@
-import type { Hono, MiddlewareHandler } from 'hono'
+import type { Hono } from 'hono'
 import { env, isDevelopment } from 'std-env'
 import { logger } from '~/logger'
-
-// TODO: This middleware populate AWS context in local development
-export const devAdapter: MiddlewareHandler = async (_c, next) => {
-  await next()
-}
 
 export async function tryServeApp(app: Hono<any>) {
   if (isDevelopment) {

@@ -1,19 +1,13 @@
 import { cors } from 'hono/cors'
 import { logger as loggerMiddleware } from 'hono/logger'
 import { handle } from 'hono-adapter-aws-lambda'
-import { env, isDevelopment } from 'std-env'
-import { devAdapter, tryServeApp } from '~/dev'
+import { env } from 'std-env'
 import { appFactory, triggerFactory } from '~/factory'
 import { errorHandler } from '~/helpers/error'
 import { cookieSession } from '~/middlewares/session'
 import { apiApp } from './api/app'
 
-const _app = appFactory.createApp()
-// Registers an adapter middleware for development only
-if (isDevelopment)
-  _app.use(devAdapter)
-
-export const app = _app
+export const app = appFactory.createApp()
   // Register global not found handler
   .notFound(c => c.text('four-o-four', 404))
 
