@@ -120,8 +120,6 @@ export default defineConfig({
       include: [
         // Default
         /\.(vue|svelte|[jt]sx|mdx?|astro|elm|php|phtml|html)($|\?)/,
-        // Primevue tailwind preset
-        'assets/vendor/primevue/presets/**',
         // shadcn js/ts files
         'lib/components/ui/**/*.{js,ts}',
       ],
