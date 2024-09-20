@@ -1,7 +1,7 @@
 import { cors } from 'hono/cors'
 import { logger as loggerMiddleware } from 'hono/logger'
 import { handle } from 'hono-adapter-aws-lambda'
-import { env } from 'std-env'
+import { env, isDevelopment } from 'std-env'
 import { appFactory, triggerFactory } from '~/factory'
 import { errorHandler } from '~/helpers/error'
 import { cookieSession } from '~/middlewares/session'
@@ -34,5 +34,6 @@ export const app = appFactory.createApp()
 
 export const handler = handle(app)
 
-// Serve API server if in development
-tryServeApp(app)
+// Serve app as a Node server if in development
+if (isDevelopment)
+  import('./node-server').then(({ serveApp }) => serveApp(app))
