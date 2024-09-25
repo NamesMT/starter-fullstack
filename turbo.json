@@ -12,7 +12,7 @@
   //   "KINDE_REDIRECT_URI",
   //   "KINDE_LOGOUT_REDIRECT_URI"
   // ],
-  // #############################################
+  // ###############################################
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
   "globalDependencies": [
