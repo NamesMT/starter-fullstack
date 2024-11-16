@@ -10,5 +10,4 @@ export default defineI18nConfig(() => ({
     en,
     vi,
   },
-  flatJson: true,
 }))
