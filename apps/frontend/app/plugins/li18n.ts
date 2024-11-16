@@ -1,7 +1,7 @@
 import { defaultOptions } from 'primevue/config'
 
 export default defineNuxtPlugin({
-  name: 'local-i18n',
+  name: 'local-li18n',
   parallel: true,
   dependsOn: [
     'local-auth',
@@ -15,8 +15,11 @@ export default defineNuxtPlugin({
       firstDayOfWeek: 1,
     }
 
+    const li18n = reactive({
+      renderKey: 0,
+    })
+
     watchImmediate(() => $i18n.locale.value, async (locale) => {
-      // @ts-expect-error locale might not be defined
       await setDayjsLocale(locale).catch(() => { console.error(`Failed to set '${locale}' for dayjs hook`) })
 
       switch (locale) {
@@ -24,6 +27,14 @@ export default defineNuxtPlugin({
           primevue.config.locale = { ...baseLocale }
           break
       }
+
+      ++li18n.renderKey
     })
+
+    return {
+      provide: {
+        li18n,
+      },
+    }
   },
 })

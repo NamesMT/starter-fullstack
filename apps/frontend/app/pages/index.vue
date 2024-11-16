@@ -14,11 +14,6 @@ definePageMeta({
 })
 
 const { t, locale, setLocale } = useI18n()
-
-const dayjsRenderKey = ref(0)
-// Fast trigger dayjs re-render after locale change
-watch(locale, () => setTimeout(() => ++dayjsRenderKey.value, 100))
-
 const runtimeConfig = useRuntimeConfig()
 const colorMode = useColorMode()
 const { $apiClient, $auth } = useNuxtApp()
@@ -90,7 +85,7 @@ const { isPending, isError, data, error } = useQuery({
         @pointerdown="setLocale(locale === 'en' ? 'vi' : 'en')"
       />
 
-      <div :key="dayjsRenderKey">
+      <div :key="$li18n.renderKey">
         {{ dayjs().format('dddd') }}
       </div>
     </div>
