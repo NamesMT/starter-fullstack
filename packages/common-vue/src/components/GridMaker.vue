@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { LooseCSSUnit } from '@local/common'
-import { cssUnit } from '@local/common'
+import type { LooseCSSUnit } from '@local/common/src/utils/css'
+import { cssUnit } from '@local/common/src/utils/css'
 import { computed } from 'vue'
 
 const {

@@ -13,7 +13,7 @@ export async function serveApp(app: Hono<any>) {
     port = +env.APP_DEV_port!
 
     const { readFileSync } = await import('node:fs')
-    const { localcertPath, localcertKeyPath } = await import('@local/common/node')
+    const { localcertPath, localcertKeyPath } = await import('@local/common/dev/cert')
     const { createServer } = await import('node:https')
 
     serve({

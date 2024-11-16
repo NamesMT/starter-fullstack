@@ -3,16 +3,6 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "exports": {
-    ".": {
-      "import": "./index.ts"
-    },
-    "./node": {
-      "import": "./node.ts"
-    }
-  },
-  "main": "./index.ts",
-  "types": "./index.ts",
   "scripts": {
     "lint": "eslint ."
   },
