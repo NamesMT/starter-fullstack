@@ -30,7 +30,7 @@
     "@nuxt/image": "^1.8.1",
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/i18n": "^9.0.0",
-    "@nuxtjs/seo": "2.0.0-rc.10",
+    "@nuxtjs/seo": "2.0.0-rc.23",
     "@primevue/nuxt-module": "^4.2.2",
     "@tanstack/query-persist-client-core": "^5.60.5",
     "@tanstack/vue-query": "^5.60.5",

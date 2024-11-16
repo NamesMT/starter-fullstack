@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   experimental: {
+    watcher: 'parcel',
     componentIslands: true,
   },
 
