@@ -1,4 +1,5 @@
 import type { Context } from 'hono'
+import { CookieStore, MemoryStore, Session, sessionMiddleware } from 'hono-sessions'
 
 /**
  * `Cookies`-based manager by `hono-sessions`.
@@ -6,7 +7,6 @@ import type { Context } from 'hono'
  * Default configuration uses `CookieStore` and just works out of the box.
  */
 export async function cookieSession() {
-  const { CookieStore, sessionMiddleware } = await import('hono-sessions')
   return sessionMiddleware({
     store: new CookieStore(),
     encryptionKey: 'password_at_least_32_characters!', // Required for CookieStore, recommended for others
@@ -49,7 +49,6 @@ export async function cookieSession() {
 export async function headerSession(options: Record<string, any> = {}) {
   const { HTTPException } = await import('hono/http-exception')
   const { createMiddleware } = await import('hono/factory')
-  const { MemoryStore, Session } = await import('hono-sessions')
 
   const TOKEN_RE = '[\\w.~+/-]+=*'
 
