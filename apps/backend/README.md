@@ -4,6 +4,7 @@
 
 ## Features
 - [x] Easy cross-function calls / Lambda triggers support with [hono-adapter-aws-lambda](https://github.com/NamesMT/hono-adapter-aws-lambda)
+- [x] OpenAPI: You can access the OpenAPI specs and Scalar UI at: http://127.0.0.1:3301/openapi/ui
 
 ## Structuring cookbook:
 #### Root level:
