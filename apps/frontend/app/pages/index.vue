@@ -23,7 +23,7 @@ const number = ref()
 // API
 const { data: apiResult, error: apiError } = await useLazyAsyncData(
   'apiResult',
-  () => hcParse($apiClient.api.hello.$get()),
+  () => hcParse($apiClient.api.dummy.hello.$get()),
   {
     server: false,
     default: () => 'Loading...' as const,
@@ -34,7 +34,7 @@ const { data: apiResult, error: apiError } = await useLazyAsyncData(
 const queryClient = useQueryClient()
 const { isPending, isError, data, error } = useQuery({
   queryKey: ['hello_test'],
-  queryFn: () => hcParse($apiClient.api.hello.$get()),
+  queryFn: () => hcParse($apiClient.api.dummy.hello.$get()),
 })
 </script>
 
@@ -93,7 +93,7 @@ const { isPending, isError, data, error } = useQuery({
     <div>
       <div>Configured frontendUrl: {{ runtimeConfig.public.frontendUrl }}</div>
       <div>Configured backendUrl: {{ runtimeConfig.public.backendUrl }}</div>
-      <div>API Response from `<code>{{ $apiClient.api.hello.$url() }}</code>`:</div>
+      <div>API Response from `<code>{{ $apiClient.api.dummy.hello.$url() }}</code>`:</div>
       <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ apiError || apiResult || 'Empty' }}</pre>
     </div>
 
