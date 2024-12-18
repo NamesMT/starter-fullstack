@@ -1,4 +1,4 @@
-import type { app } from 'backend'
+import type { app } from 'backend/src/app'
 import { type ClientRequestOptions, hc } from 'hono/client'
 import { sha256 } from 'ohash'
 

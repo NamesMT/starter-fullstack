@@ -3,14 +3,6 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "exports": {
-    ".": {
-      "import": "./src/index.ts"
-    },
-    "./*": {
-      "import": "./*"
-    }
-  },
   "scripts": {
     "start": "dotenvx run -f .env.local -f .env -- tsx src/index.ts",
     "watch": "dotenvx run -f .env.local -f .env -- tsx watch src/index.ts",
