@@ -6,6 +6,8 @@
 - [x] Easy cross-function calls / Lambda triggers support with [hono-adapter-aws-lambda](https://github.com/NamesMT/hono-adapter-aws-lambda)
 - [x] OpenAPI: You can access the OpenAPI specs and Scalar UI at: http://127.0.0.1:3301/openapi/ui
 
+*You can view the OpenAPI UI live demo here: https://4yjbmxiunrnigwewec4twf4zl40izfde.lambda-url.ap-southeast-1.on.aws/api/demo/openapi/ui*
+
 ## Structuring cookbook:
 #### Root level:
 Things like 3rd party APIs, DBs, Storages connectors, etc, should be placed in `~/providers` folder, grouped by their purpose if possible, e.g: `~/providers/auth/kinde-main.ts`, `~/providers/db/neon-main.ts`.
