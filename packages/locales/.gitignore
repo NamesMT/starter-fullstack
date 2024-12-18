@@ -1,2 +1,0 @@
-# Temporarily ignore tsx's temp dir because of a bug with pnpm, ref: https://github.com/privatenumber/tsx/issues/596
-tsx-0

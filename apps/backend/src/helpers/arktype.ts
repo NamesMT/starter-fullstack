@@ -1,5 +1,5 @@
-import { arktypeValidator } from '@hono/arktype-validator'
 import { DetailedError } from '@namesmt/utils'
+import { validator as arktypeValidator } from 'hono-openapi/arktype'
 
 type arktypeValidatorArguments = Parameters<typeof arktypeValidator>
 export function customArktypeValidator<Target extends arktypeValidatorArguments[0], Schema extends arktypeValidatorArguments[1]>(target: Target, schema: Schema) {

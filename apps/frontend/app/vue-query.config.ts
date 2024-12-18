@@ -27,11 +27,11 @@ export default defineVueQueryPluginHook(({ queryClient }) => {
       persister: !import.meta.client
         ? undefined
         : experimental_createPersister<PersistedQuery>({
-          storage: newIdbStorage(createStore('tsq_db', 'tsq_store')),
-          maxAge,
-          serialize: persistedQuery => persistedQuery,
-          deserialize: cached => cached,
-        }),
+            storage: newIdbStorage(createStore('tsq_db', 'tsq_store')),
+            maxAge,
+            serialize: persistedQuery => persistedQuery,
+            deserialize: cached => cached,
+          }),
     },
   })
 

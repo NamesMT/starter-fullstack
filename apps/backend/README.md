@@ -7,27 +7,29 @@
 
 ## Structuring cookbook:
 #### Root level:
-Things like 3rd party APIs, DBs, Storages connectors, etc, should be placed in `~/providers` folder, grouped by their purpose if possible, e.g: `~/providers/auth/kinde-main.ts`, `~/providers/auth/google-main.ts`.
+Things like 3rd party APIs, DBs, Storages connectors, etc, should be placed in `~/providers` folder, grouped by their purpose if possible, e.g: `~/providers/auth/kinde-main.ts`, `~/providers/db/neon-main.ts`.
 
 Things that interact with `~/providers` should be placed in `~/services` folder. (like an `user` service)
 
 Other globally reuseable code should be placed in `~/helpers` folder.
 
-Locally reusable code should be placed in the same folder as the file that uses it, its name should be its usable scope, suffixing the file name with `.helper`, e.g: `/api/hello.helper.ts`, `/api/app.helper.ts`.
+Locally reusable code should be placed in the same folder as the file that uses it, its name should be its usable scope, suffixing the file name with `.helper`, e.g: `/api/dummy/hello.helper.ts`, `/api/$.helper.ts`.
 
 #### `api` folder:
-The main app entry of any folder should be `app.ts`.
+The idea of the api folder is to mirrors the actual api url path if possible.
 
-You could create folders to group/prefix the routes, e.g: `/api/auth` folder.
+The main app entry of any folder should be `$.ts`, the app entry will not define any routes but to manages which routes are enabled.
 
-Each route should be placed in a separate file according to the route path, e.g: `/api/hello.ts`, `/api/greet.ts`,  
-Alternatively, you could create a `routes.ts` for multiple routes declaration in file one, e.g: `/api/auth/routes.ts`.
+You could create folders to group/prefix the routes, e.g: `/api/auth`, `api/dummy` folder.
 
-If you need to define routes for the current folder path, use `_.ts` for the file name.
+Each route should be placed in a separate file according to the route path, e.g: `/api/dummy/hello.ts`, `/api/dummy/greet.ts`,  
+Alternatively, you could create a `$.routes.ts` for multiple routes declaration in one file, e.g: `/api/auth/$.routes.ts`.
+
+If you need to define routes for the current folder path without any suffix route, use `$$.ts` for the file name, i.e: `/api/$$.ts`
 
 #### Hono `app` export naming conventions:
-* If the app contain routes defines, it should be named as: `<Name>RouteApp`, and it should not define the base route path on it's own, it's parent app should define the base route path for it, e.g: `/api/app.ts` `.route` other `RouteApp`s and define the base path for them.
-* For other cases (i.e: main `app.ts` entry), it should be named as: `<Name>App`, and it should only `.route` other instances or `.use` middlewares, do not define routes on the `App` instance.
+* For main app entries ($.ts), it should be named as: `<Name>App`, and it should only `.route` other instances or `.use` middlewares, do not define routes on the `App` instance.
+* If the app contain routes defines, it should be named as: `<Name>RouteApp`
 
 #### `import` ordering:
 Imports should not be separated by empty lines, and should be sorted automatically by eslint.
