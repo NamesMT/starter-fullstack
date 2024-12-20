@@ -19,14 +19,15 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@primevue/themes": "^4.2.5"
+    "@primevue/themes": "^4.2.5",
+    "primevue": "^4.2.5"
   },
   "devDependencies": {
     "@kinde-oss/kinde-typescript-sdk": "^2.9.1",
     "@local/common": "workspace:*",
     "@local/common-vue": "workspace:*",
     "@namesmt/vue-query-nuxt": "^0.3.3",
-    "@nuxt/eslint": "^0.7.3",
+    "@nuxt/eslint": "^0.7.4",
     "@nuxt/image": "^1.8.1",
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/i18n": "^9.1.1",
@@ -34,7 +35,7 @@
     "@primevue/nuxt-module": "^4.2.5",
     "@tanstack/query-persist-client-core": "^5.62.8",
     "@tanstack/vue-query": "^5.62.8",
-    "@unocss/nuxt": "^0.65.1",
+    "@unocss/nuxt": "^0.65.2",
     "@vueuse/core": "^12.0.0",
     "@vueuse/nuxt": "^12.0.0",
     "backend": "workspace:*",
@@ -52,10 +53,10 @@
     "primeicons": "^7.0.0",
     "radix-vue": "^1.9.11",
     "sass": "^1.83.0",
-    "shadcn-nuxt": "^0.10.4",
+    "shadcn-nuxt": "0.10.4",
     "tailwind-merge": "^2.5.5",
     "ufo": "^1.5.4",
-    "unocss": "^0.65.1",
+    "unocss": "^0.65.2",
     "unocss-preset-animations": "^1.1.0",
     "unocss-preset-shadcn": "^0.3.1",
     "vite-plugin-optimize-exclude": "^0.0.1",
