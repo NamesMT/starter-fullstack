@@ -24,7 +24,7 @@ export const providersInit = createMiddleware(async (c, next) => {
   globalThis.__env__ = honoEnv(c)
 
   // On platforms that cannot share data between requests, clean the initialized clients, else, initialize them once and reuse.
-  if (nonSharingPlatforms) {
+  if (isNonSharingPlatforms) {
     providersState.cacheMap = {}
   }
   else {
