@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@9.15.1",
   "engines": {
-    "node": ">=20.13.1"
+    "node": ">=20.18.1"
   },
   "scripts": {
     "build": "dotenvx run -- turbo run build",
@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.12.0",
-    "@dotenvx/dotenvx": "1.11.4",
+    "@dotenvx/dotenvx": "1.31.3",
     "@types/aws-lambda": "^8.10.146",
     "@unocss/eslint-plugin": "^0.65.2",
     "eslint": "^9.17.0",
@@ -34,9 +34,9 @@
   },
   "pnpm": {
     "overrides": {
-      "is-core-module": "npm:@nolyfill/is-core-module@^1",
-      "isarray": "npm:@nolyfill/isarray@^1",
-      "string.prototype.codepointat": "npm:@nolyfill/string.prototype.codepointat@^1"
+      "is-core-module": "npm:@nolyfill/is-core-module@^1.0.39",
+      "isarray": "npm:@nolyfill/isarray@^1.0.29",
+      "string.prototype.codepointat": "npm:@nolyfill/string.prototype.codepointat@^1.0.28"
     }
   },
   "simple-git-hooks": {
