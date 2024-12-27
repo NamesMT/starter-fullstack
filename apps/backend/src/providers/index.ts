@@ -23,7 +23,7 @@ export const providersInit = createMiddleware(async (c, next) => {
   // @ts-expect-error globalThis not typed
   globalThis.__env__ = honoEnv(c)
 
-  // On platforms that cannot share data between requests, clean the initialized clients, else, initialize them once and reuse.
+  // On platforms that cannot share data between requests, clean the initialized clients and initalize as needed, else, initialize them once and reuse.
   if (isNonSharingPlatforms) {
     providersState.cacheMap = {}
   }
