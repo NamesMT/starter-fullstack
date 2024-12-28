@@ -26,7 +26,7 @@ So if you use SSR, you could use the official [Nuxt Kinde](https://nuxt.com/modu
 ### Apps and Packages
 (Click the hyperlink of each app to see its README detail)
 
-- [`frontend`](./apps/frontend/README.md): a [Nuxt](https://nuxt.com/) app, configured same as [starter-nuxt](https://github.com/NamesMT/starter-nuxt).
+- [`frontend`](./apps/frontend/README.md): a [Nuxt](https://nuxt.com/) app, compatible with v4 structure.
   - By default, `/api/*` routes is proxied to the `backendUrl`.
   - The `rpcApi` plugin will call the `/api/*` proxy if they're on the same domain (e.g: 127.0.0.1)
     - > this mimics a production environment where the static frontend and the backend lives on the same domain at /api, which is the most efficient configuration for Cloudfront + Lambda Function Url
