@@ -10,7 +10,7 @@ export const authRoutesApp = appFactory.createApp()
   })
 
   .get('/login', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
     const org_code = c.req.query('org_code')
 
     const loginUrl = await kindeClient.login(getSessionManager(c), { org_code })
@@ -21,7 +21,7 @@ export const authRoutesApp = appFactory.createApp()
   })
 
   .get('/register', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
     const org_code = c.req.query('org_code')
 
     const registerUrl = await kindeClient.register(getSessionManager(c), { org_code })
@@ -30,7 +30,7 @@ export const authRoutesApp = appFactory.createApp()
   })
 
   .get('/callback', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
 
     await kindeClient.handleRedirectToApp(getSessionManager(c), new URL(c.req.url))
 
@@ -42,7 +42,7 @@ export const authRoutesApp = appFactory.createApp()
   })
 
   .get('/logout', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
 
     const logoutUrl = await kindeClient.logout(getSessionManager(c))
 
@@ -50,7 +50,7 @@ export const authRoutesApp = appFactory.createApp()
   })
 
   .get('/isAuth', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
 
     const isAuthenticated = await kindeClient.isAuthenticated(getSessionManager(c)) // Boolean: true or false
 
@@ -58,7 +58,7 @@ export const authRoutesApp = appFactory.createApp()
   })
 
   .get('/profile', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
 
     const profile = await kindeClient.getUserProfile(getSessionManager(c))
 
@@ -66,7 +66,7 @@ export const authRoutesApp = appFactory.createApp()
   })
 
   .get('/createOrg', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
     const org_name = c.req.query('org_name')?.toString()
 
     const createUrl = await kindeClient.createOrg(getSessionManager(c), { org_name })
@@ -75,7 +75,7 @@ export const authRoutesApp = appFactory.createApp()
   })
 
   .get('/getOrg', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
 
     const org = await kindeClient.getOrganization(getSessionManager(c))
 
@@ -83,7 +83,7 @@ export const authRoutesApp = appFactory.createApp()
   })
 
   .get('/getOrgs', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
 
     const orgs = await kindeClient.getUserOrganizations(getSessionManager(c))
 
@@ -91,7 +91,7 @@ export const authRoutesApp = appFactory.createApp()
   })
 
   .get('/getPerm/:perm', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
 
     const perm = await kindeClient.getPermission(getSessionManager(c), c.req.param('perm'))
 
@@ -99,7 +99,7 @@ export const authRoutesApp = appFactory.createApp()
   })
 
   .get('/getPerms', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
 
     const perms = await kindeClient.getPermissions(getSessionManager(c))
 
@@ -108,7 +108,7 @@ export const authRoutesApp = appFactory.createApp()
 
   // Try: /api/auth/getClaim/aud, /api/auth/getClaim/email/id_token
   .get('/getClaim/:claim', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
     const type = (c.req.query('type') ?? 'access_token') as ClaimTokenType
 
     if (!/^(?:access_token|id_token)$/.test(type))
@@ -119,7 +119,7 @@ export const authRoutesApp = appFactory.createApp()
   })
 
   .get('/getFlag/:code', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
 
     const claim = await kindeClient.getFlag(
       getSessionManager(c),
@@ -132,7 +132,7 @@ export const authRoutesApp = appFactory.createApp()
   })
 
   .get('/getToken', async (c) => {
-    const kindeClient = getKindeClient()
+    const kindeClient = await getKindeClient()
 
     const accessToken = await kindeClient.getToken(getSessionManager(c))
 
