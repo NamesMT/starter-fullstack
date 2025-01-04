@@ -6,8 +6,8 @@ export const handler = handle(app)
 
 if (isDevelopment) {
   // Setup openapi spec and ui
-  const { setupOpenApi } = await import('./openApi')
-  setupOpenApi(app)
+  const { setupOpenAPI } = await import('./openAPI')
+  setupOpenAPI(app)
 
   // Serve local server
   const { serve } = await import('srvx')

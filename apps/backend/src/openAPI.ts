@@ -2,7 +2,7 @@ import type { Hono } from 'hono'
 import { apiReference } from '@scalar/hono-api-reference'
 import { openAPISpecs } from 'hono-openapi'
 
-export function setupOpenApi(app: Hono<any, any>, prefix = '/openapi') {
+export function setupOpenAPI(app: Hono<any, any>, prefix = '/openapi') {
   // OpenAPI spec
   app.get(
     `${prefix}/spec`,
