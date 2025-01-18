@@ -8,6 +8,6 @@
   },
   "devDependencies": {
     "@local/tsconfig": "workspace:*",
-    "pathe": "^2.0.0"
+    "pathe": "^2.0.2"
   }
 }
