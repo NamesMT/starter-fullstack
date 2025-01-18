@@ -16,7 +16,8 @@ if (isDevelopment) {
     fetch(request) {
       return app.fetch(request)
     },
-    port: +env.APP_DEV_port!,
+    hostname: env.APP_DEV_host,
+    port: +(env.APP_DEV_port ?? '3301'),
   })
 
   server.ready().then(() => {
