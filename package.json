@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@9.15.4",
   "engines": {
-    "node": ">=20.13.1"
+    "node": ">=22.13.1"
   },
   "scripts": {
     "build": "dotenvx run -- turbo run build",
