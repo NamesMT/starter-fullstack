@@ -27,7 +27,7 @@
     "@local/common": "workspace:*",
     "@local/common-vue": "workspace:*",
     "@namesmt/vue-query-nuxt": "^0.3.3",
-    "@nuxt/eslint": "^0.7.5",
+    "@nuxt/eslint": "^1.1.0",
     "@nuxt/image": "^1.9.0",
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/i18n": "^9.1.1",
