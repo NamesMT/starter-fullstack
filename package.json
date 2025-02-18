@@ -20,7 +20,7 @@
     "@antfu/eslint-config": "^3.14.0",
     "@dotenvx/dotenvx": "1.11.4",
     "@types/aws-lambda": "^8.10.147",
-    "@unocss/eslint-plugin": "^65.4.2",
+    "@unocss/eslint-plugin": "^66.0.0",
     "eslint": "^9.18.0",
     "frontend": "workspace:*",
     "lint-staged": "^15.4.1",
@@ -30,7 +30,7 @@
     "tsx": "^4.19.2",
     "turbo": "^2.3.3",
     "typescript": "^5.7.3",
-    "unocss": "^65.4.2"
+    "unocss": "^66.0.0"
   },
   "pnpm": {
     "overrides": {
