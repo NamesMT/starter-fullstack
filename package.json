@@ -17,7 +17,7 @@
     "sst": "ion"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.14.0",
+    "@antfu/eslint-config": "^4.3.0",
     "@dotenvx/dotenvx": "1.11.4",
     "@types/aws-lambda": "^8.10.147",
     "@unocss/eslint-plugin": "^65.4.2",
