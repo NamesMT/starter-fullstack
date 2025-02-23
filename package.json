@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.3.0",
-    "@dotenvx/dotenvx": "1.11.4",
+    "@dotenvx/dotenvx": "1.37.0",
     "@types/aws-lambda": "^8.10.147",
     "@unocss/eslint-plugin": "^66.0.0",
     "eslint": "^9.21.0",

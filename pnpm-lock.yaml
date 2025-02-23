@@ -23,8 +23,8 @@ importers:
         specifier: ^4.3.0
         version: 4.3.0(@typescript-eslint/utils@8.24.1(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3))(@unocss/eslint-plugin@66.0.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3))(@vue/compiler-sfc@3.5.13)(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3)(vitest@3.0.6(@types/debug@4.1.12)(@types/node@22.13.5)(jiti@2.4.2)(sass@1.85.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))
       '@dotenvx/dotenvx':
-        specifier: 1.11.4
-        version: 1.11.4
+        specifier: 1.37.0
+        version: 1.37.0
       '@types/aws-lambda':
         specifier: ^8.10.147
         version: 8.10.147
@@ -70,7 +70,7 @@ importers:
     devDependencies:
       '@hono/arktype-validator':
         specifier: ^2.0.0
-        version: 2.0.0(arktype@2.0.4)(hono@4.7.2)
+        version: 2.0.0(arktype@2.1.0)(hono@4.7.2)
       '@kinde-oss/kinde-typescript-sdk':
         specifier: ^2.9.1
         version: 2.9.1
@@ -90,8 +90,8 @@ importers:
         specifier: ^3.0.6
         version: 3.0.6(vitest@3.0.6(@types/debug@4.1.12)(@types/node@22.13.5)(jiti@2.4.2)(sass@1.85.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))
       arktype:
-        specifier: ^2.0.4
-        version: 2.0.4
+        specifier: ^2.1.0
+        version: 2.1.0
       consola:
         specifier: ^3.4.0
         version: 3.4.0
@@ -103,7 +103,7 @@ importers:
         version: 1.3.0(hono@4.7.2)
       hono-openapi:
         specifier: ^0.4.5
-        version: 0.4.5(@hono/arktype-validator@2.0.0(arktype@2.0.4)(hono@4.7.2))(arktype@2.0.4)(hono@4.7.2)
+        version: 0.4.5(@hono/arktype-validator@2.0.0(arktype@2.1.0)(hono@4.7.2))(arktype@2.1.0)(hono@4.7.2)
       hono-sessions:
         specifier: ^0.7.1
         version: 0.7.1
@@ -217,8 +217,8 @@ importers:
         specifier: ^1.85.0
         version: 1.85.0
       shadcn-nuxt:
-        specifier: 0.10.4
-        version: 0.10.4(magicast@0.3.5)
+        specifier: 0.11.4
+        version: 0.11.4(magicast@0.3.5)
       tailwind-merge:
         specifier: ^2.6.0
         version: 2.6.0
@@ -342,11 +342,11 @@ packages:
     resolution: {integrity: sha512-OvyhwtYaWSTfo8NfibmFlgl+pIMaBOmN0OwZ3CPaGscEK3B8FCVDuQ7zgxY8seU/1kfSvNWnyB0DtKJyNLxX7g==}
     engines: {node: '>= 16'}
 
-  '@ark/schema@0.39.0':
-    resolution: {integrity: sha512-LQbQUb3Sj461LgklXObAyUJNtsUUCBxZlO2HqRLYvRSqpStm0xTMrXn51DwBNNxeSULvKVpXFwoxiSec9kwKww==}
+  '@ark/schema@0.40.0':
+    resolution: {integrity: sha512-vD78TCZkoMWYDVfJVyoBI4ndxaR5jGUeYQuhFNZHXV8Ve2pKrwb4vQFD/VHg7GgF8Pd1pxy0CPouerKNR3y79g==}
 
-  '@ark/util@0.39.0':
-    resolution: {integrity: sha512-90APHVklk8BP4kku7hIh1BgrhuyKYqoZ4O7EybtFRo7cDl9mIyc/QUbGvYDg//73s0J2H0I/gW9pzroA1R4IBQ==}
+  '@ark/util@0.40.0':
+    resolution: {integrity: sha512-YN+qWGs1q5Pl19VcnCWZMUpDEKW9aST6kuSOs0iAswDDe494xjgmg+DJeX0OF2MspH5yY03VqitNcvkywqXNpw==}
 
   '@aws-crypto/crc32@5.2.0':
     resolution: {integrity: sha512-nLbCWqQNgUiwwtFsen1AdzAtvuLRsQS8rYgMuxCrdKf9kOssamGLuPwyTY9wyYblNr9+1XM8v6zoDTPPSIeANg==}
@@ -611,8 +611,8 @@ packages:
     resolution: {integrity: sha512-YLPHc8yASwjNkmcDMQMY35yiWjoKAKnhUbPRszBRS0YgH+IXtsMp61j+yTcnCE3oO2DgP0U3iejLC8FTtKDC8Q==}
     engines: {node: '>=16.13'}
 
-  '@dotenvx/dotenvx@1.11.4':
-    resolution: {integrity: sha512-k22bsUF2Ra1f1EpBB1Jd1hAqtf3CZiU75ZSEvnDU7OMy8P3LhsqZurQTHLaQmg8JM5gBfXljfK5ve73idSkpng==}
+  '@dotenvx/dotenvx@1.37.0':
+    resolution: {integrity: sha512-AMPts6UnBQoJ+ash2M5MLSVETa0MZCY89p5msW+ojq7sbgM7R+H9Kmd8Gj1yTpcBoKbiOElWq5OLSHwG5nyCNg==}
     hasBin: true
 
   '@e965/xlsx@0.20.3':
@@ -1643,8 +1643,11 @@ packages:
     resolution: {integrity: sha512-8pDtCnyJOWIhGGlTMYM1kbzUGGUpB+8Wi835pgOoa1jBP78K3rvHKAeYS0Lr/+Ara4T7ouV0n5H2D+pmztq4uw==}
     engines: {node: '>=18.0.0'}
 
-  '@oxc-parser/wasm@0.1.0':
-    resolution: {integrity: sha512-oA7XhTbg9rRBJhIzxCNhJwYmON/9LFAH4GBQxl7HWmGSS6HTrb2t6Peq82nxY0W7knguH52neh9T7zs27FVvsQ==}
+  '@oxc-parser/wasm@0.50.0':
+    resolution: {integrity: sha512-be/QsKqtXQbKhnIRzezPrV385L6EVaX1GNAGeaQaT+HX6Lny/SfmFetCrEZCRqn2/cAqo+P5rGDNJzv06dY/vw==}
+
+  '@oxc-project/types@0.50.0':
+    resolution: {integrity: sha512-VGV87PmDCGv1D+57iEmIuDoso3ig8d8D4VIK9AS0H7h2aNiRwFoCpVyp01+3jvIuHjPcEM2wbo3NG5EKyfx6Jw==}
 
   '@parcel/watcher-android-arm64@2.5.1':
     resolution: {integrity: sha512-KF8+j9nNbUN8vzOFDpRMsaKBHZ/mcjEjMToVMJOhTozkDonQFFrRcfdLWn6yWKCmJKmdVxSgHiYvTCef4/qcBA==}
@@ -2862,8 +2865,8 @@ packages:
     resolution: {integrity: sha512-y+CcFFwelSXpLZk/7fMB2mUbGtX9lKycf1MWJ7CaTIERyitVlyQx6C+sxcROU2BAJ24OiZyK+8wj2i8AlBoS3A==}
     engines: {node: '>=10'}
 
-  arktype@2.0.4:
-    resolution: {integrity: sha512-S68rWVDnJauwH7/QCm8zCUM3aTe9Xk6oRihdcc3FSUAtxCo/q1Fwq46JhcwB5Ufv1YStwdQRz+00Y/URlvbhAQ==}
+  arktype@2.1.0:
+    resolution: {integrity: sha512-BjXPbh4S8nBSuHmlakrQ+ViiGIhTcxAw7dWuJjW3nlHdY8wGktuuKfP52eWjmC3Y/Og1BbbRYEDGr/H0Kg26Mg==}
 
   assertion-error@2.0.1:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
@@ -3807,6 +3810,10 @@ packages:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
     engines: {node: '>=0.8.x'}
 
+  execa@5.1.1:
+    resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
+    engines: {node: '>=10'}
+
   execa@7.2.0:
     resolution: {integrity: sha512-UduyVP7TLB5IcAQl+OzLyLcS/l32W/GLg+AhHJ+ow40FOk2U3SAllPwR44v4vmdFwIWqpdwxxpQbF1n5ta9seA==}
     engines: {node: ^14.18.0 || ^16.14.0 || >=18.0.0}
@@ -4155,6 +4162,10 @@ packages:
 
   httpxy@0.1.7:
     resolution: {integrity: sha512-pXNx8gnANKAndgga5ahefxc++tJvNL87CXoRwxn1cJE2ZkWEojF3tNfQIEhZX/vfpt+wzeAzpUI4qkediX1MLQ==}
+
+  human-signals@2.1.0:
+    resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
+    engines: {node: '>=10.17.0'}
 
   human-signals@4.3.1:
     resolution: {integrity: sha512-nZXjEF2nbo7lIw3mgYjItAfgQXog3OjJogSbKa2CQIIvSGWcKgeJnQlNXip6NglNzYH45nSRiEVimMvYL8DDqQ==}
@@ -4755,6 +4766,10 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
+  mimic-fn@2.1.0:
+    resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
+    engines: {node: '>=6'}
+
   mimic-fn@4.0.0:
     resolution: {integrity: sha512-vqiC06CuhBTUdZH+RYl8sFrL096vA45Ok5ISO6sE/Mr1jRbGH4Csnhi8f3wKVl7x8mO4Au7Ir9D3Oyv1VYMFJw==}
     engines: {node: '>=12'}
@@ -5034,6 +5049,10 @@ packages:
 
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
+
+  onetime@5.1.2:
+    resolution: {integrity: sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==}
+    engines: {node: '>=6'}
 
   onetime@6.0.0:
     resolution: {integrity: sha512-1FlR+gjXK7X+AsAHso35MnyN5KqGwJRi/31ft6x0M194ht7S+rWAvd7PHss9xSKMzE0asv1pyIHaJYq+BbacAQ==}
@@ -5651,8 +5670,8 @@ packages:
   setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
 
-  shadcn-nuxt@0.10.4:
-    resolution: {integrity: sha512-WhSGzjaSMi1D2xb9Aflpwl8G8Qvlb0g4OuJLPO4YyRhduQDuscU6Pr1HdF7T4700foLLglgFnz7m8E2DDLLHJA==}
+  shadcn-nuxt@0.11.4:
+    resolution: {integrity: sha512-9c5ZWUywJBJyRFxsPHP9FLaw3ZOVM2YfZc6FJ4ZEUVds6ynOCxOhn70JF+r0Fo0MsVAiGeKjL8lsRlG3Dg7XsA==}
 
   sharp@0.32.6:
     resolution: {integrity: sha512-KyLTWwgcR9Oe4d9HwCwNM2l7+J0dUQwn/yf7S0EnTtb0eVS4RxO0eUSvxPtzT4F3SY+C4K6fqdv/DO27sJ/v/w==}
@@ -5840,6 +5859,10 @@ packages:
   strip-ansi@7.1.0:
     resolution: {integrity: sha512-iq6eVVI64nQQTRYq2KtEg2d2uU7LElhTJwsH4YzIHZshxlgZms/wIc4VoDQTlG/IvVIrBKG06CrZnp0qv7hkcQ==}
     engines: {node: '>=12'}
+
+  strip-final-newline@2.0.0:
+    resolution: {integrity: sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==}
+    engines: {node: '>=6'}
 
   strip-final-newline@3.0.0:
     resolution: {integrity: sha512-dOESqjYr96iWYylGObzd39EuNTa5VJxyvVAEm5Jnh7KGo75V43Hk1odPQkNDyXNmUR6k+gEiDVXnjB8HJ3crXw==}
@@ -6108,6 +6131,11 @@ packages:
   type-fest@4.35.0:
     resolution: {integrity: sha512-2/AwEFQDFEy30iOLjrvHDIH7e4HEWH+f1Yl1bI5XMqzuoCUqwYCdxachgsgv0og/JdVZUhbfjcJAoHj5L1753A==}
     engines: {node: '>=16'}
+
+  typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
 
   typescript@5.7.3:
     resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
@@ -6830,11 +6858,11 @@ snapshots:
       '@types/json-schema': 7.0.15
       js-yaml: 4.1.0
 
-  '@ark/schema@0.39.0':
+  '@ark/schema@0.40.0':
     dependencies:
-      '@ark/util': 0.39.0
+      '@ark/util': 0.40.0
 
-  '@ark/util@0.39.0': {}
+  '@ark/util@0.40.0': {}
 
   '@aws-crypto/crc32@5.2.0':
     dependencies:
@@ -7395,16 +7423,16 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@dotenvx/dotenvx@1.11.4':
+  '@dotenvx/dotenvx@1.37.0':
     dependencies:
       commander: 11.1.0
       dotenv: 16.4.7
       eciesjs: 0.4.14
+      execa: 5.1.1
       fdir: 6.4.3(picomatch@4.0.2)
       ignore: 5.3.2
       object-treeify: 1.1.33
       picomatch: 4.0.2
-      tinyexec: 0.3.2
       which: 4.0.0
 
   '@e965/xlsx@0.20.3': {}
@@ -7828,9 +7856,9 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@hono/arktype-validator@2.0.0(arktype@2.0.4)(hono@4.7.2)':
+  '@hono/arktype-validator@2.0.0(arktype@2.1.0)(hono@4.7.2)':
     dependencies:
-      arktype: 2.0.4
+      arktype: 2.1.0
       hono: 4.7.2
 
   '@humanfs/core@0.19.1': {}
@@ -8535,7 +8563,11 @@ snapshots:
       - vite
       - vue
 
-  '@oxc-parser/wasm@0.1.0': {}
+  '@oxc-parser/wasm@0.50.0':
+    dependencies:
+      '@oxc-project/types': 0.50.0
+
+  '@oxc-project/types@0.50.0': {}
 
   '@parcel/watcher-android-arm64@2.5.1':
     optional: true
@@ -10078,10 +10110,10 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  arktype@2.0.4:
+  arktype@2.1.0:
     dependencies:
-      '@ark/schema': 0.39.0
-      '@ark/util': 0.39.0
+      '@ark/schema': 0.40.0
+      '@ark/util': 0.40.0
 
   assertion-error@2.0.1: {}
 
@@ -11170,6 +11202,18 @@ snapshots:
 
   events@3.3.0: {}
 
+  execa@5.1.1:
+    dependencies:
+      cross-spawn: 7.0.6
+      get-stream: 6.0.1
+      human-signals: 2.1.0
+      is-stream: 2.0.1
+      merge-stream: 2.0.0
+      npm-run-path: 4.0.1
+      onetime: 5.1.2
+      signal-exit: 3.0.7
+      strip-final-newline: 2.0.0
+
   execa@7.2.0:
     dependencies:
       cross-spawn: 7.0.6
@@ -11461,12 +11505,12 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  hono-openapi@0.4.5(@hono/arktype-validator@2.0.0(arktype@2.0.4)(hono@4.7.2))(arktype@2.0.4)(hono@4.7.2):
+  hono-openapi@0.4.5(@hono/arktype-validator@2.0.0(arktype@2.1.0)(hono@4.7.2))(arktype@2.1.0)(hono@4.7.2):
     dependencies:
       json-schema-walker: 2.0.0
     optionalDependencies:
-      '@hono/arktype-validator': 2.0.0(arktype@2.0.4)(hono@4.7.2)
-      arktype: 2.0.4
+      '@hono/arktype-validator': 2.0.0(arktype@2.1.0)(hono@4.7.2)
+      arktype: 2.1.0
       hono: 4.7.2
 
   hono-sessions@0.7.1:
@@ -11511,6 +11555,8 @@ snapshots:
       - supports-color
 
   httpxy@0.1.7: {}
+
+  human-signals@2.1.0: {}
 
   human-signals@4.3.1: {}
 
@@ -12289,6 +12335,8 @@ snapshots:
 
   mime@4.0.6: {}
 
+  mimic-fn@2.1.0: {}
+
   mimic-fn@4.0.0: {}
 
   mimic-function@5.0.1: {}
@@ -12834,6 +12882,10 @@ snapshots:
   once@1.4.0:
     dependencies:
       wrappy: 1.0.2
+
+  onetime@5.1.2:
+    dependencies:
+      mimic-fn: 2.1.0
 
   onetime@6.0.0:
     dependencies:
@@ -13509,10 +13561,11 @@ snapshots:
 
   setprototypeof@1.2.0: {}
 
-  shadcn-nuxt@0.10.4(magicast@0.3.5):
+  shadcn-nuxt@0.11.4(magicast@0.3.5):
     dependencies:
       '@nuxt/kit': 3.15.4(magicast@0.3.5)
-      '@oxc-parser/wasm': 0.1.0
+      '@oxc-parser/wasm': 0.50.0
+      typescript: 5.6.3
     transitivePeerDependencies:
       - magicast
       - supports-color
@@ -13714,6 +13767,8 @@ snapshots:
   strip-ansi@7.1.0:
     dependencies:
       ansi-regex: 6.1.0
+
+  strip-final-newline@2.0.0: {}
 
   strip-final-newline@3.0.0: {}
 
@@ -13991,6 +14046,8 @@ snapshots:
   type-fest@0.21.3: {}
 
   type-fest@4.35.0: {}
+
+  typescript@5.6.3: {}
 
   typescript@5.7.3: {}
 
