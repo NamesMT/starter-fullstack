@@ -217,8 +217,8 @@ importers:
         specifier: ^1.85.0
         version: 1.85.0
       shadcn-nuxt:
-        specifier: 0.10.4
-        version: 0.10.4(magicast@0.3.5)
+        specifier: 1.0.1
+        version: 1.0.1(magicast@0.3.5)
       tailwind-merge:
         specifier: ^2.6.0
         version: 2.6.0
@@ -1643,8 +1643,11 @@ packages:
     resolution: {integrity: sha512-8pDtCnyJOWIhGGlTMYM1kbzUGGUpB+8Wi835pgOoa1jBP78K3rvHKAeYS0Lr/+Ara4T7ouV0n5H2D+pmztq4uw==}
     engines: {node: '>=18.0.0'}
 
-  '@oxc-parser/wasm@0.1.0':
-    resolution: {integrity: sha512-oA7XhTbg9rRBJhIzxCNhJwYmON/9LFAH4GBQxl7HWmGSS6HTrb2t6Peq82nxY0W7knguH52neh9T7zs27FVvsQ==}
+  '@oxc-parser/wasm@0.50.0':
+    resolution: {integrity: sha512-be/QsKqtXQbKhnIRzezPrV385L6EVaX1GNAGeaQaT+HX6Lny/SfmFetCrEZCRqn2/cAqo+P5rGDNJzv06dY/vw==}
+
+  '@oxc-project/types@0.50.0':
+    resolution: {integrity: sha512-VGV87PmDCGv1D+57iEmIuDoso3ig8d8D4VIK9AS0H7h2aNiRwFoCpVyp01+3jvIuHjPcEM2wbo3NG5EKyfx6Jw==}
 
   '@parcel/watcher-android-arm64@2.5.1':
     resolution: {integrity: sha512-KF8+j9nNbUN8vzOFDpRMsaKBHZ/mcjEjMToVMJOhTozkDonQFFrRcfdLWn6yWKCmJKmdVxSgHiYvTCef4/qcBA==}
@@ -5651,8 +5654,8 @@ packages:
   setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
 
-  shadcn-nuxt@0.10.4:
-    resolution: {integrity: sha512-WhSGzjaSMi1D2xb9Aflpwl8G8Qvlb0g4OuJLPO4YyRhduQDuscU6Pr1HdF7T4700foLLglgFnz7m8E2DDLLHJA==}
+  shadcn-nuxt@1.0.1:
+    resolution: {integrity: sha512-4/JwF8pCGmlLq8nHPdeWxY7DQk4h5aMb2nKvms9N1ZK5ZldWPVLn5aBG9Tl2J8ZBqJo4+XA5K8dMNeoA0Bf9qw==}
 
   sharp@0.32.6:
     resolution: {integrity: sha512-KyLTWwgcR9Oe4d9HwCwNM2l7+J0dUQwn/yf7S0EnTtb0eVS4RxO0eUSvxPtzT4F3SY+C4K6fqdv/DO27sJ/v/w==}
@@ -6108,6 +6111,11 @@ packages:
   type-fest@4.35.0:
     resolution: {integrity: sha512-2/AwEFQDFEy30iOLjrvHDIH7e4HEWH+f1Yl1bI5XMqzuoCUqwYCdxachgsgv0og/JdVZUhbfjcJAoHj5L1753A==}
     engines: {node: '>=16'}
+
+  typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
 
   typescript@5.7.3:
     resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
@@ -8535,7 +8543,11 @@ snapshots:
       - vite
       - vue
 
-  '@oxc-parser/wasm@0.1.0': {}
+  '@oxc-parser/wasm@0.50.0':
+    dependencies:
+      '@oxc-project/types': 0.50.0
+
+  '@oxc-project/types@0.50.0': {}
 
   '@parcel/watcher-android-arm64@2.5.1':
     optional: true
@@ -13509,10 +13521,11 @@ snapshots:
 
   setprototypeof@1.2.0: {}
 
-  shadcn-nuxt@0.10.4(magicast@0.3.5):
+  shadcn-nuxt@1.0.1(magicast@0.3.5):
     dependencies:
       '@nuxt/kit': 3.15.4(magicast@0.3.5)
-      '@oxc-parser/wasm': 0.1.0
+      '@oxc-parser/wasm': 0.50.0
+      typescript: 5.6.3
     transitivePeerDependencies:
       - magicast
       - supports-color
@@ -13991,6 +14004,8 @@ snapshots:
   type-fest@0.21.3: {}
 
   type-fest@4.35.0: {}
+
+  typescript@5.6.3: {}
 
   typescript@5.7.3: {}
 
