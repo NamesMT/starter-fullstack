@@ -205,8 +205,8 @@ importers:
         specifier: ^3.15.4
         version: 3.15.4(@parcel/watcher@2.5.1)(@types/node@22.13.5)(aws4fetch@1.0.20)(db0@0.2.4)(eslint@9.21.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.5.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.34.8)(sass@1.85.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.7.3)(vite@6.1.1(@types/node@22.13.5)(jiti@2.4.2)(sass@1.85.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(yaml@2.7.0)
       ohash:
-        specifier: ^1.1.4
-        version: 1.1.4
+        specifier: ^2.0.4
+        version: 2.0.4
       primeicons:
         specifier: ^7.0.0
         version: 7.0.0
