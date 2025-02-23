@@ -2,7 +2,7 @@
   "name": "starter-fullstack",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.15.4",
+  "packageManager": "pnpm@10.4.1",
   "engines": {
     "node": ">=20.13.1"
   },
@@ -17,29 +17,39 @@
     "sst": "ion"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.14.0",
+    "@antfu/eslint-config": "^4.3.0",
     "@dotenvx/dotenvx": "1.11.4",
     "@types/aws-lambda": "^8.10.147",
-    "@unocss/eslint-plugin": "^65.4.2",
-    "eslint": "^9.18.0",
+    "@unocss/eslint-plugin": "^66.0.0",
+    "eslint": "^9.21.0",
     "frontend": "workspace:*",
-    "lint-staged": "^15.4.1",
-    "pathe": "^2.0.2",
+    "lint-staged": "^15.4.3",
+    "pathe": "^2.0.3",
     "simple-git-hooks": "^2.11.1",
     "std-env": "^3.8.0",
-    "tsx": "^4.19.2",
-    "turbo": "^2.3.3",
+    "tsx": "^4.19.3",
+    "turbo": "^2.4.2",
     "typescript": "^5.7.3",
-    "unocss": "^65.4.2"
+    "unocss": "^66.0.0"
   },
   "pnpm": {
     "overrides": {
-      "is-core-module": "npm:@nolyfill/is-core-module@^1",
-      "isarray": "npm:@nolyfill/isarray@^1",
-      "string.prototype.codepointat": "npm:@nolyfill/string.prototype.codepointat@^1",
-      "safe-buffer": "npm:@nolyfill/safe-buffer@^1",
-      "safer-buffer": "npm:@nolyfill/safer-buffer@^1"
-    }
+      "is-core-module": "npm:@nolyfill/is-core-module@^1.0.39",
+      "isarray": "npm:@nolyfill/isarray@^1.0.29",
+      "safe-buffer": "npm:@nolyfill/safe-buffer@^1.0.41",
+      "safer-buffer": "npm:@nolyfill/safer-buffer@^1.0.41",
+      "string.prototype.codepointat": "npm:@nolyfill/string.prototype.codepointat@^1.0.28"
+    },
+    "ignoredBuiltDependencies": [
+      "@namesmt/vue-query-nuxt"
+    ],
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "sharp",
+      "simple-git-hooks",
+      "vue-demi"
+    ]
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
