@@ -53,7 +53,7 @@
     "primeicons": "^7.0.0",
     "radix-vue": "^1.9.16",
     "sass": "^1.85.0",
-    "shadcn-nuxt": "0.10.4",
+    "shadcn-nuxt": "1.0.2",
     "tailwind-merge": "^2.6.0",
     "ufo": "^1.5.4",
     "unocss": "^66.0.0",
