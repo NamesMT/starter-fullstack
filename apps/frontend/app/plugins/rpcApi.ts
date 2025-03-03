@@ -1,7 +1,7 @@
 import type { app } from 'backend/src/app'
 import type { ClientRequestOptions } from 'hono/client'
 import { hc } from 'hono/client'
-import { sha256 } from 'ohash'
+import { sha256 } from 'hono/utils/crypto'
 
 export default defineNuxtPlugin({
   name: 'local-rpcApi',
@@ -17,11 +17,16 @@ export default defineNuxtPlugin({
       : enableProxy
 
     // this wrappedFetch calculates the sha256 hash of the request body and adds it to the headers, it is necessary for AWS Lambda + OAC on POST/PUT requests.
-    const wrappedFetch = (url: string | URL | Request, options?: RequestInit) => {
+    const wrappedFetch = async (url: string | URL | Request, options?: RequestInit) => {
       if (options?.body) {
         options.headers = new Headers(options.headers || {})
         // TODO: make sure this work well with all forms of BodyInit, i.e: FormData, Blob, etc.
-        options.headers.set('x-amz-content-sha256', sha256(typeof options.body === 'string' ? options.body : JSON.stringify(options.body)))
+        options.headers.set(
+          'x-amz-content-sha256',
+          (await sha256(typeof options.body === 'string'
+            ? options.body
+            : JSON.stringify(options.body)))!,
+        )
       }
 
       return fetch(url, options)
