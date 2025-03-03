@@ -19,8 +19,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@primevue/themes": "^4.2.5",
-    "primevue": "^4.2.5"
+    "@primevue/themes": "^4.3.1",
+    "primevue": "^4.3.1"
   },
   "devDependencies": {
     "@kinde-oss/kinde-typescript-sdk": "^2.9.1",
@@ -32,9 +32,9 @@
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/i18n": "^9.2.1",
     "@nuxtjs/seo": "^2.2.0",
-    "@primevue/nuxt-module": "^4.2.5",
-    "@tanstack/query-persist-client-core": "^5.66.4",
-    "@tanstack/vue-query": "^5.66.9",
+    "@primevue/nuxt-module": "^4.3.1",
+    "@tanstack/query-persist-client-core": "^5.66.11",
+    "@tanstack/vue-query": "^5.66.11",
     "@unocss/nuxt": "^66.0.0",
     "@vueuse/core": "^12.7.0",
     "@vueuse/nuxt": "^12.7.0",
@@ -49,11 +49,11 @@
     "hono": "^4.7.2",
     "idb-keyval": "^6.2.1",
     "nuxt": "^3.15.4",
-    "ohash": "^1.1.4",
+    "ohash": "^2.0.9",
     "primeicons": "^7.0.0",
-    "radix-vue": "^1.9.16",
-    "sass": "^1.85.0",
-    "shadcn-nuxt": "0.10.4",
+    "radix-vue": "^1.9.17",
+    "sass": "^1.85.1",
+    "shadcn-nuxt": "^1.0.2",
     "tailwind-merge": "^2.6.0",
     "ufo": "^1.5.4",
     "unocss": "^66.0.0",
