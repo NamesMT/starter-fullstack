@@ -30,9 +30,9 @@ const gapYUnit = computed(() => cssUnit(gapY))
       '--GAP-Y': gapYUnit,
     }"
   >
-    <div v-for="row, _index of value" :key="_index" class="GridMaker__row flex gap-$GAP-X">
+    <div v-for="row, rowIndex of value" :key="rowIndex" class="GridMaker__row flex gap-$GAP-X">
       <div
-        v-for="col, _index of row.split('')" :key="_index" class="h-$SIZE w-$SIZE" :class="[
+        v-for="col, colIndex of row.split('')" :key="colIndex" class="h-$SIZE w-$SIZE" :class="[
           col !== ' '
             ? ['GridMaker__col', elementClass]
             : 'GridMaker__col--inactive',
