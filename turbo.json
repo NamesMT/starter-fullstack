@@ -21,7 +21,8 @@
   ],
   "globalPassThroughEnv": [
     "NODE_TLS_REJECT_UNAUTHORIZED", // Needed to dev and build with self-signed certificates
-    "AWS_*" // AWS variables
+    "AWS_*", // AWS variables
+    "SST_*" // SST variables
   ],
   "tasks": {
     "build": {
