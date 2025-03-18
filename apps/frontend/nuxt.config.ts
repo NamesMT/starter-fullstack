@@ -48,8 +48,14 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [
-      optimizeExclude({ }),
+      optimizeExclude(),
     ],
+    optimizeDeps: {
+      exclude: [
+        'clsx',
+        'embla-carousel-vue',
+      ],
+    },
   },
 
   modules: [
