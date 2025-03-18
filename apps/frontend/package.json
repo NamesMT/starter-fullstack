@@ -19,8 +19,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@primevue/themes": "^4.3.2",
-    "primevue": "^4.3.2"
+    "@primevue/themes": "4.3.1",
+    "primevue": "4.3.1"
   },
   "devDependencies": {
     "@kinde-oss/kinde-typescript-sdk": "^2.9.1",
@@ -32,7 +32,7 @@
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/i18n": "^9.3.1",
     "@nuxtjs/seo": "^3.0.1",
-    "@primevue/nuxt-module": "^4.3.2",
+    "@primevue/nuxt-module": "4.3.1",
     "@tanstack/query-persist-client-core": "^5.66.11",
     "@tanstack/vue-query": "^5.68.0",
     "@unocss/nuxt": "^66.0.0",
