@@ -109,7 +109,7 @@ export default defineConfig({
       },
     }),
     presetAnimations(),
-    presetShadcn({ color: false, radius: false }, false),
+    presetShadcn({ color: false, radius: false }, { globals: false }),
   ],
   transformers: [
     transformerDirectives(),
