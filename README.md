@@ -12,7 +12,7 @@ Note: the app comes with a `localcert` SSL at `packages/common/dev` for local de
 - The starter kit is still configured for 100% SSR support,  
   Simply change the `apps/frontend`'s build script to `nuxt build` to enable SSR building
 
-🌩️ Utilizing [SST Ion](https://ion.sst.dev/) for Infrastructure-as-Code, with powerful [Live](https://ion.sst.dev/docs/live/) development.  
+🌩️ [SST Ion](https://ion.sst.dev/), an Infrastructure-as-Code solution, with powerful [Live](https://ion.sst.dev/docs/live/) development.  
 - SST is 100% opt-in, by using `sst` CLI commands yourself, like `sst dev`,  
   simply remove `sst` dependency and `sst.config.ts` if you want to use another solution.
 - *currently only `backend` app is configured, which will deploy a Lambda with Function URL enabled*
@@ -57,6 +57,10 @@ To develop all apps and packages, run the following command:
 `pnpm run dev`
 
 It is recommended to do your local .env setup to `.env.local` of each app and use `git update-index --skip-worktree` to ignore the changes from being committed to the repo.
+
+### Notes
+#### `import` ordering:
+Imports should not be separated by empty lines, and should be sorted automatically by eslint.
 
 ### Remote Caching
 

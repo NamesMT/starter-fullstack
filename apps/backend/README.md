@@ -19,20 +19,18 @@ Other globally reuseable code should be placed in `~/helpers` folder.
 Locally reusable code should be placed in the same folder as the file that uses it, its name should be its usable scope, suffixing the file name with `.helper`, e.g: `/api/dummy/hello.helper.ts`, `/api/$.helper.ts`.
 
 #### `api` folder:
-The idea of the api folder is to mirrors the actual api url path if possible.
+The idea of the api folder is to mirrors the actual api url path if possible, i.e: an API endpoint at `://example.com/api/dummy/hello` should be placed in `/src/api/dummy/hello.ts`.
 
-The main app entry of any folder should be `$.ts`, the app entry will not define any routes but to manages which routes are enabled.
+The root app entry of the backend is `/src/app.ts`. (*app entry means an Hono app instance*)
 
-You could create folders to group/prefix the routes, e.g: `/api/auth`, `api/dummy` folder.
+If an api prefix requires some common middlewares applied, then it should defines a main app entry as `$.ts` file at the prefix that the middleware applies, routes of this prefix will now be managed by this `$.ts` (called main app entry), instead of the root app entry, e.g: `/api/auth/$.ts`.
 
-Each route should be placed in a separate file according to the route path, e.g: `/api/dummy/hello.ts`, `/api/dummy/greet.ts`,  
-Alternatively, you could create a `$.routes.ts` for multiple routes declaration in one file, e.g: `/api/auth/$.routes.ts`.
+Root and main app entries will not define any routes but to manage middlewares and which routes are enabled (in other words, the app entries should only `.use` middlewares and `.route` routes).
 
-If you need to define routes for the current folder path without any suffix route, use `$$.ts` for the file name, i.e: `/api/$$.ts`
+If a folder prefix already exists and you need to define routes for the current folder path without any suffix route, use `$$.ts` for the file name, do not define a file with the same name as the folder on the parent, i.e: do `/api/dummy/$$.ts` instead of `/api/dummy.ts`.
+
+Again, the recommended structure is to mirror the api url path, but, if for some reason like migrating an old app over that have multiple routes defined in the same file, you should create a `$.routes.ts` for multiple routes declaration in one file, e.g: `/api/auth/$.routes.ts`.
 
 #### Hono `app` export naming conventions:
-* For main app entries ($.ts), it should be named as: `<Name>App`, and it should only `.route` other instances or `.use` middlewares, do not define routes on the `App` instance.
-* If the app contain routes defines, it should be named as: `<Name>RouteApp`
-
-#### `import` ordering:
-Imports should not be separated by empty lines, and should be sorted automatically by eslint.
+* Root and main app entries (app.ts, $.ts) should be named as: `<Name>App`, and it should only `.route` other instances or `.use` middlewares, do not define routes on the `App` instance.
+* For other app entries, a.k.a routes defines, it should be named as: `<Name>RouteApp`, i.e: `/api/dummy/hello.ts` should be named as `dummyHelloRouteApp`/`helloRouteApp`.

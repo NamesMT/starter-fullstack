@@ -1,7 +1,8 @@
 import { appFactory } from '~/helpers/factory'
 import { apiRouteApp } from './$$'
 import { authApp } from './auth/$'
-import { dummyApp } from './dummy/$'
+import { dummyGreetRouteApp } from './dummy/greet'
+import { dummyHelloRouteApp } from './dummy/hello'
 
 export const apiApp = appFactory.createApp()
   // Simple health check route
@@ -10,8 +11,9 @@ export const apiApp = appFactory.createApp()
   // Auth app - you'll need to setup Kinde environment variables.
   .route('/auth', authApp)
 
-  // A dummy app for some demos
-  .route('/dummy', dummyApp)
+  // Some example routes
+  .route('/dummy/hello', dummyHelloRouteApp)
+  .route('/dummy/greet', dummyGreetRouteApp)
 
 // ### This block contains the sample code for streaming APIs,
 // import type { TypedResponse } from 'hono'
