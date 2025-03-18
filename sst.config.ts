@@ -10,11 +10,12 @@ export default $config({
     return {
       name: 'starter-fullstack',
       removal: input?.stage === 'production' ? 'retain' : 'remove',
+      protect: ['production'].includes(input?.stage),
       home: 'aws',
     }
   },
   async run() {
-    // // Loading apps/backend .env files for Function environments
+    // // Loading apps/backend's .env files
     // sst.config.ts will be compiled to .sst/platform/eval, we need to move out from it.
     const currentDir = dirname(fileURLToPath(import.meta.url))
     const rootDir = resolve(currentDir, '../../../')

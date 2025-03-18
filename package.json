@@ -14,7 +14,7 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
-    "sst": "ion"
+    "sst": "^3.9.39"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.10.1",
@@ -34,6 +34,7 @@
   },
   "pnpm": {
     "overrides": {
+      "@intlify/message-compiler": "^11.1.2",
       "is-arguments": "npm:@nolyfill/is-arguments@^1",
       "is-core-module": "npm:@nolyfill/is-core-module@^1",
       "is-generator-function": "npm:@nolyfill/is-generator-function@^1",
