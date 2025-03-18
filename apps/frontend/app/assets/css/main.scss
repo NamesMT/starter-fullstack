@@ -1,6 +1,11 @@
-@import url('./palette.css');
-@import url('./primevue.css');
-@import url('./shadcn.css');
+@layer reset, normalize, tailwind-base, primevue, tailwind-utilities;
+
+@import '@unocss/reset/tailwind.css' layer(reset);
+
+@import './palette.css';
+@import './primevue.css';
+@import './shadcn.css';
+
 
 html {
   --at-apply: 'bg-gray-300 text-surface-600';
