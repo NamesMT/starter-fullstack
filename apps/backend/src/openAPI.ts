@@ -18,7 +18,7 @@ export function setupOpenAPI(app: Hono<any, any>, prefix = '/openapi') {
     `${prefix}/ui`,
     apiReference({
       theme: 'deepSpace',
-      spec: { url: `${prefix}/spec` },
+      url: `${prefix}/spec`,
     }),
   )
 }
