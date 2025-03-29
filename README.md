@@ -1,8 +1,8 @@
 # starter-fullstack
 
-This is a starter template to kick-start your `Nuxt` full-stack project
+This is ~~my~~ a base monorepo starter template to kick-start your beautifully organized project, whether its a fullstack project, monorepo of multiple libraries, or even just one API server and its related infrastructure deployment and utilities separated into another package.
 
-Note: the app comes with a `localcert` SSL at `packages/common/dev` for local development, generated with [mkcert](https://github.com/FiloSottile/mkcert), you can install mkcert and generate your own certificate and replace it or install the `localcert.crt` to your trusted CA to remove the untrusted SSL warning 
+Note: the app comes with a `localcert` SSL at `packages/common/dev` to enable HTTPS for local development, generated with [mkcert](https://github.com/FiloSottile/mkcert), you can install mkcert, generate your own certificate and replace it, or install the `localcert.crt` to your trusted CA to remove the untrusted SSL warning.
 
 ## What's inside?
 
