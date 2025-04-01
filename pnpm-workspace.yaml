@@ -1,7 +1,6 @@
 packages:
   - apps/*
   - packages/*
-shamefullyHoist: 'true'
 ignoredBuiltDependencies:
   - '@namesmt/vue-query-nuxt'
   - aws-sdk
