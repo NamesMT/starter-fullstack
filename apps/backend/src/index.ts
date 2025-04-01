@@ -1,3 +1,4 @@
+import { localcertKeyPath, localcertPath } from '@local/common/dev/cert'
 import { handle, streamHandle } from 'hono-adapter-aws-lambda'
 import { env, isDevelopment } from 'std-env'
 import { app } from './app'
@@ -19,6 +20,7 @@ if (isDevelopment) {
     },
     hostname: env.APP_DEV_host,
     port: +(env.APP_DEV_port ?? '3301'),
+    tls: { cert: localcertPath, key: localcertKeyPath },
   })
 
   server.ready().then(() => {
