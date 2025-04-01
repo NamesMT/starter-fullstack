@@ -2,6 +2,12 @@ import { localcertKeyPath, localcertPath } from '@local/common/dev/cert'
 import optimizeExclude from 'vite-plugin-optimize-exclude'
 import { Names } from './app/primevue.config'
 
+const siteConfig = {
+  url: import.meta.env.NUXT_PUBLIC_FRONTEND_URL,
+  name: 'starter-fullstack',
+  description: '🔥Hono RPC, Nuxt, SST Ion, Kinde Auth, Tanstack Query, Shadcn, Primevue, UnoCSS',
+}
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   future: {
@@ -69,13 +75,10 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@primevue/nuxt-module',
     'shadcn-nuxt',
+    'nuxt-llms',
   ],
 
-  site: {
-    url: import.meta.env.NUXT_PUBLIC_FRONTEND_URL,
-    name: 'starter-fullstack',
-    description: '🔥Hono RPC, Nuxt, SST Ion, Kinde Auth, Tanstack Query, Shadcn, Primevue, UnoCSS',
-  },
+  site: siteConfig,
 
   i18n: {
     baseUrl: import.meta.env.NUXT_PUBLIC_FRONTEND_URL,
@@ -134,6 +137,12 @@ export default defineNuxtConfig({
       // stylistic: true,
       standalone: false,
     },
+  },
+
+  llms: {
+    domain: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
   },
 
   telemetry: false,
