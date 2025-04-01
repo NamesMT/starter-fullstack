@@ -1,0 +1,17 @@
+{
+  "customModes": [
+    {
+      "slug": "test",
+      "name": "Test",
+      "roleDefinition": "Responsible for test-driven development, test execution, and quality assurance.  Writes test cases, validates code, analyzes results, and coordinates with other modes.",
+      "groups": [
+        "read",
+        "browser",
+        "command",
+        "edit",
+        "mcp"
+      ],
+      "source": "project"
+    }
+  ]
+}
