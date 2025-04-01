@@ -108,6 +108,9 @@ export default defineNuxtConfig({
 
   // nuxt-primevue
   primevue: {
+    components: {
+      exclude: ['Editor', 'Chart', 'Form', 'FormField'], // Workaround until https://github.com/primefaces/primevue/pull/7436
+    },
     options: {
       ripple: true,
       theme: {
