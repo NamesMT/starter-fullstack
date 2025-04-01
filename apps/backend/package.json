@@ -15,7 +15,7 @@
     "build": "dotenvx run -f .env.prod.local -f .env -- unbuild"
   },
   "dependencies": {
-    "srvx": "^0.2.5"
+    "srvx": "^0.2.6"
   },
   "devDependencies": {
     "@hono/arktype-validator": "^2.0.0",
@@ -23,9 +23,9 @@
     "@local/common": "workspace:*",
     "@local/tsconfig": "workspace:*",
     "@namesmt/utils": "^0.5.9",
-    "@scalar/hono-api-reference": "^0.7.2",
-    "@vitest/coverage-v8": "^3.0.9",
-    "arktype": "^2.1.10",
+    "@scalar/hono-api-reference": "^0.7.4",
+    "@vitest/coverage-v8": "^3.1.1",
+    "arktype": "^2.1.16",
     "consola": "^3.4.2",
     "hono": "^4.7.5",
     "hono-adapter-aws-lambda": "^1.3.0",
@@ -33,6 +33,6 @@
     "hono-sessions": "^0.7.2",
     "std-env": "^3.8.1",
     "unbuild": "^3.5.0",
-    "vitest": "^3.0.9"
+    "vitest": "^3.1.1"
   }
 }
