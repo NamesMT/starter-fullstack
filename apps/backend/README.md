@@ -1,4 +1,4 @@
-# backend [![NPM version](https://img.shields.io/npm/v/backend?color=a1b858&label=)](https://www.npmjs.com/package/backend)
+# backend
 
 **backend** is the main backend/API server for the project, powered by [Hono🔥](https://hono.dev/)
 
@@ -6,7 +6,7 @@
 - [x] Easy cross-function calls / Lambda triggers support with [hono-adapter-aws-lambda](https://github.com/NamesMT/hono-adapter-aws-lambda)
 - [x] OpenAPI: You can access the OpenAPI specs and Scalar UI at: https://127.0.0.1:3301/openapi/ui
 
-*You can view the OpenAPI UI live demo here: https://4yjbmxiunrnigwewec4twf4zl40izfde.lambda-url.ap-southeast-1.on.aws/openapi/ui*
+*You can view the OpenAPI UI live demo [HERE](https://4yjbmxiunrnigwewec4twf4zl40izfde.lambda-url.ap-southeast-1.on.aws/openapi/ui).*
 
 ## Structuring cookbook:
 #### Root level:
@@ -14,7 +14,7 @@ Things like 3rd party APIs, DBs, Storages connectors, etc, should be placed in `
 
 Things that interact with `~/providers` should be placed in `~/services` folder. (like an `user` service)
 
-Other globally reuseable code should be placed in `~/helpers` folder.
+Other globally reuseable code should be placed in `~/helpers` folder. (like `error`, `logger` utils)
 
 Locally reusable code should be placed in the same folder as the file that uses it, its name should be its usable scope, suffixing the file name with `.helper`, e.g: `/api/dummy/hello.helper.ts`, `/api/$.helper.ts`.
 
