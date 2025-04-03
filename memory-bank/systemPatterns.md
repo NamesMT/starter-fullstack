@@ -13,6 +13,7 @@ This document details the established architectural patterns, technology choices
     *   Factory pattern (`appFactory`, `triggerFactory`) for application setup.
 *   **Frontend UI Strategy:** Concurrent use of PrimeVue (comprehensive) and Shadcn/vue (composable) UI libraries.
 *   **Frontend State/Data Fetching:** Tanstack Query (Vue Query) for client-side caching and data fetching, with IndexedDB persistence.
+*   **Frontend API Proxy:** Nuxt frontend proxies API calls to the backend when running on the same domain (dev/prod parity).
 *   **Type-Safe API Communication:** Hono RPC client (`hono/client`) used in the frontend, leveraging TypeScript project references for shared types.
 *   **Internationalization (i18n):** Centralized management in `@local/locales` using `unplugin-sheet-i18n` to process a CSV file (`src/i18n.csv`).
 
