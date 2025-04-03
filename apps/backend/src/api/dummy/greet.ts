@@ -3,6 +3,7 @@ import { describeRoute } from 'hono-openapi'
 import { resolver } from 'hono-openapi/arktype'
 import { customArktypeValidator } from '~/helpers/arktype'
 import { appFactory } from '~/helpers/factory'
+import { i18nComposer } from '~/helpers/i18n'
 
 export const dummyGreetRouteApp = appFactory.createApp()
   .get(
@@ -21,10 +22,11 @@ export const dummyGreetRouteApp = appFactory.createApp()
       },
     }),
     customArktypeValidator('query', type({
-      name: 'string>0',
+      'name': 'string>0',
+      'locale?': `'en' | 'vi'`,
     })),
     async (c) => {
-      const { name } = c.req.valid('query')
-      return c.text(`Hello ${name}!`)
+      const { name, locale } = c.req.valid('query')
+      return c.text(`${i18nComposer.t('hello', 1, { locale })} ${name}!`)
     },
   )
