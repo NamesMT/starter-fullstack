@@ -6,7 +6,7 @@ definePageMeta({
   title: 'pages.title.home',
 })
 
-const { t, locale, setLocale } = useI18n()
+const { locale, setLocale } = useI18n()
 const runtimeConfig = useRuntimeConfig()
 const colorMode = useColorMode()
 const { $apiClient, $auth } = useNuxtApp()
@@ -51,36 +51,46 @@ const { isPending, isError, data, error } = useQuery({
         ]"
       />
     </div>
-    <div class="flex items-center justify-center gap-2">
-      <div>Theme:&nbsp;</div>
-      <ClientOnly>
-        <template #fallback>
-          <span>
-            ...
-          </span>
-        </template>
+    <div class="flex items-center justify-center gap-4">
+      <div class="flex items-center gap-2">
+        <p>
+          Theme:
+        </p>
+        <ClientOnly>
+          <template #fallback>
+            <Button
+              class="w-16"
+              label="..."
+            />
+          </template>
 
+          <Button
+            class="w-16"
+            :label="colorMode.preference"
+            @pointerdown="colorMode.preference = (colorMode.preference !== 'dark')
+              ? 'dark'
+              : 'light'"
+          />
+        </ClientOnly>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <p>{{ $t('language') }}:</p>
         <Button
-          :label="colorMode.preference"
-          @pointerdown="colorMode.preference = (colorMode.preference !== 'dark')
-            ? 'dark'
-            : 'light'"
+          :label="locale"
+          @pointerdown="setLocale(locale === 'en' ? 'vi' : 'en')"
         />
-      </ClientOnly>
-      <InputNumber
-        v-model="number"
-        input-id="integeronly"
-        placeholder="Number input"
-      />
-      <div>{{ t('language') }}:&nbsp;</div>
-      <Button
-        :label="locale"
-        @pointerdown="setLocale(locale === 'en' ? 'vi' : 'en')"
-      />
+      </div>
 
       <div :key="$li18n.renderKey">
         {{ dayjs().format('dddd') }}
       </div>
+
+      <InputNumber
+        v-model="number"
+        input-id="integeronly"
+        :placeholder="$t('number-input')"
+      />
     </div>
 
     <div>
@@ -103,17 +113,21 @@ const { isPending, isError, data, error } = useQuery({
     <div>
       <ClientOnly>
         <template #fallback>
-          <div>Auth status: ...</div>
+          <div class="h-12 flex items-center">
+            <p>Auth status: ...</p>
+          </div>
         </template>
-        <div>Auth status: {{ $auth.loggedIn ? 'Logged in' : 'Not logged in' }}</div>
+        <div class="h-12 flex items-center gap-4">
+          <p>Auth status: {{ $auth.loggedIn ? 'Logged in' : 'Not logged in' }}</p>
+          <div class="flex items-center justify-center gap-2">
+            <Button v-if="$auth.loggedIn" label="Sign-out" @pointerdown="navigateTo(getSignOutUrl(), { external: true })" />
+            <Button v-else label="Sign-in" @pointerdown="navigateTo(getSignInUrl(), { external: true })" />
+          </div>
+        </div>
         <template v-if="$auth.loggedIn">
           <div>User information:</div>
           <pre class="max-w-60vw overflow-hidden text-ellipsis rounded bg-black p-2 px-4 text-left text-white">{{ $auth }}</pre>
         </template>
-        <div class="mt-2 flex items-center justify-center gap-2">
-          <Button v-if="$auth.loggedIn" label="Sign-out" @pointerdown="navigateTo(getSignOutUrl(), { external: true })" />
-          <Button v-else label="Sign-in" @pointerdown="navigateTo(getSignInUrl(), { external: true })" />
-        </div>
       </ClientOnly>
     </div>
 
