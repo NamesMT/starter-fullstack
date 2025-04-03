@@ -2,7 +2,7 @@
   "name": "starter-fullstack",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.7.0",
+  "packageManager": "pnpm@10.7.1",
   "engines": {
     "node": ">=20.13.1"
   },
@@ -14,7 +14,7 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
-    "sst": "^3.11.21"
+    "sst": "^3.12.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.11.0",
