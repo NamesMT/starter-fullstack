@@ -51,6 +51,7 @@ const { isPending, isError, data, error } = useQuery({
         ]"
       />
     </div>
+
     <div class="flex items-center justify-center gap-4">
       <div class="flex items-center gap-2">
         <p>
@@ -117,6 +118,7 @@ const { isPending, isError, data, error } = useQuery({
             <p>Auth status: ...</p>
           </div>
         </template>
+
         <div class="h-12 flex items-center gap-4">
           <p>Auth status: {{ $auth.loggedIn ? 'Logged in' : 'Not logged in' }}</p>
           <div class="flex items-center justify-center gap-2">
