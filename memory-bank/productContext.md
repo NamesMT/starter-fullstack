@@ -2,9 +2,14 @@
 
 This document outlines the high-level description, goals, features, and overall architecture of the `starter-fullstack` project.
 
-## 1. Project Goal & Description
+## 1. Project Description & Goal
 
-A monorepo project template designed to provide a starting point for full-stack applications using modern technologies like Nuxt (frontend), Hono (backend), SST (deployment), and pnpm/Turborepo (monorepo management).
+### Initial description:
+A monorepo project template designed to "kick-start your beautifully organized project, whether its a fullstack project, monorepo of multiple libraries, or even just one API server and its related infrastructure deployment and utilities separated into another package." (quote from [root README.md](../README.md)).  
+The current demo code configuration is full-stack applications using modern technologies like Nuxt (frontend), Hono (backend), SST (deployment), and pnpm/Turborepo (monorepo management).
+
+### Target goal and description:
+To be updated on user input what do you want to achieve with this template.
 
 ## 2. Overall Architecture
 
