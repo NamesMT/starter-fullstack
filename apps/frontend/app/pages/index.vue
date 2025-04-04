@@ -32,7 +32,7 @@ const { isPending, isError, data, error } = useQuery({
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col items-center justify-center gap-4 py-4 text-center">
+  <div class="min-h-screen flex flex-col items-center justify-center gap-4 px-4 py-4 text-center">
     <div class="flex items-end gap-2">
       <GridMaker
         :value="[
@@ -52,7 +52,7 @@ const { isPending, isError, data, error } = useQuery({
       />
     </div>
 
-    <div class="flex items-center justify-center gap-4">
+    <div class="w-full flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-4">
       <div class="flex items-center gap-2">
         <p>
           Theme:
@@ -61,13 +61,11 @@ const { isPending, isError, data, error } = useQuery({
           <template #fallback>
             <Button
               key="fallback"
-              class="w-18"
               label="..."
             />
           </template>
 
           <Button
-            class="w-18"
             :label="colorMode.preference"
             @pointerdown="colorMode.preference = (colorMode.preference !== 'dark')
               ? 'dark'
@@ -95,16 +93,16 @@ const { isPending, isError, data, error } = useQuery({
       />
     </div>
 
-    <div>
+    <div class="max-w-full flex flex-col items-center">
       <div>Configured frontendUrl: {{ runtimeConfig.public.frontendUrl }}</div>
       <div>Configured backendUrl: {{ runtimeConfig.public.backendUrl }}</div>
       <div>API Response from `<code>{{ $apiClient.api.dummy.hello.$url() }}</code>`:</div>
-      <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ apiError || apiResult || 'Empty' }}</pre>
+      <pre class="max-w-full w-fit overflow-x-auto rounded bg-black p-2 px-4 text-left text-white">{{ apiError || apiResult || 'Empty' }}</pre>
     </div>
 
-    <div>
+    <div class="max-w-full flex flex-col items-center">
       <div>Tanstack Query result (fetched client-side and persisted to IndexedDB for 12 hours)</div>
-      <pre class="rounded bg-black p-2 px-4 text-left text-white">{{ isPending ? 'Loading...' : isError ? error : data }}</pre>
+      <pre class="max-w-full w-fit overflow-x-auto rounded bg-black p-2 px-4 text-left text-white">{{ isPending ? 'Loading...' : isError ? error : data }}</pre>
       <Button
         class="mt-2"
         label="Make stale (refetch)"
@@ -112,7 +110,7 @@ const { isPending, isError, data, error } = useQuery({
       />
     </div>
 
-    <div>
+    <div class="max-w-full">
       <ClientOnly>
         <template #fallback>
           <div key="fallback" class="h-12 flex items-center">
@@ -130,33 +128,35 @@ const { isPending, isError, data, error } = useQuery({
 
         <div v-if="$auth.loggedIn">
           <div>User information:</div>
-          <pre class="max-w-60vw overflow-hidden text-ellipsis rounded bg-black p-2 px-4 text-left text-white">{{ $auth }}</pre>
+          <pre class="max-w-full overflow-x-auto rounded bg-black p-2 px-4 text-left text-white 2xl:max-w-60vw">{{ $auth }}</pre>
         </div>
       </ClientOnly>
     </div>
 
-    <Carousel class="relative max-w-xs w-full">
-      <CarouselContent>
-        <!-- You could either explicitly import the shadcn components or use them with 'Shad' auto-import prefix -->
-        <ShadCarouselItem v-for="(_, index) in 5" :key="index">
-          <div class="p-1">
-            <Card>
-              <template #title>
-                Simple Card #{{ index }}
-              </template>
-              <template #content>
-                <p class="m-0">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-                  quas!
-                </p>
-              </template>
-            </Card>
-          </div>
-        </ShadCarouselItem>
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+    <div class="max-w-full w-full flex justify-center px-12">
+      <Carousel class="relative max-w-xs w-full">
+        <CarouselContent>
+          <!-- You could either explicitly import the shadcn components or use them with 'Shad' auto-import prefix -->
+          <ShadCarouselItem v-for="(_, index) in 5" :key="index">
+            <div class="p-1">
+              <Card>
+                <template #title>
+                  Simple Card #{{ index }}
+                </template>
+                <template #content>
+                  <p class="m-0">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
+                    quas!
+                  </p>
+                </template>
+              </Card>
+            </div>
+          </ShadCarouselItem>
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </div>
 
     <div>
       <IsSST />
