@@ -60,13 +60,14 @@ const { isPending, isError, data, error } = useQuery({
         <ClientOnly>
           <template #fallback>
             <Button
-              class="w-16"
+              key="fallback"
+              class="w-18"
               label="..."
             />
           </template>
 
           <Button
-            class="w-16"
+            class="w-18"
             :label="colorMode.preference"
             @pointerdown="colorMode.preference = (colorMode.preference !== 'dark')
               ? 'dark'
@@ -114,7 +115,7 @@ const { isPending, isError, data, error } = useQuery({
     <div>
       <ClientOnly>
         <template #fallback>
-          <div class="h-12 flex items-center">
+          <div key="fallback" class="h-12 flex items-center">
             <p>Auth status: ...</p>
           </div>
         </template>
@@ -126,10 +127,11 @@ const { isPending, isError, data, error } = useQuery({
             <Button v-else label="Sign-in" @pointerdown="navigateTo(getSignInUrl(), { external: true })" />
           </div>
         </div>
-        <template v-if="$auth.loggedIn">
+
+        <div v-if="$auth.loggedIn">
           <div>User information:</div>
           <pre class="max-w-60vw overflow-hidden text-ellipsis rounded bg-black p-2 px-4 text-left text-white">{{ $auth }}</pre>
-        </template>
+        </div>
       </ClientOnly>
     </div>
 
