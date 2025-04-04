@@ -76,7 +76,7 @@ const { isPending, isError, data, error } = useQuery({
       </div>
 
       <div class="flex items-center gap-2">
-        <p>{{ $t('hello-from-/x') }}:</p>
+        <p>{{ $t('language') }}:</p>
         <Button
           :label="locale"
           @pointerdown="setLocale(locale === 'en' ? 'vi' : 'en')"
