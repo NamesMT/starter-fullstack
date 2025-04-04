@@ -14,3 +14,7 @@ html {
 html.dark {
   --at-apply: 'bg-gray-700 text-surface-200';
 }
+
+pre, code {
+  --at-apply: 'font-mono'
+}

@@ -105,7 +105,11 @@ export default defineConfig({
           weights: ['100..900'],
           italic: true,
         },
-        mono: 'Chivo Mono',
+        mono: {
+          name: 'Chivo Mono',
+          weights: ['100..900'],
+          italic: true,
+        },
       },
     }),
     presetAnimations(),
