@@ -120,11 +120,11 @@ const { isPending, isError, data, error } = useQuery({
           </div>
         </template>
 
-        <div class="h-12 flex items-center gap-4">
+        <div class="h-12 flex items-center justify-center gap-4">
           <p>Auth status: {{ $auth.loggedIn ? 'Logged in' : 'Not logged in' }}</p>
           <div class="flex items-center justify-center gap-2">
-            <Button v-if="$auth.loggedIn" label="Sign-out" @pointerdown="navigateTo(getSignOutUrl(), { external: true })" />
-            <Button v-else label="Sign-in" @pointerdown="navigateTo(getSignInUrl(), { external: true })" />
+            <Button v-if="$auth.loggedIn" label="Sign-out" @click="navigateTo(getSignOutUrl(), { external: true })" />
+            <Button v-else label="Sign-in" @click="navigateTo(getSignInUrl(), { external: true })" />
           </div>
         </div>
 
