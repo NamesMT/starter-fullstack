@@ -26,9 +26,9 @@
     "lint-staged": "^15.5.0",
     "pathe": "^2.0.3",
     "simple-git-hooks": "^2.12.1",
-    "std-env": "^3.8.1",
+    "std-env": "^3.9.0",
     "tsx": "^4.19.3",
-    "turbo": "^2.4.4",
+    "turbo": "^2.5.0",
     "typescript": "^5.8.2"
   },
   "pnpm": {
