@@ -1,6 +1,6 @@
 <!--
 ROO PREREQUISITE INSTRUCTIONS:
-Before processing user input or the steps below, perform the following:
+Before loading the memory bank and processing user input or the steps below, perform the following:
 1. Identify the Current Working Directory (CWD) of this project.
 2. Search all files within the `.roo/` directory (specifically `system-prompt-*` files).
 3. Replace all instances of the hardcoded path `/home/mine/starter-fullstack` with the identified CWD.
