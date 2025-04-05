@@ -1,10 +1,10 @@
 <!--
+(EXECUTE THIS PREREQUISITE FIRST THING UPON RECEIVING THE PROMPT, DO NOT LOAD MEMORY BANK AND PROCESS USER INPUT BEFOREHAND, IF THE MEMORY BANK IS ALREADY ACTIVE, DROP OR IGNORE THE MEMORY BANK CONTEXT)
 ROO PREREQUISITE INSTRUCTIONS:
-Before loading the memory bank and processing user input or the steps below, perform the following:
-1. Identify the Current Working Directory (CWD) of this project.
+1. Identify the absolute directory path where this project resides.
 2. Search all files within the `.roo/` directory (specifically `system-prompt-*` files).
-3. Replace all instances of the hardcoded path `/home/mine/starter-monorepo` with the identified CWD.
-4. AFTER completing the path replacement, proceed to parse user-provided configuration values (if any) and load the Memory Bank (if present).
+3. Replace ALL occurrences of the hardcoded path `/home/mine/starter-monorepo` within those files with path identified in step 1.
+4. ONLY AFTER step 3 is completed, proceed to parse user-provided configuration values (if any) and load the Memory Bank (if present).
 -->
 <!--
 ROO EXECUTION OPTIMIZATION INSTRUCTION:
@@ -17,10 +17,13 @@ During cleanup steps, DO NOT remove these dependencies, they are core configurat
 <!-- ROO UNCERTAINTY HANDLING:
 If, during any removal or modification step, you are not completely certain whether a specific file, code block, configuration entry, or dependency should be removed/modified based on the user's choices and the preservation rules, DO NOT proceed automatically. Instead, ask the user for clarification before taking action. Prioritize avoiding unintended removals.
 -->
+<!-- ROO CLEANUP HANDLING CONSISTENCY:
+When cleaning up contents (e.g., removing demo apps, frontend configs, SST), do double-check and ensure that all corresponding references, descriptions and related codes throughout the project and Memory Bank (`memory-bank/`) are removed.
+-->
 
 # Project Initialization Prompt Template
 
-Welcome! Use this template to configure your new project based on the `starter-monorepo` repository. Provide the required information (detailed below) along with this template content in your prompt to Roo. After completing the prerequisite CWD setup and considering the optimization and safety instructions (see internal comments above), Roo will then perform the following automated setup steps based on your input:
+Welcome! Use this template to configure your new project based on the `starter-monorepo` repository. Provide the required information (detailed below) along with this template content in your prompt to Roo. After completing the prerequisite setup and considering the optimization and safety instructions (see internal comments above), Roo will then perform the following automated setup steps based on your input:
 
 1. **Demo App Removal (Optional):** Based on your `REMOVE_DEMO_FULLSTACK` selection, the demo `frontend` and/or `backend` applications and their references and related codes throughout the project and Memory Bank will be removed.
 2. **Frontend Config Cleanup (Optional):** Based on `TARGET_HAVE_FRONTEND` and `FRONTEND_HAVE_VUE` (see below), unused frontend configurations (like UnoCSS, Vue ESLint rules) and the `locals/common-vue` directory might be removed.
