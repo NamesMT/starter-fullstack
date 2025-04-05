@@ -16,9 +16,10 @@ Welcome! Use this template to configure your new project based on the `starter-m
 3.  **SST Removal (Optional):** If requested via `REMOVE_SST`, SST configuration files (`sst.config.ts`, `.env.sst`), related scripts/dependencies in `package.json`, and references and related codes will be removed.
 4.  **Renaming:** All instances of the default name `starter-monorepo` within the project files and Memory Bank will be replaced with your chosen `MONOREPO_ROOT_NAME`.
 5.  **Context Update:** The root `README.md` and `memory-bank/productContext.md` will be updated with your `TARGET_PROJECT_GOAL_AND_DESCRIPTION`.
-6.  **Planning Phase:** After the setup, Roo will enter a feedback loop with you and help you to make plans, create more goals, and break down your project goals into actionable steps and create an initial plan.
-7.  **Cleanup:** This `INIT_PROMPT.md` file will be removed.
-8.  **Final Check:** You will be reminded to check and potentially update the rest of the system-specific information in the `.roo/system-prompt-*` files.
+6.  **Initialize local secret env files:** Scan project for `.env.local` files and copy them to `.env.local.ignored`.
+7.  **Planning Phase:** After the setup, Roo will enter a feedback loop with you and help you to make plans, create more goals, and break down your project goals into actionable steps and create an initial plan.
+8.  **Cleanup:** This `INIT_PROMPT.md` file will be removed.
+9.  **Final Check:** You will be reminded to check and potentially update the rest of the system-specific information in the `.roo/system-prompt-*` files.
 
 **Required Information:**
 

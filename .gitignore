@@ -39,7 +39,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-# It's better to use `git update-index --skip-worktree` than to ignore .env file.
+.env.*.local.ignored
 
 # turbo
 .turbo

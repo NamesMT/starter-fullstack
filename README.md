@@ -74,7 +74,8 @@ To build all apps and packages, run the following command:
 To develop all apps and packages, run the following command:  
 `pnpm run dev`
 
-It is recommended to do your local .env setup to `.env.local` of each app and use `git update-index --skip-worktree` to ignore the changes from being committed to the repo.
+To define local development environment variables of each app, either use `git update-index --skip-worktree .env.local` and use it directly, or create a copy of or rename `.env.local` to `.env.local.ignored`.
+  - Roo will help you creating `.env.local.ignored` file if you use the AI initialization prompt.
 
 ### Notes
 #### `import` ordering:

@@ -24,7 +24,10 @@ This document details the established architectural patterns, technology choices
 *   **Frontend:** Nuxt (Vue 3), PrimeVue, Shadcn/vue, UnoCSS, Tanstack Query, Kinde (auth), `@nuxtjs/i18n`.
 *   **Monorepo/Build:** pnpm, Turborepo, TypeScript, ESLint (`@antfu/eslint-config`), `simple-git-hooks`, `lint-staged`.
 *   **Deployment:** SST Ion (optional, for AWS Lambda).
-*   **Environment:** `dotenvx`.
+*   **Environment:** 
+    * Uses `dotenvx` to load `.env` files.
+    * Common env files are not ignored by git (e.g: `.env`, `.env.local`), ignore pattern is `.env.*.ignored`
+    * MUST define local secrets in `.env.local.ignored`.
 *   **Local Development:** `mkcert` for generating local SSL certificates (`localcert`).
 
 ## 3. Code Organization & Conventions
