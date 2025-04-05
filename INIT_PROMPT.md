@@ -76,7 +76,7 @@ TARGET_PROJECT_GOAL_AND_DESCRIPTION="""
 *   Specify whether your final project goal includes building *any* kind of frontend application.
 *   If `false`, Roo will remove frontend-specific configurations like the root `uno.config.ts` and related ESLint settings/dependencies.
 *   If you keep the demo frontend (`keep_both` or `remove_backend`), this setting is ignored (as a frontend exists).
-*   **If you remove the demo frontend and do not provide this value, Roo will ask you interactively.**
+*   **If you remove the demo frontend and do not provide this value, Roo will ask you interactively (see How to Use below).**
 
 ```text
 # Options: true | false
@@ -91,7 +91,7 @@ TARGET_PROJECT_GOAL_AND_DESCRIPTION="""
 *   **Inferred Values:**
     *   If you keep the demo frontend (`keep_both` or `remove_backend`), this is automatically `true`.
     *   If `TARGET_HAVE_FRONTEND` is determined to be `false` (either specified or asked), this is automatically `false`.
-*   **When to Specify / Ask:** This setting is only relevant if `TARGET_HAVE_FRONTEND` is determined to be `true`. If you don't provide it in that scenario, Roo will ask you interactively.
+*   **When to Specify / Ask:** This setting is only relevant if `TARGET_HAVE_FRONTEND` is determined to be `true`. If you don't provide it in that scenario, Roo will ask you interactively (see How to Use below).
 *   **Effect:** If `false`, Roo will remove Vue-specific configurations (like ESLint rules) and the `locals/common-vue` directory.
 
 ```text
@@ -152,9 +152,9 @@ FRONTEND_HAVE_VUE="true"   # Must specify true if the new frontend uses Vue
 [Paste the entire content of INIT_PROMPT.md here]
 ```
 
-Alternatively, just provide the template content on its own, and Roo will ask you for the required and relevant optional values interactively.
-
-<!-- For Roo, make sure you ask interactively for each value, don't ask all of them at once -->
+Alternatively, if you provide the template content on its own without specifying the required/relevant values upfront, Roo will first ask *how* you'd like to provide the missing information:
+*   **Interactively:** Roo will ask you for each missing value one by one (recommended for first-time users).
+*   **Via Template Snippet:** Roo will provide a consolidated code block containing only the necessary configuration variables for you to fill out and paste back.
 
 ---
 
