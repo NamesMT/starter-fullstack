@@ -79,13 +79,13 @@ importers:
         version: 2.10.0
       '@local/common':
         specifier: workspace:*
-        version: link:../../packages/common
+        version: link:../../locals/common
       '@local/locales':
         specifier: workspace:*
-        version: link:../../packages/locales
+        version: link:../../locals/locales
       '@local/tsconfig':
         specifier: workspace:*
-        version: link:../../packages/tsconfig
+        version: link:../../locals/tsconfig
       '@namesmt/utils':
         specifier: ^0.5.9
         version: 0.5.9
@@ -143,10 +143,10 @@ importers:
         version: 2.10.0
       '@local/common':
         specifier: workspace:*
-        version: link:../../packages/common
+        version: link:../../locals/common
       '@local/common-vue':
         specifier: workspace:*
-        version: link:../../packages/common-vue
+        version: link:../../locals/common-vue
       '@namesmt/vue-query-nuxt':
         specifier: ^0.3.3
         version: 0.3.3(@tanstack/vue-query@5.71.5(vue@3.5.13(typescript@5.8.2)))(nuxt@3.16.2(@parcel/watcher@2.5.1)(@types/node@22.14.0)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(idb-keyval@6.2.1)(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.39.0)(sass@1.86.3)(terser@5.39.0)(tsx@4.19.3)(typescript@5.8.2)(vite@6.2.5(@types/node@22.14.0)(jiti@2.4.2)(sass@1.86.3)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(xml2js@0.6.2)(yaml@2.7.1))
@@ -256,7 +256,7 @@ importers:
         specifier: ^4.5.0
         version: 4.5.0(vue@3.5.13(typescript@5.8.2))
 
-  packages/common:
+  locals/common:
     devDependencies:
       '@local/tsconfig':
         specifier: workspace:*
@@ -265,7 +265,7 @@ importers:
         specifier: ^2.0.3
         version: 2.0.3
 
-  packages/common-vue:
+  locals/common-vue:
     devDependencies:
       '@local/tsconfig':
         specifier: workspace:*
@@ -277,7 +277,7 @@ importers:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.2)
 
-  packages/locales:
+  locals/locales:
     devDependencies:
       '@local/tsconfig':
         specifier: workspace:*
@@ -292,7 +292,7 @@ importers:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.2)
 
-  packages/tsconfig:
+  locals/tsconfig:
     devDependencies:
       '@vue/tsconfig':
         specifier: ^0.7.0

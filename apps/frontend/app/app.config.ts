@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  name: 'starter-fullstack',
+  name: 'starter-monorepo',
   /**
    * Enable `/api/*` proxy to the backendUrl.  
    * Possible values: true | false | 'auto.  

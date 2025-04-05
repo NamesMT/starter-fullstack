@@ -3,18 +3,18 @@ ROO PREREQUISITE INSTRUCTIONS:
 Before loading the memory bank and processing user input or the steps below, perform the following:
 1. Identify the Current Working Directory (CWD) of this project.
 2. Search all files within the `.roo/` directory (specifically `system-prompt-*` files).
-3. Replace all instances of the hardcoded path `/home/mine/starter-fullstack` with the identified CWD.
+3. Replace all instances of the hardcoded path `/home/mine/starter-monorepo` with the identified CWD.
 4. AFTER completing the path replacement, proceed to parse user-provided configuration values (if any) and load the Memory Bank (if present).
 -->
 
 # Project Initialization Template
 
-Welcome! Use this template to configure your new project based on the `starter-fullstack` repository. Provide the required information (detailed below) along with this template content in your prompt to Roo. After completing the prerequisite CWD setup (see internal comment above), Roo will then perform the following automated setup steps based on your input:
+Welcome! Use this template to configure your new project based on the `starter-monorepo` repository. Provide the required information (detailed below) along with this template content in your prompt to Roo. After completing the prerequisite CWD setup (see internal comment above), Roo will then perform the following automated setup steps based on your input:
 
 1.  **Demo App Removal (Optional):** Based on your `REMOVE_DEMO_FULLSTACK` selection, the demo `frontend` and/or `backend` applications and their references and related codes throughout the project and Memory Bank will be removed.
-2.  **Frontend Config Cleanup (Optional):** Based on `TARGET_HAVE_FRONTEND` and `FRONTEND_HAVE_VUE` (see below), unused frontend configurations (like UnoCSS, Vue ESLint rules) and the `packages/common-vue` directory might be removed.
+2.  **Frontend Config Cleanup (Optional):** Based on `TARGET_HAVE_FRONTEND` and `FRONTEND_HAVE_VUE` (see below), unused frontend configurations (like UnoCSS, Vue ESLint rules) and the `locals/common-vue` directory might be removed.
 3.  **SST Removal (Optional):** If requested via `REMOVE_SST`, SST configuration files (`sst.config.ts`, `.env.sst`), related scripts/dependencies in `package.json`, and references and related codes will be removed.
-4.  **Renaming:** All instances of the default name `starter-fullstack` within the project files and Memory Bank will be replaced with your chosen `MONOREPO_ROOT_NAME`.
+4.  **Renaming:** All instances of the default name `starter-monorepo` within the project files and Memory Bank will be replaced with your chosen `MONOREPO_ROOT_NAME`.
 5.  **Context Update:** The root `README.md` and `memory-bank/productContext.md` will be updated with your `TARGET_PROJECT_GOAL_AND_DESCRIPTION`.
 6.  **Planning Phase:** After the setup, Roo will enter a feedback loop with you and help you to make plans, create more goals, and break down your project goals into actionable steps and create an initial plan.
 7.  **Cleanup:** This `INIT_TEMPLATE.md` file will be removed.
@@ -87,7 +87,7 @@ TARGET_PROJECT_GOAL_AND_DESCRIPTION="""
     *   If you keep the demo frontend (`keep_both` or `remove_backend`), this is automatically `true`.
     *   If `TARGET_HAVE_FRONTEND` is determined to be `false` (either specified or asked), this is automatically `false`.
 *   **When to Specify / Ask:** This setting is only relevant if `TARGET_HAVE_FRONTEND` is determined to be `true`. If you don't provide it in that scenario, Roo will ask you interactively.
-*   **Effect:** If `false`, Roo will remove Vue-specific configurations (like ESLint rules) and the `packages/common-vue` directory.
+*   **Effect:** If `false`, Roo will remove Vue-specific configurations (like ESLint rules) and the `locals/common-vue` directory.
 
 ```text
 # Options: true | false

@@ -1,8 +1,8 @@
-# starter-fullstack
+# starter-monorepo
 
-This is ~~my~~ a base monorepo starter template to kick-start your beautifully organized project, whether its a fullstack project, monorepo of multiple libraries, or even just one API server and its related infrastructure deployment and utilities separated into another package.
+This is a base monorepo starter template to kick-start your beautifully organized project, whether its a fullstack project, monorepo of multiple libraries and applications, or even just one API server and its related infrastructure deployment and utilities.
 
-Note: the app comes with a `localcert` SSL at `packages/common/dev` to enable HTTPS for local development, generated with [mkcert](https://github.com/FiloSottile/mkcert), you can install mkcert, generate your own certificate and replace it, or install the `localcert.crt` to your trusted CA to remove the untrusted SSL warning.
+Note: the app comes with a `localcert` SSL at `locals/common/dev` to enable HTTPS for local development, generated with [mkcert](https://github.com/FiloSottile/mkcert), you can install mkcert, generate your own certificate and replace it, or install the `localcert.crt` to your trusted CA to remove the untrusted SSL warning.
 
 ## What's inside?
 
@@ -33,7 +33,7 @@ So if you use SSR, you could use the official [Nuxt Kinde](https://nuxt.com/modu
     - If the `frontend` and `backend` are on different domains then the backend will be called directly without proxy.
     - This could be configured in frontend's [`app.config.ts`](./apps/frontend/app/app.config.ts)
 - [`backend`](./apps/backend/README.md): a [Hono🔥](https://hono.dev/) app.
-- [`@local/locales`](./packages/locales/README.md): a shared locales/i18n library powered by [unplugin-sheet-i18n](https://github.com/NamesMT/unplugin-sheet-i18n).
+- [`@local/locales`](./locals/locales/README.md): a shared locales/i18n library powered by [unplugin-sheet-i18n](https://github.com/NamesMT/unplugin-sheet-i18n).
 - `@local/common`: a shared library that can contain constants, functions, types.
 - `@local/common-vue`: a shared library that can contain components, constants, functions, types for vue-based apps.
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo.

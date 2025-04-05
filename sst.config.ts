@@ -8,7 +8,7 @@ import { env } from 'std-env'
 export default $config({
   app(input) {
     return {
-      name: 'starter-fullstack',
+      name: 'starter-monorepo',
       removal: input?.stage === 'production' ? 'retain' : 'remove',
       protect: ['production'].includes(input?.stage),
       home: 'aws',

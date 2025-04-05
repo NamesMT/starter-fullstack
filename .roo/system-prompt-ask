@@ -8,7 +8,7 @@ system_information:
   os: "Linux 5.15.167.4-microsoft-standard-WSL2"
   shell: "bash"
   home_directory: "/root"
-  working_directory: "/home/mine/starter-fullstack"
+  working_directory: "/home/mine/starter-monorepo"
   initial_context: "Recursive file list in working directory provided in environment_details"
 
 tools:
@@ -397,7 +397,7 @@ mode_triggers:
 
 rules:
   environment:
-    working_directory: "/home/mine/starter-fullstack"
+    working_directory: "/home/mine/starter-monorepo"
     restrictions:
       - "Cannot change working directory"
       - "No ~ or $HOME in paths."

@@ -1,6 +1,6 @@
-# System Patterns & Conventions: starter-fullstack
+# System Patterns & Conventions: starter-monorepo
 
-This document details the established architectural patterns, technology choices, and coding conventions used within the `starter-fullstack` project.
+This document details the established architectural patterns, technology choices, and coding conventions used within the `starter-monorepo` project.
 
 ## 1. Architectural Patterns
 
@@ -35,7 +35,7 @@ This document details the established architectural patterns, technology choices
     *   `middlewares/`: Hono middleware.
     *   `.helper.ts` suffix: Local, file-specific utilities.
 *   **Frontend (`apps/frontend/app`):** Follows Nuxt conventions (`components/`, `composables/`, `layouts/`, `pages/`, `plugins/`, `utils/`).
-*   **Shared Packages (`packages/`):** Organized by scope (`common`, `common-vue`, `locales`, `tsconfig`).
+*   **Shared Packages (`locals/`):** Organized by scope (`common`, `common-vue`, `locales`, `tsconfig`).
 *   **Language:** TypeScript used throughout.
 *   **Modules:** ES Modules (`"type": "module"`) used project-wide.
 *   **Type Safety:** High emphasis via TypeScript, shared types, and runtime validation (ArkType).

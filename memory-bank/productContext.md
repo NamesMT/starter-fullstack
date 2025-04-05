@@ -1,6 +1,6 @@
-# Product Context: starter-fullstack
+# Product Context: starter-monorepo
 
-This document outlines the high-level description, goals, features, and overall architecture of the `starter-fullstack` project.
+This document outlines the high-level description, goals, features, and overall architecture of the `starter-monorepo` project.
 
 ## 1. Project Description & Goal
 
@@ -13,7 +13,7 @@ To be updated on user input what do you want to achieve with this template.
 
 ## 2. Overall Architecture
 
-*   **Monorepo:** Utilizes `pnpm` workspaces (`apps/*`, `packages/*`) and `Turborepo` for task orchestration.
+*   **Monorepo:** Utilizes `pnpm` workspaces (`apps/*`, `locals/*`) and `Turborepo` for task orchestration.
 *   **Frontend/Backend Separation:** Clear separation between `apps/frontend` (Nuxt) and `apps/backend` (Hono).
 *   **Infrastructure as Code (IaC):** Optionally uses `SST (Serverless Stack Toolkit) Ion` for AWS infrastructure deployment (backend as Lambda).
 *   **Environment Management:** Uses `.env` files per application managed via `dotenvx` and SST.
@@ -32,7 +32,7 @@ To be updated on user input what do you want to achieve with this template.
 *   **Build Mode:** Defaults to Static Site Generation (SSG), SSR-capable.
 *   **Core Features:** Dual UI libraries (PrimeVue & Shadcn/vue), UnoCSS styling, Tanstack Query data fetching, type-safe RPC communication with backend, Kinde authentication integration, i18n support.
 
-### 3.3. Shared Code (`packages/`)
+### 3.3. Shared Code (`locals/`)
 
 *   **`@local/common`:** Framework-agnostic utilities, types, dev assets.
 *   **`@local/common-vue`:** Shared Vue components and utilities.

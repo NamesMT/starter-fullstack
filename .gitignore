@@ -28,8 +28,8 @@ temp
 logs
 *.log
 *.pem
-# Un-ignore pems in packages/common/dev
-!packages/common/dev/*
+# Un-ignore pems in locals/common/dev
+!locals/common/dev/*
 
 
 # debug
