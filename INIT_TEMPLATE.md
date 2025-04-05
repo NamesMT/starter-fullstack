@@ -1,15 +1,24 @@
+<!--
+ROO PREREQUISITE INSTRUCTIONS:
+Before processing user input or the steps below, perform the following:
+1. Identify the Current Working Directory (CWD) of this project.
+2. Search all files within the `.roo/` directory (specifically `system-prompt-*` files).
+3. Replace all instances of the hardcoded path `/home/mine/starter-fullstack` with the identified CWD.
+4. AFTER completing the path replacement, proceed to parse user-provided configuration values (if any) and load the Memory Bank (if present).
+-->
+
 # Project Initialization Template
 
-Welcome! Use this template to configure your new project based on the `starter-fullstack` repository. Provide the required information (detailed below) along with this template content in your prompt to Roo. Roo will then perform the following automated setup steps:
+Welcome! Use this template to configure your new project based on the `starter-fullstack` repository. Provide the required information (detailed below) along with this template content in your prompt to Roo. After completing the prerequisite CWD setup (see internal comment above), Roo will then perform the following automated setup steps based on your input:
 
-1.  **Renaming:** All instances of the default name `starter-fullstack` within the project files and Memory Bank will be replaced with your chosen `MONOREPO_ROOT_NAME`.
-2.  **Demo App Removal (Optional):** Based on your `REMOVE_DEMO_FULLSTACK` selection, the demo `frontend` and/or `backend` applications and their references and related codes throughout the project and Memory Bank will be removed.
-3.  **Frontend Config Cleanup (Optional):** Based on `TARGET_HAVE_FRONTEND` and `FRONTEND_HAVE_VUE` (see below), unused frontend configurations (like UnoCSS, Vue ESLint rules) and the `packages/common-vue` directory might be removed.
-4.  **SST Removal (Optional):** If requested via `REMOVE_SST`, SST configuration files (`sst.config.ts`, `.env.sst`), related scripts/dependencies in `package.json`, and references and related codes will be removed.
+1.  **Demo App Removal (Optional):** Based on your `REMOVE_DEMO_FULLSTACK` selection, the demo `frontend` and/or `backend` applications and their references and related codes throughout the project and Memory Bank will be removed.
+2.  **Frontend Config Cleanup (Optional):** Based on `TARGET_HAVE_FRONTEND` and `FRONTEND_HAVE_VUE` (see below), unused frontend configurations (like UnoCSS, Vue ESLint rules) and the `packages/common-vue` directory might be removed.
+3.  **SST Removal (Optional):** If requested via `REMOVE_SST`, SST configuration files (`sst.config.ts`, `.env.sst`), related scripts/dependencies in `package.json`, and references and related codes will be removed.
+4.  **Renaming:** All instances of the default name `starter-fullstack` within the project files and Memory Bank will be replaced with your chosen `MONOREPO_ROOT_NAME`.
 5.  **Context Update:** The root `README.md` and `memory-bank/productContext.md` will be updated with your `TARGET_PROJECT_GOAL_AND_DESCRIPTION`.
 6.  **Planning Phase:** After the setup, Roo will enter a feedback loop with you and help you to make plans, create more goals, and break down your project goals into actionable steps and create an initial plan.
 7.  **Cleanup:** This `INIT_TEMPLATE.md` file will be removed.
-8.  **Final Check:** You will be reminded to check and potentially update the system-specific information in the `.roo/system-prompt-*` files.
+8.  **Final Check:** You will be reminded to check and potentially update the rest of the system-specific information in the `.roo/system-prompt-*` files.
 
 **Required Information:**
 
@@ -144,8 +153,8 @@ Alternatively, just provide the template content on its own, and Roo will ask yo
 
 **IMPORTANT FINAL NOTE:**
 
-After Roo completes the automated setup and removes this template file, please manually check the files located in the `.roo/` directory (specifically files named `system-prompt-*`). These files contain system information (like Operating System, default shell, paths) that was specific to the machine where this template was originally created.
+After Roo completes the automated setup and removes this template file, please check the files located in the `.roo/` directory (specifically files named `system-prompt-*`).
 
-**You MUST review and update the `SYSTEM INFORMATION` section within each of these `.roo/system-prompt-*` files to match YOUR development environment.** Failure to do so might cause Roo to behave unexpectedly or incorrectly when executing commands or accessing files later on.
+While Roo attempts to automatically update the `working_directory` path in these files as a prerequisite step before processing your configuration, **you SHOULD still manually review and update the `SYSTEM INFORMATION` section (OS, shell, paths, etc.) within each of these `.roo/system-prompt-*` files to match YOUR development environment.** Failure to ensure this information is correct might cause Roo to behave unexpectedly or incorrectly when executing commands or accessing files later on.
 
 *(Tip: You can potentially use the install script from the RooFlow repository ([https://github.com/GreatScottyMac/RooFlow](https://github.com/GreatScottyMac/RooFlow)) to help automate updating this system information.)*
