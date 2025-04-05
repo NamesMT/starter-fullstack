@@ -7,7 +7,7 @@ Before loading the memory bank and processing user input or the steps below, per
 4. AFTER completing the path replacement, proceed to parse user-provided configuration values (if any) and load the Memory Bank (if present).
 -->
 
-# Project Initialization Template
+# Project Initialization Prompt Template
 
 Welcome! Use this template to configure your new project based on the `starter-monorepo` repository. Provide the required information (detailed below) along with this template content in your prompt to Roo. After completing the prerequisite CWD setup (see internal comment above), Roo will then perform the following automated setup steps based on your input:
 
@@ -17,7 +17,7 @@ Welcome! Use this template to configure your new project based on the `starter-m
 4.  **Renaming:** All instances of the default name `starter-monorepo` within the project files and Memory Bank will be replaced with your chosen `MONOREPO_ROOT_NAME`.
 5.  **Context Update:** The root `README.md` and `memory-bank/productContext.md` will be updated with your `TARGET_PROJECT_GOAL_AND_DESCRIPTION`.
 6.  **Planning Phase:** After the setup, Roo will enter a feedback loop with you and help you to make plans, create more goals, and break down your project goals into actionable steps and create an initial plan.
-7.  **Cleanup:** This `INIT_TEMPLATE.md` file will be removed.
+7.  **Cleanup:** This `INIT_PROMPT.md` file will be removed.
 8.  **Final Check:** You will be reminded to check and potentially update the rest of the system-specific information in the `.roo/system-prompt-*` files.
 
 **Required Information:**
@@ -123,7 +123,7 @@ TARGET_PROJECT_GOAL_AND_DESCRIPTION="Build a cool CLI tool."
 TARGET_HAVE_FRONTEND="false" # Explicitly state no frontend. FRONTEND_HAVE_VUE is inferred false.
 REMOVE_SST="true"            # Remove SST config
 
-[Paste the entire content of INIT_TEMPLATE.md here]
+[Paste the entire content of INIT_PROMPT.md here]
 
 # Example 2: Removing demo apps, target is a non-Vue frontend + Go backend, no SST
 MONOREPO_ROOT_NAME="my-react-app"
@@ -133,7 +133,7 @@ TARGET_HAVE_FRONTEND="true"  # Must specify true if removing demo but still want
 FRONTEND_HAVE_VUE="false" # Must specify false if frontend is not Vue
 REMOVE_SST="true"            # Remove SST config (assuming Go backend doesn't use it)
 
-[Paste the entire content of INIT_TEMPLATE.md here]
+[Paste the entire content of INIT_PROMPT.md here]
 
 # Example 3: Keeping demo backend (uses SST), replacing demo frontend with own Vue app
 MONOREPO_ROOT_NAME="my-custom-vue-app"
@@ -144,7 +144,7 @@ FRONTEND_HAVE_VUE="true"   # Must specify true if the new frontend uses Vue
 # REMOVE_SST is omitted (defaults to false), keeping SST for the demo backend.
 # If TARGET_HAVE_FRONTEND or FRONTEND_HAVE_VUE were omitted here, Roo would ask.
 
-[Paste the entire content of INIT_TEMPLATE.md here]
+[Paste the entire content of INIT_PROMPT.md here]
 ```
 
 Alternatively, just provide the template content on its own, and Roo will ask you for the required and relevant optional values interactively.

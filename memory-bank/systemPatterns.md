@@ -46,5 +46,5 @@ This document details the established architectural patterns, technology choices
 *   **Type Safety:** High emphasis via TypeScript, shared types, and runtime validation (ArkType).
 *   **Linting/Formatting:** Enforced by ESLint (`@antfu/eslint-config`) via config files and pre-commit hooks. Includes automatic import sorting.
 *   **Configuration:** Heavy reliance on configuration files (`turbo.json`, `sst.config.ts`, `nuxt.config.ts`, etc.).
-*   **AI Development:** Setup for Roo Code AI Agent, including prompting rules (`.roo/`, `.roomodes`), Memory Bank (`memory-bank/`) and initialization (`INIT_TEMPLATE.md`).
+*   **AI Development:** Setup for Roo Code AI Agent, including prompting rules (`.roo/`, `.roomodes`), Memory Bank (`memory-bank/`) and initialization prompt (`INIT_PROMPT.md`).
 *   **Caching:** Turborepo Remote Caching can be enabled via `npx turbo login` and `npx turbo link`.
