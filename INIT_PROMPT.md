@@ -22,15 +22,16 @@ If, during any removal or modification step, you are not completely certain whet
 
 Welcome! Use this template to configure your new project based on the `starter-monorepo` repository. Provide the required information (detailed below) along with this template content in your prompt to Roo. After completing the prerequisite CWD setup and considering the optimization and safety instructions (see internal comments above), Roo will then perform the following automated setup steps based on your input:
 
-1.  **Demo App Removal (Optional):** Based on your `REMOVE_DEMO_FULLSTACK` selection, the demo `frontend` and/or `backend` applications and their references and related codes throughout the project and Memory Bank will be removed.
-2.  **Frontend Config Cleanup (Optional):** Based on `TARGET_HAVE_FRONTEND` and `FRONTEND_HAVE_VUE` (see below), unused frontend configurations (like UnoCSS, Vue ESLint rules) and the `locals/common-vue` directory might be removed.
-3.  **SST Removal (Optional):** If requested via `REMOVE_SST`, SST configuration files (`sst.config.ts`, `.env.sst`), related scripts/dependencies in `package.json`, and references and related codes will be removed.
-4.  **Renaming:** All instances of the default name `starter-monorepo` within the project files and Memory Bank will be replaced with your chosen `MONOREPO_ROOT_NAME`.
-5.  **Context Update:** The root `README.md` and `memory-bank/productContext.md` will be updated with your `TARGET_PROJECT_GOAL_AND_DESCRIPTION`.
-6.  **Initialize local secret env files:** Scan project for `.env.local` files and copy them to `.env.local.ignored`.
-7.  **RooFlow Config Completion:** Roo will remind you to check/update the system information in `.roo/system-prompt-*` files (see [NOTE](#important-note-on-roo-configuration)). **Roo will pause here and wait for your confirmation** that you have completed this check before proceeding.
-8.  **Cleanup:** This `INIT_PROMPT.md` file will be removed.
-9.  **Planning Phase:** After your confirmation and cleanup, Roo can optionally enter a feedback loop with you to help make plans, create goals, and break down your project goals into actionable steps.
+1. **Demo App Removal (Optional):** Based on your `REMOVE_DEMO_FULLSTACK` selection, the demo `frontend` and/or `backend` applications and their references and related codes throughout the project and Memory Bank will be removed.
+2. **Frontend Config Cleanup (Optional):** Based on `TARGET_HAVE_FRONTEND` and `FRONTEND_HAVE_VUE` (see below), unused frontend configurations (like UnoCSS, Vue ESLint rules) and the `locals/common-vue` directory might be removed.
+3. **SST Removal (Optional):** If requested via `REMOVE_SST`, SST configuration files (`sst.config.ts`, `.env.sst`), related scripts/dependencies in `package.json`, and references and related codes will be removed.
+<!-- + For Roo, when doing SST Removal, also remove the `pathe` and `@types/aws-lambda` dependency, they are only used by SST -->
+4. **Renaming:** All instances of the default name `starter-monorepo` within the project files and Memory Bank will be replaced with your chosen `MONOREPO_ROOT_NAME`.
+5. **Context Update:** The root `README.md` and `memory-bank/productContext.md` will be updated with your `TARGET_PROJECT_GOAL_AND_DESCRIPTION`.
+6. **Initialize local secret env files:** Scan project for `.env.local` files and copy them to `.env.local.ignored`.
+7. **RooFlow Config Completion:** Roo will remind you to check/update the system information in `.roo/system-prompt-*` files (see [NOTE](#important-note-on-roo-configuration)). **Roo will pause here and wait for your confirmation** that you have completed this check before proceeding.
+8. **Cleanup:** This `INIT_PROMPT.md` file will be removed.
+9. **Planning Phase:** After your confirmation and cleanup, Roo can optionally enter a feedback loop with you to help make plans, create goals, and break down your project goals into actionable steps.
 
 **Required Information:**
 
@@ -38,7 +39,7 @@ Welcome! Use this template to configure your new project based on the `starter-m
 
 **1. Monorepo Root Name (`MONOREPO_ROOT_NAME`)**
 
-*   Specify the desired name for your project's root `package.json`. This name should be NodeJS-friendly (e.g., `my-awesome-project`, `@my-org/my-app`).
+* Specify the desired name for your project's root `package.json`. This name should be NodeJS-friendly (e.g., `my-awesome-project`, `@my-org/my-app`).
 
 ```text
 MONOREPO_ROOT_NAME="<your-project-name-here>"
@@ -48,11 +49,11 @@ MONOREPO_ROOT_NAME="<your-project-name-here>"
 
 **2. Remove Demo Applications? (`REMOVE_DEMO_FULLSTACK`)**
 
-*   This template includes a demo full-stack setup (`apps/frontend` and `apps/backend`). Do you plan to keep both, remove one, or remove both?
-    *   `keep_both`: Keep both frontend and backend demo apps.
-    *   `remove_frontend`: Remove `apps/frontend`.
-    *   `remove_backend`: Remove `apps/backend`.
-    *   `remove_both`: Remove both `apps/frontend` and `apps/backend`.
+* This template includes a demo full-stack setup (`apps/frontend` and `apps/backend`). Do you plan to keep both, remove one, or remove both?
+  * `keep_both`: Keep both frontend and backend demo apps.
+  * `remove_frontend`: Remove `apps/frontend`.
+  * `remove_backend`: Remove `apps/backend`.
+  * `remove_both`: Remove both `apps/frontend` and `apps/backend`.
 
 ```text
 # Options: keep_both | remove_frontend | remove_backend | remove_both
@@ -63,7 +64,7 @@ REMOVE_DEMO_FULLSTACK="<your-choice-here>"
 
 **3. Target Project Goal and Description (`TARGET_PROJECT_GOAL_AND_DESCRIPTION`)**
 
-*   Briefly describe the main goal of your project and what you intend to build. This will be used to update the project's README and Memory Bank context.
+* Briefly describe the main goal of your project and what you intend to build. This will be used to update the project's README and Memory Bank context.
 
 ```text
 TARGET_PROJECT_GOAL_AND_DESCRIPTION="""
@@ -79,11 +80,11 @@ TARGET_PROJECT_GOAL_AND_DESCRIPTION="""
 
 **4. Will Your Target Project Include a Frontend? (`TARGET_HAVE_FRONTEND`)**
 
-*   **(Only relevant if you chose `remove_frontend` or `remove_both` above)**.
-*   Specify whether your final project goal includes building *any* kind of frontend application.
-*   If `false`, Roo will remove frontend-specific configurations like the root `uno.config.ts` and related ESLint settings/dependencies.
-*   If you keep the demo frontend (`keep_both` or `remove_backend`), this setting is ignored (as a frontend exists).
-*   **If you remove the demo frontend and do not provide this value, Roo will ask you interactively (see How to Use below).**
+* **(Only relevant if you chose `remove_frontend` or `remove_both` above)**.
+* Specify whether your final project goal includes building *any* kind of frontend application.
+* If `false`, Roo will remove frontend-specific configurations like the root `uno.config.ts` and related ESLint settings/dependencies.
+* If you keep the demo frontend (`keep_both` or `remove_backend`), this setting is ignored (as a frontend exists).
+* **If you remove the demo frontend and do not provide this value, Roo will ask you interactively (see How to Use below).**
 
 ```text
 # Options: true | false
@@ -94,12 +95,12 @@ TARGET_PROJECT_GOAL_AND_DESCRIPTION="""
 
 **5. Will Your Frontend Use Vue? (`FRONTEND_HAVE_VUE`)**
 
-*   Specify whether your target frontend application (if any) will use the Vue framework.
-*   **Inferred Values:**
-    *   If you keep the demo frontend (`keep_both` or `remove_backend`), this is automatically `true`.
-    *   If `TARGET_HAVE_FRONTEND` is determined to be `false` (either specified or asked), this is automatically `false`.
-*   **When to Specify / Ask:** This setting is only relevant if `TARGET_HAVE_FRONTEND` is determined to be `true`. If you don't provide it in that scenario, Roo will ask you interactively (see How to Use below).
-*   **Effect:** If `false`, Roo will remove Vue-specific configurations (like ESLint rules) and the `locals/common-vue` directory.
+* Specify whether your target frontend application (if any) will use the Vue framework.
+* **Inferred Values:**
+  * If you keep the demo frontend (`keep_both` or `remove_backend`), this is automatically `true`.
+  * If `TARGET_HAVE_FRONTEND` is determined to be `false` (either specified or asked), this is automatically `false`.
+* **When to Specify / Ask:** This setting is only relevant if `TARGET_HAVE_FRONTEND` is determined to be `true`. If you don't provide it in that scenario, Roo will ask you interactively (see How to Use below).
+* **Effect:** If `false`, Roo will remove Vue-specific configurations (like ESLint rules) and the `locals/common-vue` directory.
 
 ```text
 # Options: true | false
@@ -110,9 +111,9 @@ TARGET_PROJECT_GOAL_AND_DESCRIPTION="""
 
 **6. Remove SST (Serverless Stack Toolkit) Configuration? (`REMOVE_SST`)**
 
-*   Specify whether you want to remove the SST configuration files (`sst.config.ts`, `.env.sst`), related scripts/dependencies in `package.json`, and documentation references and related codes.
-*   Choose `true` if you do not plan to use SST.
-*   If omitted, the default value is `false` (SST configuration is kept).
+* Specify whether you want to remove the SST configuration files (`sst.config.ts`, `.env.sst`), related scripts/dependencies in `package.json`, and documentation references and related codes.
+* Choose `true` if you do not plan to use SST.
+* If omitted, the default value is `false` (SST configuration is kept).
 
 ```text
 # Options: true | false (default: false)
@@ -160,8 +161,8 @@ FRONTEND_HAVE_VUE="true"   # Must specify true if the new frontend uses Vue
 ```
 
 Alternatively, if you provide the template content on its own without specifying the required/relevant values upfront, Roo will first ask *how* you'd like to provide the missing information:
-*   **Interactively:** Roo will ask you for each missing value one by one (recommended for first-time users).
-*   **Via Template Snippet:** Roo will provide a consolidated code block containing only the necessary configuration variables for you to fill out and paste back.
+* **Interactively:** Roo will ask you for each missing value one by one (recommended for first-time users).
+* **Via Template Snippet:** Roo will provide a consolidated code block containing only the necessary configuration variables for you to fill out and paste back.
 
 ---
 
