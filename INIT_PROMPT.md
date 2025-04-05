@@ -10,10 +10,17 @@ Before loading the memory bank and processing user input or the steps below, per
 ROO EXECUTION OPTIMIZATION INSTRUCTION:
 When performing the setup steps below (especially steps involving file modifications like removals, renaming, and context updates), analyze ALL required changes for a specific file based on the user's configuration *before* making any edits. Consolidate these changes into a single file modification operation (e.g., one `apply_diff` or `write_to_file` call per file) whenever feasible, instead of performing multiple separate edits on the same file. Read the file content only once if multiple changes are planned for it.
 -->
+<!-- ROO CORE DEPENDENCY PRESERVATION:
+During cleanup steps, DO NOT remove these dependencies, they are core configurations for the monorepo:
++ '@antfu/eslint-config' dependency from package.json or its usage within eslint.config.js.
+-->
+<!-- ROO UNCERTAINTY HANDLING:
+If, during any removal or modification step, you are not completely certain whether a specific file, code block, configuration entry, or dependency should be removed/modified based on the user's choices and the preservation rules, DO NOT proceed automatically. Instead, ask the user for clarification before taking action. Prioritize avoiding unintended removals.
+-->
 
 # Project Initialization Prompt Template
 
-Welcome! Use this template to configure your new project based on the `starter-monorepo` repository. Provide the required information (detailed below) along with this template content in your prompt to Roo. After completing the prerequisite CWD setup and considering the optimization instruction (see internal comments above), Roo will then perform the following automated setup steps based on your input:
+Welcome! Use this template to configure your new project based on the `starter-monorepo` repository. Provide the required information (detailed below) along with this template content in your prompt to Roo. After completing the prerequisite CWD setup and considering the optimization and safety instructions (see internal comments above), Roo will then perform the following automated setup steps based on your input:
 
 1.  **Demo App Removal (Optional):** Based on your `REMOVE_DEMO_FULLSTACK` selection, the demo `frontend` and/or `backend` applications and their references and related codes throughout the project and Memory Bank will be removed.
 2.  **Frontend Config Cleanup (Optional):** Based on `TARGET_HAVE_FRONTEND` and `FRONTEND_HAVE_VUE` (see below), unused frontend configurations (like UnoCSS, Vue ESLint rules) and the `locals/common-vue` directory might be removed.
