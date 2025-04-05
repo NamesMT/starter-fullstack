@@ -9,12 +9,8 @@ const siteConfig = {
   description: '🔥Hono RPC, Nuxt, SST Ion, Kinde Auth, Tanstack Query, Shadcn, Primevue, UnoCSS',
 }
 
-config({ path: ['.env.local', '.env.local.ignored'], override: true })
-
-console.log({
-  a: import.meta.env.NUXT_PUBLIC_FRONTEND_URL,
-  b: import.meta.env.NUXT_PUBLIC_FRONTEND_URL_TEST,
-})
+if (import.meta.dev)
+  config({ path: ['.env.local', '.env.local.ignored'], override: true })
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
