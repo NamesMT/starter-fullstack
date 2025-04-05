@@ -149,6 +149,8 @@ FRONTEND_HAVE_VUE="true"   # Must specify true if the new frontend uses Vue
 
 Alternatively, just provide the template content on its own, and Roo will ask you for the required and relevant optional values interactively.
 
+<!-- For Roo, make sure you ask interactively for each value, don't ask all of them at once -->
+
 ---
 
 **IMPORTANT FINAL NOTE:**
