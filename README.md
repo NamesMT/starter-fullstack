@@ -2,7 +2,23 @@
 
 This is a base monorepo starter template to kick-start your beautifully organized project, whether its a fullstack project, monorepo of multiple libraries and applications, or even just one API server and its related infrastructure deployment and utilities.
 
+It is recommended to use `Roo Code` AI Agent to help you setup the monorepo according to your needs, see [Utilities](#utilities)
+
 Note: the app comes with a `localcert` SSL at `locals/common/dev` to enable HTTPS for local development, generated with [mkcert](https://github.com/FiloSottile/mkcert), you can install mkcert, generate your own certificate and replace it, or install the `localcert.crt` to your trusted CA to remove the untrusted SSL warning.
+
+## Table of Contents
+
+- [starter-monorepo](#starter-monorepo)
+  - [Table of Contents](#table-of-contents)
+  - [What's inside?](#whats-inside)
+    - [Apps and Packages](#apps-and-packages)
+    - [Utilities](#utilities)
+    - [Build](#build)
+    - [Develop](#develop)
+    - [Notes](#notes)
+      - [`import` ordering:](#import-ordering)
+    - [Remote Caching](#remote-caching)
+  - [Useful Links](#useful-links)
 
 ## What's inside?
 

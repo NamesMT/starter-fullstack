@@ -3,6 +3,7 @@
 **frontend** is the consumer-facing website for the project, powered by [Nuxt🔥](https://nuxt.com/) (`compatibilityVersion: 4`)
 
 ## Features:
+- Type-safe integration with [`backend`](../backend/README.md) via `hono/client`, with `rpcApi` plugin to support Nuxt context and local dev proxy, cors, AWS Lambda OAC
 - ESLint
   - [@nuxt/eslint](https://eslint.nuxt.com/packages/module)
   - [@antfu/eslint-config](https://github.com/antfu/eslint-config)
@@ -24,8 +25,10 @@
   - Automatic optimized images for the app, as well as placeholder support.
 - [NuxtI18n](https://i18n.nuxtjs.org/)
   - Internationalization (i18n) module for Nuxt.js + SEO headers.
+  - With [`@local/locales`](../../locals/locales/README.md) as shared localization source.
 - [Nuxt SEO](https://nuxtseo.com/)
   - All the boring SEO work for Nuxt done.
+- [Nuxt LLMs](https://github.com/nuxtlabs/nuxt-llms)
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
