@@ -20,7 +20,7 @@ export default $config({
     const currentDir = dirname(fileURLToPath(import.meta.url))
     const rootDir = resolve(currentDir, '../../../')
     const backendDir = resolve(rootDir, 'apps/backend/')
-    config({ path: [resolve(backendDir, '.env'), resolve(backendDir, '.env.prod.local')], debug: true })
+    config({ path: [resolve(backendDir, '.env.prod.local'), resolve(backendDir, '.env')], debug: true })
     // //
 
     const backend = new sst.aws.Function('Backend', {

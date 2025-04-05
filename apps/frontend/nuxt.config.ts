@@ -1,4 +1,5 @@
 import { localcertKeyPath, localcertPath } from '@local/common/dev/cert'
+import { config } from 'dotenv'
 import optimizeExclude from 'vite-plugin-optimize-exclude'
 import { Names } from './app/primevue.config'
 
@@ -7,6 +8,13 @@ const siteConfig = {
   name: 'starter-monorepo',
   description: '🔥Hono RPC, Nuxt, SST Ion, Kinde Auth, Tanstack Query, Shadcn, Primevue, UnoCSS',
 }
+
+config({ path: ['.env.local', '.env.local.ignored'], override: true })
+
+console.log({
+  a: import.meta.env.NUXT_PUBLIC_FRONTEND_URL,
+  b: import.meta.env.NUXT_PUBLIC_FRONTEND_URL_TEST,
+})
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({

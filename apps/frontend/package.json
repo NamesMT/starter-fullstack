@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt generate",
-    "dev": "nuxt dev --dotenv .env.local",
+    "dev": "nuxt dev",
     "lint": "eslint .",
     "test:types": "nuxt typecheck",
     "preview": "nuxt preview",
