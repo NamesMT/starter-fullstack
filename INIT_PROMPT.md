@@ -21,9 +21,9 @@ Welcome! Use this template to configure your new project based on the `starter-m
 4.  **Renaming:** All instances of the default name `starter-monorepo` within the project files and Memory Bank will be replaced with your chosen `MONOREPO_ROOT_NAME`.
 5.  **Context Update:** The root `README.md` and `memory-bank/productContext.md` will be updated with your `TARGET_PROJECT_GOAL_AND_DESCRIPTION`.
 6.  **Initialize local secret env files:** Scan project for `.env.local` files and copy them to `.env.local.ignored`.
-7.  **Planning Phase:** After the setup, Roo will enter a feedback loop with you and help you to make plans, create more goals, and break down your project goals into actionable steps and create an initial plan.
+7.  **RooFlow Config Completion:** Roo will remind you to check/update the system information in `.roo/system-prompt-*` files (see [NOTE](#important-note-on-roo-configuration)). **Roo will pause here and wait for your confirmation** that you have completed this check before proceeding.
 8.  **Cleanup:** This `INIT_PROMPT.md` file will be removed.
-9.  **Final Check:** You will be reminded to check and potentially update the rest of the system-specific information in the `.roo/system-prompt-*` files.
+9.  **Planning Phase:** After your confirmation and cleanup, Roo can optionally enter a feedback loop with you to help make plans, create goals, and break down your project goals into actionable steps.
 
 **Required Information:**
 
@@ -158,10 +158,10 @@ Alternatively, if you provide the template content on its own without specifying
 
 ---
 
-**IMPORTANT FINAL NOTE:**
+### **IMPORTANT NOTE ON ROO CONFIGURATION:**
 
-After Roo completes the automated setup and removes this template file, please check the files located in the `.roo/` directory (specifically files named `system-prompt-*`).
+During the setup process (at step 7), Roo will pause and remind you to check the files located in the `.roo/` directory (specifically files named `system-prompt-*`).
 
-While Roo attempts to automatically update the `working_directory` path in these files as a prerequisite step before processing your configuration, **you SHOULD still manually review and update the `SYSTEM INFORMATION` section (OS, shell, paths, etc.) within each of these `.roo/system-prompt-*` files to match YOUR development environment.** Failure to ensure this information is correct might cause Roo to behave unexpectedly or incorrectly when executing commands or accessing files later on.
+While Roo attempts to automatically update the `working_directory` path in these files as a prerequisite step, **it is HIGHLY RECOMMENDED THAT YOU SHOULD manually review and update the `SYSTEM INFORMATION` section (OS, shell, paths, etc.) within each of these `.roo/system-prompt-*` files to match YOUR development environment.** Failure to ensure this information is correct might cause Roo to behave unexpectedly or incorrectly later on.
 
 *(Tip: You can potentially use the install script from the RooFlow repository ([https://github.com/GreatScottyMac/RooFlow](https://github.com/GreatScottyMac/RooFlow)) to help automate updating this system information.)*
