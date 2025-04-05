@@ -6,10 +6,14 @@ Before loading the memory bank and processing user input or the steps below, per
 3. Replace all instances of the hardcoded path `/home/mine/starter-monorepo` with the identified CWD.
 4. AFTER completing the path replacement, proceed to parse user-provided configuration values (if any) and load the Memory Bank (if present).
 -->
+<!--
+ROO EXECUTION OPTIMIZATION INSTRUCTION:
+When performing the setup steps below (especially steps involving file modifications like removals, renaming, and context updates), analyze ALL required changes for a specific file based on the user's configuration *before* making any edits. Consolidate these changes into a single file modification operation (e.g., one `apply_diff` or `write_to_file` call per file) whenever feasible, instead of performing multiple separate edits on the same file. Read the file content only once if multiple changes are planned for it.
+-->
 
 # Project Initialization Prompt Template
 
-Welcome! Use this template to configure your new project based on the `starter-monorepo` repository. Provide the required information (detailed below) along with this template content in your prompt to Roo. After completing the prerequisite CWD setup (see internal comment above), Roo will then perform the following automated setup steps based on your input:
+Welcome! Use this template to configure your new project based on the `starter-monorepo` repository. Provide the required information (detailed below) along with this template content in your prompt to Roo. After completing the prerequisite CWD setup and considering the optimization instruction (see internal comments above), Roo will then perform the following automated setup steps based on your input:
 
 1.  **Demo App Removal (Optional):** Based on your `REMOVE_DEMO_FULLSTACK` selection, the demo `frontend` and/or `backend` applications and their references and related codes throughout the project and Memory Bank will be removed.
 2.  **Frontend Config Cleanup (Optional):** Based on `TARGET_HAVE_FRONTEND` and `FRONTEND_HAVE_VUE` (see below), unused frontend configurations (like UnoCSS, Vue ESLint rules) and the `locals/common-vue` directory might be removed.
